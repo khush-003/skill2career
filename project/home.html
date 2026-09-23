@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skill2Career | Turn Your Skills Into a Career</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* ================= BACKGROUND MOTION ================= */
+
+
+.background-motion {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.motion-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.18;
+    transition: transform 0.2s ease-out;
+}
+
+.shape-one {
+    width: 250px;
+    height: 250px;
+    background: #1264e8;
+    top: 15%;
+    left: -100px;
+}
+
+.shape-two {
+    width: 200px;
+    height: 200px;
+    background: #6c63ff;
+    top: 55%;
+    right: -80px;
+}
+
+.shape-three {
+    width: 180px;
+    height: 180px;
+    background: #42a5f5;
+    bottom: 5%;
+    left: 30%;
+}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+ 
+        .navbar {
+            width: 100%;
+            height: 72px;
+            background: white;
+            border-bottom: 1px solid #e7ebf2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            color: #1264e8;
+        }
+
+        .logo span {
+            color: #172033;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #536078;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1264e8;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .login-btn {
+            padding: 9px 17px;
+            border: 1px solid #d8dfeb;
+            border-radius: 8px;
+            color: #26334a;
+            font-size: 13px;
+        }
+
+        .signup-btn {
+            padding: 10px 18px;
+            background: #1264e8;
+            color: white;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            padding: 70px 7% 60px;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef6ff,
+                    #ffffff 55%,
+                    #f4f8ff
+                );
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+
+            padding: 7px 13px;
+            border-radius: 20px;
+
+            background: #e4efff;
+            color: #1264e8;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #1264e8;
+        }
+
+        .hero p {
+            max-width: 570px;
+
+            color: #667085;
+            font-size: 16px;
+            line-height: 1.8;
+
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            padding: 13px 22px;
+
+            background: #1264e8;
+            color: white;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn:hover {
+            background: #0953ca;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            padding: 13px 22px;
+
+            background: white;
+            color: #1264e8;
+
+            border: 1px solid #cbd8ed;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* ================= HERO VISUAL ================= */
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .career-card {
+            width: 390px;
+            padding: 28px;
+
+            background: white;
+
+            border: 1px solid #e2e8f2;
+            border-radius: 20px;
+
+            box-shadow: 0 20px 50px rgba(40, 70, 120, 0.12);
+        }
+
+        .career-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 24px;
+        }
+
+        .career-card-header h3 {
+            font-size: 17px;
+        }
+
+        .status {
+            font-size: 11px;
+            color: #087f5b;
+            background: #e4f8f1;
+            padding: 6px 9px;
+            border-radius: 20px;
+        }
+
+        .career-progress {
+            margin-bottom: 22px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 12px;
+            color: #69758b;
+
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+
+            background: #edf1f7;
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 72%;
+            height: 100%;
+            background: #1264e8;
+            border-radius: inherit;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-item {
+            padding: 12px;
+
+            background: #f7f9fc;
+            border-radius: 9px;
+
+            font-size: 12px;
+            color: #44516a;
+        }
+
+        .skill-item strong {
+            display: block;
+            color: #172033;
+            margin-bottom: 4px;
+        }
+
+
+        /* ================= STATS ================= */
+
+        .stats {
+            width: 86%;
+            margin: -28px auto 0;
+
+            background: white;
+
+            border: 1px solid #e5eaf2;
+            border-radius: 14px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            box-shadow: 0 10px 30px rgba(30, 55, 90, 0.06);
+
+            position: relative;
+            z-index: 5;
+        }
+
+        .stat {
+            padding: 22px;
+            text-align: center;
+
+            border-right: 1px solid #edf0f5;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h2 {
+            color: #1264e8;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            font-size: 12px;
+            color: #758197;
+        }
+
+
+        /* ================= COMMON SECTION ================= */
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: #758197;
+            font-size: 14px;
+        }
+
+        .view-link {
+            color: #1264e8;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* ================= CAREER CARDS ================= */
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .career-box {
+            padding: 22px;
+
+            background: white;
+
+            border: 1px solid #e3e8f0;
+            border-radius: 13px;
+
+            transition: 0.3s;
+        }
+
+        .career-box:hover {
+            transform: translateY(-5px);
+            border-color: #b9d2f7;
+            box-shadow: 0 12px 30px rgba(40, 70, 120, 0.08);
+        }
+
+        .career-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf3ff;
+            color: #1264e8;
+
+            border-radius: 10px;
+
+            font-size: 21px;
+
+            margin-bottom: 17px;
+        }
+
+        .career-box h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .career-box p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #758197;
+
+            margin-bottom: 15px;
+        }
+
+        .career-box span {
+            font-size: 11px;
+            color: #1264e8;
+            font-weight: 600;
+        }
+
+
+        /* ================= COURSES ================= */
+
+        .courses {
+            background: #f0f5fb;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 13px;
+            overflow: hidden;
+
+            border: 1px solid #e1e7ef;
+
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(30, 60, 100, 0.08);
+        }
+
+        .course-top {
+            height: 120px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f1ff;
+
+            color: #1264e8;
+
+            font-size: 35px;
+            font-weight: 800;
+        }
+
+        .course-content {
+            padding: 18px;
+        }
+
+        .course-content h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .course-content p {
+            color: #758197;
+            font-size: 12px;
+            line-height: 1.6;
+
+            margin-bottom: 13px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 11px;
+            color: #69758b;
+        }
+
+             .menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    color: #172033;
+}
+
+
+
+@media (max-width: 800px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 20px 6%;
+
+        border-bottom: 1px solid #e7ebf2;
+    }
+
+    
+}
+
+
+
+
+
+
+        /* ================= WHY SECTION ================= */
+
+        .why-section {
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            padding: 27px;
+
+            border: 1px solid #e3e8f0;
+            border-radius: 14px;
+
+            background: #fbfcfe;
+        }
+
+        .why-number {
+            font-size: 13px;
+            color: #1264e8;
+            font-weight: 700;
+
+            margin-bottom: 18px;
+        }
+
+        .why-card h3 {
+            font-size: 16px;
+            margin-bottom: 9px;
+        }
+
+        .why-card p {
+            font-size: 13px;
+            color: #758197;
+            line-height: 1.7;
+        }
+
+
+        /* ================= UPDATES ================= */
+
+        .updates {
+            background: #f0f5fb;
+        }
+
+        .update-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .update-card {
+            background: white;
+
+            padding: 20px;
+
+            border: 1px solid #e1e7ef;
+            border-radius: 12px;
+        }
+
+        .update-date {
+            font-size: 11px;
+            color: #1264e8;
+            font-weight: 600;
+
+            margin-bottom: 12px;
+        }
+
+        .update-card h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .update-card p {
+            font-size: 12px;
+            color: #758197;
+            line-height: 1.6;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            margin: 70px 7%;
+
+            padding: 55px;
+
+            background: #1264e8;
+            color: white;
+
+            border-radius: 18px;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 31px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 24px;
+
+            color: #dceaff;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .cta a {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            background: white;
+            color: #1264e8;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #101827;
+            color: white;
+
+            padding: 45px 7% 25px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+
+            padding-bottom: 35px;
+        }
+
+        .footer-brand h2 {
+            color: #4f9aff;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            max-width: 330px;
+
+            color: #9ba8bc;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        footer h4 {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer li a {
+            color: #9ba8bc;
+            font-size: 12px;
+        }
+
+        footer li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #263247;
+
+            padding-top: 20px;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #758197;
+            font-size: 11px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1100px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-content {
+                max-width: 800px;
+            }
+
+            .career-grid,
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat {
+                border-bottom: 1px solid #edf0f5;
+            }
+
+            .why-grid,
+            .update-list {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .hero {
+                padding: 50px 5%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .career-card {
+                width: 100%;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+
+            .career-grid,
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                width: 90%;
+            }
+
+            .cta {
+                margin: 40px 5%;
+                padding: 35px 20px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-buttons .login-btn {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="background-motion">
+    <div class="motion-shape shape-one"></div>
+    <div class="motion-shape shape-two"></div>
+    <div class="motion-shape shape-three"></div>
+</div>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            Skill<span>2</span>Career
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="home.html" class="active">Home</a>
+
+            <a href="explore.html">Explore</a>
+
+            <a href="courses.html">Courses</a>
+
+            <a href="careers.html">Careers</a>
+
+            <a href="roadmap.html">Roadmap</a>
+
+            <a href="resources.html">Resources</a>
+
+            <a href="skills.html">Skills</a>
+
+            <a href="updates.html">Updates</a>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="signup.html" class="signup-btn">
+                Sign Up
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    YOUR CAREER, YOUR PATH
+                </span>
+
+                <h1>
+                    Turn Your <span>Skills</span><br>
+                    Into a Brighter Career
+                </h1>
+
+                <p>
+                    Explore careers, discover courses, identify your
+                    skill gaps and build a personalized learning path
+                    that helps you move from where you are to where
+                    you want to be.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="explore.html" class="primary-btn">
+                        Explore Careers →
+                    </a>
+
+                    <a href="courses.html" class="secondary-btn">
+                        Explore Courses
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO DASHBOARD CARD -->
+
+            <div class="hero-visual">
+
+                <div class="career-card">
+
+                    <div class="career-card-header">
+
+                        <h3>
+                            Your Career Progress
+                        </h3>
+
+                        <span class="status">
+                            Learning
+                        </span>
+
+                    </div>
+
+
+                    <div class="career-progress">
+
+                        <div class="progress-info">
+
+                            <span>
+                                Full Stack Developer
+                            </span>
+
+                            <span>
+                                72%
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-list">
+
+                        <div class="skill-item">
+                            <strong>HTML & CSS</strong>
+                            Completed
+                        </div>
+
+                        <div class="skill-item">
+                            <strong>JavaScript</strong>
+                            In Progress
+                        </div>
+
+                        <div class="skill-item">
+                            <strong>React</strong>
+                            Upcoming
+                        </div>
+
+                        <div class="skill-item">
+                            <strong>Node.js</strong>
+                            Upcoming
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <h2>200+</h2>
+
+                <p>
+                    Career Paths
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h2>500+</h2>
+
+                <p>
+                    Courses
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h2>1000+</h2>
+
+                <p>
+                    Learning Resources
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h2>50+</h2>
+
+                <p>
+                    Skill Areas
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= POPULAR CAREERS ================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Explore Popular Careers
+                    </h2>
+
+                    <p>
+                        Discover career paths based on skills,
+                        interests and goals.
+                    </p>
+
+                </div>
+
+
+                <a href="careers.html" class="view-link">
+                    View All Careers →
+                </a>
+
+            </div>
+
+
+            <div class="career-grid">
+
+
+                <a href="career-details.html?career=software-developer"
+                    class="career-box">
+
+                    <div class="career-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
+                        Software Developer
+                    </h3>
+
+                    <p>
+                        Build applications, websites and
+                        software solutions.
+                    </p>
+
+                    <span>
+                        Explore Career →
+                    </span>
+
+                </a>
+
+
+                <a href="career-details.html?career=data-analyst"
+                    class="career-box">
+
+                    <div class="career-icon">
+                        ◫
+                    </div>
+
+                    <h3>
+                        Data Analyst
+                    </h3>
+
+                    <p>
+                        Analyze data and convert information
+                        into useful insights.
+                    </p>
+
+                    <span>
+                        Explore Career →
+                    </span>
+
+                </a>
+
+
+                <a href="career-details.html?career=uiux"
+                    class="career-box">
+
+                    <div class="career-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        UI/UX Designer
+                    </h3>
+
+                    <p>
+                        Design useful, accessible and engaging
+                        digital experiences.
+                    </p>
+
+                    <span>
+                        Explore Career →
+                    </span>
+
+                </a>
+
+
+                <a href="career-details.html?career=cybersecurity"
+                    class="career-box">
+
+                    <div class="career-icon">
+                        ◉
+                    </div>
+
+                    <h3>
+                        Cybersecurity
+                    </h3>
+
+                    <p>
+                        Protect systems, networks and digital
+                        information.
+                    </p>
+
+                    <span>
+                        Explore Career →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= COURSES ================= -->
+
+        <section class="section courses">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Explore Courses
+                    </h2>
+
+                    <p>
+                        Find courses that connect your interests
+                        with your career goals.
+                    </p>
+
+                </div>
+
+
+                <a href="courses.html" class="view-link">
+                    View All Courses →
+                </a>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <a href="course-details.html?course=bca"
+                    class="course-card">
+
+                    <div class="course-top">
+                        BCA
+                    </div>
+
+                    <div class="course-content">
+
+                        <h3>
+                            Bachelor of Computer Applications
+                        </h3>
+
+                        <p>
+                            Learn programming, databases,
+                            web development and computer science.
+                        </p>
+
+                        <div class="course-meta">
+
+                            <span>
+                                3 Years
+                            </span>
+
+                            <span>
+                                Undergraduate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <a href="course-details.html?course=mca"
+                    class="course-card">
+
+                    <div class="course-top">
+                        MCA
+                    </div>
+
+                    <div class="course-content">
+
+                        <h3>
+                            Master of Computer Applications
+                        </h3>
+
+                        <p>
+                            Advanced computer applications,
+                            software development and technology.
+                        </p>
+
+                        <div class="course-meta">
+
+                            <span>
+                                2 Years
+                            </span>
+
+                            <span>
+                                Postgraduate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <a href="course-details.html?course=btech"
+                    class="course-card">
+
+                    <div class="course-top">
+                        B.Tech
+                    </div>
+
+                    <div class="course-content">
+
+                        <h3>
+                            Bachelor of Technology
+                        </h3>
+
+                        <p>
+                            Technical and engineering-focused
+                            education across multiple specializations.
+                        </p>
+
+                        <div class="course-meta">
+
+                            <span>
+                                4 Years
+                            </span>
+
+                            <span>
+                                Undergraduate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <a href="course-details.html?course=mba"
+                    class="course-card">
+
+                    <div class="course-top">
+                        MBA
+                    </div>
+
+                    <div class="course-content">
+
+                        <h3>
+                            Master of Business Administration
+                        </h3>
+
+                        <p>
+                            Business, management, leadership and
+                            organizational skills.
+                        </p>
+
+                        <div class="course-meta">
+
+                            <span>
+                                2 Years
+                            </span>
+
+                            <span>
+                                Postgraduate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= WHY SKILL2CAREER ================= -->
+
+        <section class="section why-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Make Better Career Decisions
+                    </h2>
+
+                    <p>
+                        Understand your options before choosing
+                        your next step.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-grid">
+
+
+                <div class="why-card">
+
+                    <div class="why-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Explore Your Options
+                    </h3>
+
+                    <p>
+                        Compare different careers and courses
+                        based on eligibility, duration, skills,
+                        opportunities and your goals.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div class="why-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Find Your Skill Gaps
+                    </h3>
+
+                    <p>
+                        Understand which skills you already have
+                        and which skills you need to develop for
+                        your target career.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div class="why-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Build Your Roadmap
+                    </h3>
+
+                    <p>
+                        Follow a structured learning roadmap with
+                        courses, skills and resources for your
+                        selected career path.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LATEST UPDATES ================= -->
+
+        <section class="section updates">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Latest Career Updates
+                    </h2>
+
+                    <p>
+                        Stay informed about courses, careers,
+                        skills and learning opportunities.
+                    </p>
+
+                </div>
+
+
+                <a href="updates.html" class="view-link">
+                    View All Updates →
+                </a>
+
+            </div>
+
+
+            <div class="update-list">
+
+
+                <a href="updates.html" class="update-card">
+
+                    <div class="update-date">
+                        CAREER UPDATE
+                    </div>
+
+                    <h3>
+                        Emerging Technology Careers
+                    </h3>
+
+                    <p>
+                        Explore technology roles and the skills
+                        increasingly associated with them.
+                    </p>
+
+                </a>
+
+
+                <a href="updates.html" class="update-card">
+
+                    <div class="update-date">
+                        COURSE UPDATE
+                    </div>
+
+                    <h3>
+                        New Learning Paths
+                    </h3>
+
+                    <p>
+                        Discover newly added learning paths
+                        organized around career goals.
+                    </p>
+
+                </a>
+
+
+                <a href="updates.html" class="update-card">
+
+                    <div class="update-date">
+                        SKILL UPDATE
+                    </div>
+
+                    <h3>
+                        Skills In Demand
+                    </h3>
+
+                    <p>
+                        Keep track of important technical and
+                        professional skills.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta">
+
+            <h2>
+                Not Sure What To Choose?
+            </h2>
+
+            <p>
+                Explore careers, compare courses, understand
+                your skill gaps and create a learning direction
+                that matches your goals.
+            </p>
+
+            <a href="explore.html">
+                Start Exploring
+            </a>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Skill2Career
+                </h2>
+
+                <p>
+                    A career exploration and learning platform
+                    designed to help students understand their
+                    options and build a clearer path forward.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Explore
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="explore.html">
+                            Explore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="careers.html">
+                            Careers
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html">
+                            Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="skills.html">
+                            Skills
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Learn
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="roadmap.html">
+                            Roadmaps
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="resources.html">
+                            Resources
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="updates.html">
+                            Updates
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Platform
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="signup.html">
+                            Sign Up
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Skill2Career
+            </span>
+
+            <span>
+                Explore. Learn. Decide. Grow.
+            </span>
+
+        </div>
+
+    </footer>
+
+<script>
+    // ================= MOBILE MENU =================
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+
+        const isOpen = navLinks.classList.contains("show");
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+    });
+}
+
+
+// ================= ACTIVE NAVIGATION =================
+
+const currentPage = window.location.pathname.split("/").pop();
+
+const navItems = document.querySelectorAll(".nav-links a");
+
+navItems.forEach(function (link) {
+
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    }
+
+});
+
+
+// ================= STATISTICS COUNTER =================
+
+const counters = document.querySelectorAll(".counter");
+
+const statsSection = document.querySelector(".stats");
+
+let countersStarted = false;
+
+function startCounters() {
+
+    if (countersStarted) {
+        return;
+    }
+
+    countersStarted = true;
+
+    counters.forEach(function (counter) {
+
+        const target = Number(counter.dataset.target);
+
+        let current = 0;
+
+        function updateCounter() {
+
+            const increment = Math.ceil(target / 100);
+
+            current += increment;
+
+            if (current >= target) {
+                current = target;
+            }
+
+            counter.textContent = current + "+";
+
+            if (current < target) {
+                requestAnimationFrame(updateCounter);
+            }
+
+        }
+
+        updateCounter();
+
+    });
+
+}
+
+
+// Start counters when stats section becomes visible
+
+if (statsSection && counters.length > 0) {
+
+    const statsObserver = new IntersectionObserver(
+        function (entries) {
+
+            if (entries[0].isIntersecting) {
+
+                startCounters();
+
+                statsObserver.disconnect();
+
+            }
+
+        },
+        {
+            threshold: 0.3
+        }
+    );
+
+    statsObserver.observe(statsSection);
+
+}
+
+
+// ================= CAREER PROGRESS =================
+
+const progressFill = document.querySelector(".progress-fill");
+
+if (progressFill) {
+
+    const progress = Number(progressFill.dataset.progress);
+
+    progressFill.style.width = "0%";
+
+    setTimeout(function () {
+
+        progressFill.style.width = progress + "%";
+
+    }, 300);
+
+}
+
+
+// ================= CLOSE MOBILE MENU =================
+
+// Close menu when a navigation link is clicked
+
+navItems.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        if (navLinks) {
+            navLinks.classList.remove("show");
+        }
+
+        if (menuToggle) {
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+        }
+
+    });
+
+});
+
+// ================= BACKGROUND MOUSE MOVEMENT =================
+
+const shapes = document.querySelectorAll(".motion-shape");
+
+document.addEventListener("mousemove", function (event) {
+
+    const x = (event.clientX / window.innerWidth - 0.5) * 2;
+    const y = (event.clientY / window.innerHeight - 0.5) * 2;
+
+    shapes.forEach(function (shape, index) {
+
+        const movement = (index + 1) * 12;
+
+        shape.style.transform =
+            `translate(${x * movement}px, ${y * movement}px)`;
+
+    });
+
+});
+
+
+// ================= LEFT TO RIGHT FLOATING MOVEMENT =================
+
+const floatingShapes = document.querySelectorAll(".motion-shape");
+
+floatingShapes.forEach(function (shape, index) {
+
+    let position = 0;
+    let direction = 1;
+
+    function moveShape() {
+
+        position += direction * 0.15;
+
+        if (position > 35) {
+            direction = -1;
+        }
+
+        if (position < -35) {
+            direction = 1;
+        }
+
+        shape.style.marginLeft = position + "px";
+
+        requestAnimationFrame(moveShape);
+    }
+
+    setTimeout(function () {
+        moveShape();
+    }, index * 500);
+
+});
+</script>
+</body>
+
+</html>

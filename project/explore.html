@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore | Skill2Career</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 72px;
+            padding: 0 6%;
+
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #e5eaf1;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            color: #1264e8;
+        }
+
+        .logo span {
+            color: #172033;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .nav-links a {
+            color: #59667c;
+            font-size: 13px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1264e8;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .login-btn {
+            padding: 9px 16px;
+            border: 1px solid #d7dfeb;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .signup-btn {
+            padding: 10px 17px;
+            background: #1264e8;
+            color: white;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .explore-hero {
+            min-height: 440px;
+            padding: 75px 7%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(18, 100, 232, 0.13),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(80, 120, 255, 0.10),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #eef6ff,
+                    #ffffff
+                );
+        }
+
+
+        /* floating background circles */
+
+        .hero-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(18, 100, 232, 0.12);
+            pointer-events: none;
+        }
+
+        .circle-one {
+            width: 220px;
+            height: 220px;
+            left: -90px;
+            top: 80px;
+
+            animation: floatOne 7s ease-in-out infinite;
+        }
+
+        .circle-two {
+            width: 320px;
+            height: 320px;
+            right: -150px;
+            top: -80px;
+
+            animation: floatTwo 8s ease-in-out infinite;
+        }
+
+        @keyframes floatOne {
+
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(8deg);
+            }
+
+        }
+
+        @keyframes floatTwo {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(25px);
+            }
+
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+
+            animation: heroAppear 0.9s ease forwards;
+        }
+
+        @keyframes heroAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .hero-tag {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            background: #e3efff;
+            color: #1264e8;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            margin-bottom: 17px;
+        }
+
+        .explore-hero h1 {
+            font-size: clamp(40px, 5vw, 62px);
+            letter-spacing: -2px;
+            line-height: 1.05;
+
+            margin-bottom: 18px;
+        }
+
+        .explore-hero h1 span {
+            color: #1264e8;
+        }
+
+        .explore-hero p {
+            color: #68758b;
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+        /* ================= SEARCH ================= */
+
+        .search-container {
+            width: min(700px, 90%);
+            margin-top: 30px;
+
+            position: relative;
+            z-index: 5;
+
+            animation: searchAppear 1s ease 0.2s both;
+        }
+
+        @keyframes searchAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .search-box {
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+
+            background: white;
+
+            border: 1px solid #dce4ef;
+            border-radius: 12px;
+
+            padding: 7px;
+
+            box-shadow:
+                0 15px 40px rgba(30, 70, 120, 0.10);
+
+            transition: 0.3s;
+        }
+
+        .search-box:focus-within {
+            border-color: #1264e8;
+
+            box-shadow:
+                0 0 0 4px rgba(18, 100, 232, 0.08),
+                0 15px 40px rgba(30, 70, 120, 0.12);
+        }
+
+        .search-icon {
+            width: 48px;
+            font-size: 21px;
+        }
+
+        .search-box input {
+            flex: 1;
+
+            border: none;
+            outline: none;
+
+            font-size: 14px;
+            font-family: inherit;
+
+            color: #172033;
+        }
+
+        .search-box button {
+            height: 46px;
+
+            padding: 0 20px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #1264e8;
+            color: white;
+
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+        .section-heading h2 {
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .section-heading p {
+            color: #758197;
+            font-size: 13px;
+        }
+
+
+        /* ================= EXPLORE OPTIONS ================= */
+
+        .explore-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .explore-option {
+            padding: 25px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+
+            animation: cardUp 0.7s ease both;
+        }
+
+        .explore-option:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .explore-option:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .explore-option:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes cardUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .explore-option:hover {
+            transform: translateY(-8px);
+
+            border-color: #b8d2f7;
+
+            box-shadow:
+                0 15px 35px rgba(30, 70, 120, 0.10);
+        }
+
+        .option-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #eaf3ff;
+            color: #1264e8;
+
+            font-size: 21px;
+
+            margin-bottom: 18px;
+
+            transition: 0.3s;
+        }
+
+        .explore-option:hover .option-icon {
+            transform: rotate(-7deg) scale(1.08);
+        }
+
+        .explore-option h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .explore-option p {
+            color: #758197;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .explore-option span {
+            color: #1264e8;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* ================= CATEGORIES ================= */
+
+        .categories {
+            background: #f0f5fb;
+        }
+
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category {
+            padding: 11px 17px;
+
+            background: white;
+
+            border: 1px solid #dfe6ef;
+            border-radius: 30px;
+
+            font-size: 12px;
+            color: #4d5a70;
+
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            background: #1264e8;
+            color: white;
+            border-color: #1264e8;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= CAREERS ================= */
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .career-card {
+            padding: 22px;
+
+            background: white;
+
+            border: 1px solid #e1e7ef;
+            border-radius: 13px;
+
+            transition: 0.3s;
+        }
+
+        .career-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(30, 70, 120, 0.08);
+        }
+
+        .career-icon {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf3ff;
+            color: #1264e8;
+
+            border-radius: 9px;
+
+            margin-bottom: 16px;
+
+            font-weight: 700;
+        }
+
+        .career-card h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .career-card p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #758197;
+
+            margin-bottom: 13px;
+        }
+
+        .career-card a {
+            color: #1264e8;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+
+        /* ================= FIND CAREER ================= */
+
+        .find-career {
+            background: #f0f5fb;
+        }
+
+        .finder {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: white;
+
+            border: 1px solid #e0e6ef;
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow: 0 15px 40px rgba(30, 60, 100, 0.06);
+        }
+
+        .finder-left {
+            padding: 40px;
+            background: #1264e8;
+            color: white;
+        }
+
+        .finder-left h2 {
+            font-size: 30px;
+            margin-bottom: 14px;
+        }
+
+        .finder-left p {
+            color: #dbeaff;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .finder-left a {
+            display: inline-block;
+
+            padding: 11px 18px;
+
+            background: white;
+            color: #1264e8;
+
+            border-radius: 8px;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .finder-right {
+            padding: 35px;
+        }
+
+        .question {
+            margin-bottom: 23px;
+        }
+
+        .question h4 {
+            font-size: 13px;
+            margin-bottom: 11px;
+        }
+
+        .question-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .question-options span {
+            padding: 8px 12px;
+
+            background: #f4f7fb;
+
+            border: 1px solid #e2e7ee;
+            border-radius: 7px;
+
+            font-size: 11px;
+            color: #5b6679;
+
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .question-options span:hover {
+            background: #eaf3ff;
+            color: #1264e8;
+            border-color: #b9d3f7;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skill-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 12px 18px;
+
+            background: white;
+
+            border: 1px solid #dfe6ef;
+            border-radius: 8px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px) rotate(-1deg);
+            border-color: #1264e8;
+            color: #1264e8;
+            box-shadow: 0 8px 20px rgba(30, 80, 150, 0.08);
+        }
+
+
+        /* ================= POPULAR ================= */
+
+        .popular {
+            background: #f0f5fb;
+        }
+
+        .popular-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .popular-box {
+            background: white;
+
+            padding: 25px;
+
+            border: 1px solid #e1e7ef;
+            border-radius: 13px;
+        }
+
+        .popular-box h3 {
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .popular-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid #edf0f4;
+
+            font-size: 12px;
+        }
+
+        .popular-item:last-child {
+            border-bottom: none;
+        }
+
+        .popular-item span {
+            color: #1264e8;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            margin: 70px 7%;
+
+            padding: 55px 30px;
+
+            background: #1264e8;
+
+            border-radius: 18px;
+
+            text-align: center;
+            color: white;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 50%;
+
+            left: 10%;
+            top: -100px;
+
+            animation: ctaFloat 6s infinite ease-in-out;
+        }
+
+        @keyframes ctaFloat {
+
+            50% {
+                transform: translateY(30px);
+            }
+
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .cta p {
+            color: #dceaff;
+            font-size: 13px;
+            max-width: 600px;
+            margin: auto auto 23px;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .cta a {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            background: white;
+            color: #1264e8;
+
+            border-radius: 8px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            position: relative;
+
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            transform: translateY(-4px);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #101827;
+            color: white;
+
+            padding: 45px 7% 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 35px;
+
+            padding-bottom: 30px;
+        }
+
+        footer h2 {
+            color: #4d99ff;
+            margin-bottom: 12px;
+        }
+
+        footer h4 {
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        footer p,
+        footer li,
+        footer a {
+            color: #9ba8bc;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 7px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #263247;
+            padding-top: 18px;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #758197;
+            font-size: 10px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1050px) {
+
+            .nav-links {
+                gap: 13px;
+            }
+
+            .explore-options,
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .finder {
+                grid-template-columns: 1fr;
+            }
+
+            .popular-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .login-btn {
+                display: none;
+            }
+
+            .explore-hero {
+                padding: 60px 5%;
+            }
+
+            .explore-hero h1 {
+                font-size: 40px;
+            }
+
+            .search-box {
+                height: 55px;
+            }
+
+            .search-box button {
+                padding: 0 12px;
+            }
+
+            .explore-options,
+            .career-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+
+            .finder-left,
+            .finder-right {
+                padding: 28px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            Skill<span>2</span>Career
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="home.html">Home</a>
+
+            <a href="explore.html" class="active">
+                Explore
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="careers.html">
+                Careers
+            </a>
+
+            <a href="roadmap.html">
+                Roadmap
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="updates.html">
+                Updates
+            </a>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="signup.html" class="signup-btn">
+                Sign Up
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="explore-hero">
+
+        <div class="hero-circle circle-one"></div>
+        <div class="hero-circle circle-two"></div>
+
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                DISCOVER YOUR POSSIBILITIES
+            </span>
+
+            <h1>
+                Explore.
+                <span>Discover.</span>
+                Decide.
+            </h1>
+
+            <p>
+                Explore careers, courses, skills and learning
+                paths to understand your options and find a
+                direction that matches your goals.
+            </p>
+
+
+            <div class="search-container">
+
+                <div class="search-box">
+
+                    <div class="search-icon">
+                        🔎
+                    </div>
+
+                    <input
+                        type="text"
+                        placeholder="Search careers, courses, skills..."
+                    >
+
+                    <button>
+                        Search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EXPLORE OPTIONS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                What Do You Want To Explore?
+            </h2>
+
+            <p>
+                Start with what you already know or discover
+                something completely new.
+            </p>
+
+        </div>
+
+
+        <div class="explore-options">
+
+
+            <a href="careers.html" class="explore-option">
+
+                <div class="option-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Careers
+                </h3>
+
+                <p>
+                    Discover different career paths, roles,
+                    required skills and opportunities.
+                </p>
+
+                <span>
+                    Explore Careers →
+                </span>
+
+            </a>
+
+
+            <a href="courses.html" class="explore-option">
+
+                <div class="option-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Courses
+                </h3>
+
+                <p>
+                    Explore degrees, certifications and
+                    learning programs.
+                </p>
+
+                <span>
+                    Explore Courses →
+                </span>
+
+            </a>
+
+
+            <a href="skills.html" class="explore-option">
+
+                <div class="option-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Skills
+                </h3>
+
+                <p>
+                    Discover technical and professional skills
+                    connected to different careers.
+                </p>
+
+                <span>
+                    Explore Skills →
+                </span>
+
+            </a>
+
+
+            <a href="roadmap.html" class="explore-option">
+
+                <div class="option-icon">
+                    🧭
+                </div>
+
+                <h3>
+                    Career Paths
+                </h3>
+
+                <p>
+                    Understand the journey from learning a
+                    skill to building a career.
+                </p>
+
+                <span>
+                    View Paths →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section categories">
+
+        <div class="section-heading">
+
+            <h2>
+                Explore By Category
+            </h2>
+
+            <p>
+                Choose a field that interests you.
+            </p>
+
+        </div>
+
+
+        <div class="category-list">
+
+            <a href="careers.html?category=technology"
+                class="category">
+                Technology
+            </a>
+
+            <a href="careers.html?category=data-ai"
+                class="category">
+                Data & AI
+            </a>
+
+            <a href="careers.html?category=design"
+                class="category">
+                Design
+            </a>
+
+            <a href="careers.html?category=business"
+                class="category">
+                Business
+            </a>
+
+            <a href="careers.html?category=finance"
+                class="category">
+                Finance
+            </a>
+
+            <a href="careers.html?category=marketing"
+                class="category">
+                Marketing
+            </a>
+
+            <a href="careers.html?category=engineering"
+                class="category">
+                Engineering
+            </a>
+
+            <a href="careers.html?category=healthcare"
+                class="category">
+                Healthcare
+            </a>
+
+            <a href="careers.html?category=government"
+                class="category">
+                Government
+            </a>
+
+            <a href="careers.html?category=education"
+                class="category">
+                Education
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= POPULAR CAREERS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Popular Career Paths
+            </h2>
+
+            <p>
+                Explore careers that learners frequently
+                investigate.
+            </p>
+
+        </div>
+
+
+        <div class="career-grid">
+
+
+            <div class="career-card">
+
+                <div class="career-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h3>
+                    Software Developer
+                </h3>
+
+                <p>
+                    Build software applications and solve
+                    technical problems.
+                </p>
+
+                <a href="career-details.html?career=software-developer">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <div class="career-card">
+
+                <div class="career-icon">
+                    ◫
+                </div>
+
+                <h3>
+                    Data Analyst
+                </h3>
+
+                <p>
+                    Analyze information and turn data into
+                    useful insights.
+                </p>
+
+                <a href="career-details.html?career=data-analyst">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <div class="career-card">
+
+                <div class="career-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    UI/UX Designer
+                </h3>
+
+                <p>
+                    Create useful and engaging digital
+                    experiences.
+                </p>
+
+                <a href="career-details.html?career=uiux">
+                    View Career →
+                </a>
+
+            </div>
+
+
+            <div class="career-card">
+
+                <div class="career-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Cybersecurity Analyst
+                </h3>
+
+                <p>
+                    Protect systems, networks and digital
+                    information.
+                </p>
+
+                <a href="career-details.html?career=cybersecurity">
+                    View Career →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FIND YOUR CAREER ================= -->
+
+    <section class="section find-career">
+
+        <div class="finder">
+
+
+            <div class="finder-left">
+
+                <h2>
+                    Not Sure What To Choose?
+                </h2>
+
+                <p>
+                    Tell us about your interests, education
+                    and goals. Use your answers to explore
+                    career paths that fit your direction.
+                </p>
+
+                <a href="decision-matrix.html">
+                    Start Career Discovery →
+                </a>
+
+            </div>
+
+
+            <div class="finder-right">
+
+
+                <div class="question">
+
+                    <h4>
+                        What interests you?
+                    </h4>
+
+                    <div class="question-options">
+
+                        <span>Coding</span>
+                        <span>Design</span>
+                        <span>Data</span>
+                        <span>Business</span>
+                        <span>Technology</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question">
+
+                    <h4>
+                        What's your current level?
+                    </h4>
+
+                    <div class="question-options">
+
+                        <span>Beginner</span>
+                        <span>Intermediate</span>
+                        <span>Advanced</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question">
+
+                    <h4>
+                        What is your goal?
+                    </h4>
+
+                    <div class="question-options">
+
+                        <span>Get a Job</span>
+                        <span>Higher Studies</span>
+                        <span>Learn a Skill</span>
+                        <span>Change Career</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2>
+                Explore Popular Skills
+            </h2>
+
+            <p>
+                See what skills connect with different career
+                paths.
+            </p>
+
+        </div>
+
+
+        <div class="skill-cloud">
+
+            <a href="skills.html?skill=html"
+                class="skill">
+                HTML
+            </a>
+
+            <a href="skills.html?skill=css"
+                class="skill">
+                CSS
+            </a>
+
+            <a href="skills.html?skill=javascript"
+                class="skill">
+                JavaScript
+            </a>
+
+            <a href="skills.html?skill=python"
+                class="skill">
+                Python
+            </a>
+
+            <a href="skills.html?skill=java"
+                class="skill">
+                Java
+            </a>
+
+            <a href="skills.html?skill=sql"
+                class="skill">
+                SQL
+            </a>
+
+            <a href="skills.html?skill=react"
+                class="skill">
+                React
+            </a>
+
+            <a href="skills.html?skill=dsa"
+                class="skill">
+                DSA
+            </a>
+
+            <a href="skills.html?skill=git"
+                class="skill">
+                Git
+            </a>
+
+            <a href="skills.html?skill=communication"
+                class="skill">
+                Communication
+            </a>
+
+            <a href="skills.html?skill=problem-solving"
+                class="skill">
+                Problem Solving
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= POPULAR ================= -->
+
+    <section class="section popular">
+
+        <div class="popular-grid">
+
+
+            <div class="popular-box">
+
+                <h3>
+                    🔥 Popular Searches
+                </h3>
+
+
+                <a href="careers.html" class="popular-item">
+                    Software Developer
+                    <span>Explore →</span>
+                </a>
+
+                <a href="careers.html" class="popular-item">
+                    Data Science
+                    <span>Explore →</span>
+                </a>
+
+                <a href="careers.html" class="popular-item">
+                    AI / ML
+                    <span>Explore →</span>
+                </a>
+
+                <a href="careers.html" class="popular-item">
+                    Cybersecurity
+                    <span>Explore →</span>
+                </a>
+
+                <a href="careers.html" class="popular-item">
+                    Web Development
+                    <span>Explore →</span>
+                </a>
+
+            </div>
+
+
+            <div class="popular-box">
+
+                <h3>
+                    ⭐ Popular Courses
+                </h3>
+
+
+                <a href="courses.html" class="popular-item">
+                    BCA
+                    <span>View Course →</span>
+                </a>
+
+                <a href="courses.html" class="popular-item">
+                    MCA
+                    <span>View Course →</span>
+                </a>
+
+                <a href="courses.html" class="popular-item">
+                    B.Tech CSE
+                    <span>View Course →</span>
+                </a>
+
+                <a href="courses.html" class="popular-item">
+                    MBA
+                    <span>View Course →</span>
+                </a>
+
+                <a href="courses.html" class="popular-item">
+                    Data Science Certifications
+                    <span>View Course →</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>
+            Your Next Step Starts Here
+        </h2>
+
+        <p>
+            Explore your options, understand the skills you
+            need and find a path that connects your learning
+            with your career goals.
+        </p>
+
+        <a href="roadmap.html">
+            Explore Career Roadmaps →
+        </a>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h2>
+                    Skill2Career
+                </h2>
+
+                <p>
+                    Explore careers, courses, skills and
+                    learning paths to make informed career
+                    decisions.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Explore
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="explore.html">
+                            Explore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="careers.html">
+                            Careers
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html">
+                            Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="skills.html">
+                            Skills
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Learn
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="roadmap.html">
+                            Roadmaps
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="resources.html">
+                            Resources
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="updates.html">
+                            Updates
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Platform
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Skill2Career
+            </span>
+
+            <span>
+                Explore. Learn. Decide. Grow.
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

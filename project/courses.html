@@ -1,0 +1,3901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses | Skill2Career</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+
+            height: 76px;
+
+            padding: 0 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            border-bottom: 1px solid #e7ebf2;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(12px);
+        }
+
+
+        .logo {
+
+            font-size: 24px;
+            font-weight: 800;
+
+            color: #1769e0;
+        }
+
+        .logo span {
+            color: #172033;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+
+        .nav-links a {
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: #596579;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links .active {
+
+            color: #1769e0;
+        }
+
+
+        .login-btn {
+
+            padding: 10px 18px;
+
+            background: #1769e0;
+
+            color: white !important;
+
+            border-radius: 8px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 520px;
+
+            padding: 95px 7% 85px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 90% 10%,
+                    #dbeafe,
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 5% 90%,
+                    #e0e7ff,
+                    transparent 30%
+                ),
+
+                #f7f9fc;
+        }
+
+
+        .hero-content {
+
+            max-width: 680px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
+            background: #eaf2ff;
+
+            color: #1769e0;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(42px, 5vw, 68px);
+
+            line-height: 1.08;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 span {
+
+            color: #1769e0;
+        }
+
+
+        .hero-description {
+
+            max-width: 620px;
+
+            color: #667287;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-box {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 8px;
+
+            background: white;
+
+            border: 1px solid #e0e6ef;
+
+            border-radius: 14px;
+
+            box-shadow: 0 15px 40px rgba(25, 55, 100, 0.08);
+        }
+
+
+        .search-box input {
+
+            flex: 1;
+
+            border: none;
+
+            outline: none;
+
+            padding: 15px;
+
+            font-size: 14px;
+
+            background: transparent;
+        }
+
+
+        .search-btn {
+
+            border: none;
+
+            background: #1769e0;
+
+            color: white;
+
+            padding: 14px 23px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(23, 105, 224, 0.25);
+        }
+
+
+        /* =========================
+           HERO DECORATION
+        ========================= */
+
+        .hero-visual {
+
+            width: 330px;
+
+            height: 330px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #eaf2ff
+                );
+
+            border: 1px solid #dce8fa;
+
+            box-shadow:
+                0 30px 70px rgba(23, 105, 224, 0.12);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+
+        .hero-visual::before {
+
+            content: "";
+
+            width: 210px;
+
+            height: 210px;
+
+            border-radius: 50%;
+
+            border: 1px dashed #9bbdf2;
+
+            position: absolute;
+        }
+
+
+        .hero-center {
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 30px;
+
+            background: #1769e0;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 42px;
+
+            box-shadow: 0 20px 40px rgba(23, 105, 224, 0.25);
+        }
+
+
+        .floating-course {
+
+            position: absolute;
+
+            padding: 11px 15px;
+
+            background: white;
+
+            border: 1px solid #e4eaf3;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            box-shadow: 0 12px 30px rgba(20, 40, 80, 0.08);
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+
+        .course-one {
+            top: 35px;
+            right: 15px;
+        }
+
+
+        .course-two {
+            bottom: 45px;
+            left: 0;
+            animation-delay: 1s;
+        }
+
+
+        .course-three {
+            bottom: 10px;
+            right: 40px;
+            animation-delay: 2s;
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+
+            padding: 85px 7%;
+        }
+
+
+        .section-heading {
+
+            max-width: 700px;
+
+            margin: 0 auto 45px;
+
+            text-align: center;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 12px;
+
+            letter-spacing: -0.8px;
+        }
+
+
+        .section-heading p {
+
+            color: #6d788b;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           WHAT DO YOU WANT TO STUDY
+        ========================= */
+
+        .study-section {
+
+            background: white;
+        }
+
+
+        .study-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .study-card {
+
+            padding: 24px;
+
+            background: #ffffff;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .study-card::after {
+
+            content: "";
+
+            width: 70px;
+
+            height: 70px;
+
+            border-radius: 50%;
+
+            background: #edf4ff;
+
+            position: absolute;
+
+            right: -25px;
+            bottom: -25px;
+
+            transition: 0.3s;
+        }
+
+
+        .study-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: #1769e0;
+
+            box-shadow:
+                0 18px 35px rgba(23, 105, 224, 0.10);
+        }
+
+
+        .study-card:hover::after {
+
+            transform: scale(1.4);
+        }
+
+
+        .study-icon {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #edf4ff;
+
+            border-radius: 11px;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .study-card h3 {
+
+            font-size: 16px;
+
+            margin-bottom: 6px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .study-card p {
+
+            color: #758095;
+
+            font-size: 12px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           COURSE TYPES
+        ========================= */
+
+        .type-section {
+
+            background: #f7f9fc;
+        }
+
+
+        .type-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap: 14px;
+        }
+
+
+        .type-card {
+
+            min-height: 145px;
+
+            padding: 20px 12px;
+
+            text-align: center;
+
+            background: white;
+
+            border: 1px solid #e2e7ef;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.3s;
+        }
+
+
+        .type-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color: #1769e0;
+
+            box-shadow:
+                0 15px 30px rgba(23, 105, 224, 0.10);
+        }
+
+
+        .type-icon {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #edf4ff;
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .type-card h3 {
+
+            font-size: 13px;
+
+            line-height: 1.4;
+        }
+
+
+        .type-card p {
+
+            color: #7b8597;
+
+            font-size: 10px;
+
+            margin-top: 4px;
+        }
+
+
+        /* =========================
+           FILTER AREA
+        ========================= */
+
+        .explorer {
+
+            background: white;
+        }
+
+
+        .filter-area {
+
+            padding: 25px;
+
+            background: #f7f9fc;
+
+            border: 1px solid #e3e8f0;
+
+            border-radius: 16px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 45px;
+        }
+
+
+        .filter-group label {
+
+            display: block;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+        }
+
+
+        .filter-group select {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #dce3ed;
+
+            background: white;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            color: #566176;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           POPULAR COURSES
+        ========================= */
+
+        .course-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 23px;
+        }
+
+
+        .course-card {
+
+            background: white;
+
+            border: 1px solid #e1e7ef;
+
+            border-radius: 17px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .course-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 45px rgba(20, 40, 80, 0.10);
+
+            border-color: #b8d2f7;
+        }
+
+
+        .course-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+        }
+
+
+        .course-badge {
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: #edf4ff;
+
+            color: #1769e0;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+
+        .course-arrow {
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            background: #f1f5f9;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #1769e0;
+
+            transition: 0.3s;
+        }
+
+
+        .course-card:hover .course-arrow {
+
+            background: #1769e0;
+
+            color: white;
+
+            transform: rotate(-45deg);
+        }
+
+
+        .course-card h3 {
+
+            font-size: 19px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .course-card p {
+
+            font-size: 13px;
+
+            color: #707c90;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+
+        .course-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .course-meta span {
+
+            padding: 5px 8px;
+
+            border-radius: 6px;
+
+            background: #f4f6f9;
+
+            color: #687387;
+
+            font-size: 10px;
+        }
+
+
+        .view-course {
+
+            color: #1769e0;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           NEW — FREE LEARNING HUB
+        ===================================================== */
+
+        .learning-resources {
+
+            background: #f7f9fc;
+        }
+
+
+        .resource-search-area {
+
+            max-width: 850px;
+
+            margin: 0 auto 35px;
+
+            background: white;
+
+            padding: 20px;
+
+            border: 1px solid #e1e7ef;
+
+            border-radius: 18px;
+
+            box-shadow: 0 15px 40px rgba(20, 40, 80, 0.06);
+        }
+
+
+        .resource-search-box {
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+
+        .resource-search-box input {
+
+            flex: 1;
+
+            padding: 14px 16px;
+
+            border: 1px solid #dce3ed;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 14px;
+        }
+
+
+        .resource-search-box input:focus {
+
+            border-color: #1769e0;
+
+            box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.08);
+        }
+
+
+        .resource-search-btn {
+
+            border: none;
+
+            padding: 0 22px;
+
+            background: #1769e0;
+
+            color: white;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .resource-search-btn:hover {
+
+            transform: translateY(-2px);
+        }
+
+
+        .resource-controls {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-top: 14px;
+        }
+
+
+        .resource-controls label {
+
+            font-size: 12px;
+
+            color: #687387;
+
+            font-weight: 600;
+        }
+
+
+        .resource-controls select {
+
+            padding: 9px 12px;
+
+            border: 1px solid #dce3ed;
+
+            border-radius: 8px;
+
+            background: white;
+
+            color: #566176;
+
+            outline: none;
+
+            font-size: 12px;
+        }
+
+
+        .resource-status {
+
+            text-align: center;
+
+            min-height: 25px;
+
+            margin-bottom: 20px;
+
+            color: #6d788b;
+
+            font-size: 13px;
+        }
+
+
+        .resource-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .resource-card {
+
+            background: white;
+
+            border: 1px solid #e1e7ef;
+
+            border-radius: 16px;
+
+            padding: 23px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-height: 245px;
+
+            transition: 0.35s;
+
+            animation: resourceIn 0.5s ease both;
+
+            animation-delay: calc(var(--i) * 80ms);
+        }
+
+
+        .resource-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: #b8d2f7;
+
+            box-shadow:
+                0 18px 40px rgba(20, 40, 80, 0.09);
+        }
+
+
+        @keyframes resourceIn {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateX(-25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateX(0);
+            }
+        }
+
+
+        .resource-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .resource-source {
+
+            padding: 5px 9px;
+
+            border-radius: 20px;
+
+            background: #edf4ff;
+
+            color: #1769e0;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+        }
+
+
+        .resource-type {
+
+            font-size: 10px;
+
+            color: #7b8597;
+
+            font-weight: 600;
+        }
+
+
+        .resource-card h3 {
+
+            font-size: 17px;
+
+            line-height: 1.4;
+
+            margin-bottom: 10px;
+        }
+
+
+        .resource-card p {
+
+            color: #707c90;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            margin-bottom: 15px;
+
+            flex: 1;
+        }
+
+
+        .resource-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 17px;
+        }
+
+
+        .resource-meta span {
+
+            padding: 5px 8px;
+
+            background: #f4f6f9;
+
+            color: #687387;
+
+            border-radius: 6px;
+
+            font-size: 9px;
+        }
+
+
+        .resource-link {
+
+            display: inline-block;
+
+            padding: 10px 13px;
+
+            background: #f1f5f9;
+
+            color: #1769e0;
+
+            border-radius: 8px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+
+        .resource-link:hover {
+
+            background: #1769e0;
+
+            color: white;
+        }
+
+
+        .resource-note {
+
+            max-width: 850px;
+
+            margin: 25px auto 0;
+
+            padding: 14px 17px;
+
+            border-left: 3px solid #1769e0;
+
+            background: white;
+
+            color: #6d788b;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+            border-radius: 6px;
+        }
+
+
+        /* =========================
+           LEARNING PATH
+        ========================= */
+
+        .path-section {
+
+            background: #101827;
+
+            color: white;
+        }
+
+
+        .path-section .section-heading p {
+
+            color: #aeb8c8;
+        }
+
+
+        .path-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .path-card {
+
+            padding: 25px;
+
+            background: #172235;
+
+            border: 1px solid #26344a;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .path-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color: #4d83d6;
+        }
+
+
+        .path-number {
+
+            font-size: 11px;
+
+            color: #75a9ff;
+
+            font-weight: 700;
+        }
+
+
+        .path-card h3 {
+
+            margin: 10px 0;
+
+            font-size: 18px;
+        }
+
+
+        .path-card p {
+
+            color: #aab5c7;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           DECISION CTA
+        ========================= */
+
+        .decision {
+
+            margin: 80px 7%;
+
+            padding: 60px 7%;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1769e0,
+                    #315fc7
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+
+        .decision-content {
+
+            max-width: 650px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .decision h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .decision p {
+
+            font-size: 14px;
+
+            opacity: 0.9;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+
+        .decision-btn {
+
+            display: inline-block;
+
+            padding: 12px 20px;
+
+            background: white;
+
+            color: #1769e0;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        .decision-circle {
+
+            width: 190px;
+
+            height: 190px;
+
+            border-radius: 50%;
+
+            border: 35px solid rgba(255,255,255,0.08);
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #0b1220;
+
+            color: white;
+
+            padding: 55px 7% 25px;
+        }
+
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+
+        footer h3 {
+
+            margin-bottom: 15px;
+
+            font-size: 16px;
+        }
+
+
+        footer p,
+        footer a {
+
+            color: #9ba7ba;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+
+        footer a {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            transition: 0.3s;
+        }
+
+
+        footer a:hover {
+
+            color: white;
+        }
+
+
+        .copyright {
+
+            margin-top: 40px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #263044;
+
+            text-align: center;
+
+            color: #758196;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1150px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero-visual {
+                width: 280px;
+                height: 280px;
+            }
+
+            .type-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .study-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .search-box {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .hero-visual {
+
+                width: 260px;
+
+                height: 260px;
+            }
+
+            .filter-area {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .course-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .path-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .resource-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .navbar {
+
+                padding: 0 5%;
+            }
+
+            .nav-links {
+
+                display: none;
+            }
+
+            .hero {
+
+                padding: 70px 5%;
+            }
+
+            .section {
+
+                padding: 60px 5%;
+            }
+
+            .study-grid,
+            .type-grid,
+            .course-grid,
+            .path-grid,
+            .filter-area,
+            .resource-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+
+                flex-direction: column;
+
+                padding: 8px;
+            }
+
+            .search-box input {
+
+                width: 100%;
+            }
+
+            .search-btn {
+
+                width: 100%;
+            }
+
+            .resource-search-box {
+
+                flex-direction: column;
+            }
+
+            .resource-search-btn {
+
+                min-height: 45px;
+            }
+
+            .resource-controls {
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .resource-controls select {
+
+                width: 100%;
+            }
+
+            .decision {
+
+                margin: 50px 5%;
+
+                padding: 45px 25px;
+            }
+
+            .decision-circle {
+
+                display: none;
+            }
+
+            .footer-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            Skill<span>2</span>Career
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="courses.html" class="active">
+                Courses
+            </a>
+
+            <a href="careers.html">
+                Careers
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="roadmaps.html">
+                Roadmaps
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+            <a href="updates.html">
+                Updates
+            </a>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                EXPLORE • LEARN • BUILD
+            </span>
+
+
+            <h1>
+
+                Find the right
+                <span>course</span>
+                for your future.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Explore degrees, diplomas, certificates and
+                professional learning paths. Connect what you
+                study with the skills and careers you want.
+
+            </p>
+
+
+            <!-- UPDATED SEARCH -->
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="heroSearchInput"
+                    placeholder="Search courses, fields, degrees or skills..."
+                >
+
+                <button
+                    class="search-btn"
+                    id="heroSearchBtn">
+
+                    Search
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+
+            <div class="hero-center">
+                🎓
+            </div>
+
+
+            <div class="floating-course course-one">
+                BCA
+            </div>
+
+
+            <div class="floating-course course-two">
+                MCA
+            </div>
+
+
+            <div class="floating-course course-three">
+                Data Science
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= WHAT DO YOU WANT TO STUDY ================= -->
+
+    <section class="section study-section">
+
+
+        <div class="section-heading">
+
+            <h2>
+                What do you want to study?
+            </h2>
+
+            <p>
+                Start with an area you're interested in
+                and discover related courses and career paths.
+            </p>
+
+        </div>
+
+
+        <div class="study-grid">
+
+
+            <a href="#computer" class="study-card">
+
+                <div class="study-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Computer & IT
+                </h3>
+
+                <p>
+                    Software, data, AI, cybersecurity and technology.
+                </p>
+
+            </a>
+
+
+            <a href="#engineering" class="study-card">
+
+                <div class="study-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Engineering
+                </h3>
+
+                <p>
+                    Technology, machines, infrastructure and systems.
+                </p>
+
+            </a>
+
+
+            <a href="#business" class="study-card">
+
+                <div class="study-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Business
+                </h3>
+
+                <p>
+                    Management, marketing, finance and entrepreneurship.
+                </p>
+
+            </a>
+
+
+            <a href="#science" class="study-card">
+
+                <div class="study-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Science
+                </h3>
+
+                <p>
+                    Mathematics, physics, chemistry and research.
+                </p>
+
+            </a>
+
+
+            <a href="#commerce" class="study-card">
+
+                <div class="study-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Commerce
+                </h3>
+
+                <p>
+                    Accounting, economics, finance and taxation.
+                </p>
+
+            </a>
+
+
+            <a href="#arts" class="study-card">
+
+                <div class="study-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Arts & Humanities
+                </h3>
+
+                <p>
+                    Literature, history, psychology and social sciences.
+                </p>
+
+            </a>
+
+
+            <a href="#design" class="study-card">
+
+                <div class="study-icon">
+                    ✏️
+                </div>
+
+                <h3>
+                    Design
+                </h3>
+
+                <p>
+                    UI/UX, fashion, graphics and creative design.
+                </p>
+
+            </a>
+
+
+            <a href="#healthcare" class="study-card">
+
+                <div class="study-icon">
+                    🩺
+                </div>
+
+                <h3>
+                    Healthcare
+                </h3>
+
+                <p>
+                    Medicine, pharmacy, nursing and allied fields.
+                </p>
+
+            </a>
+
+
+            <a href="#law" class="study-card">
+
+                <div class="study-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    Law
+                </h3>
+
+                <p>
+                    Legal studies, justice and professional law.
+                </p>
+
+            </a>
+
+
+            <a href="#media" class="study-card">
+
+                <div class="study-icon">
+                    🎥
+                </div>
+
+                <h3>
+                    Media & Communication
+                </h3>
+
+                <p>
+                    Journalism, content, film and communication.
+                </p>
+
+            </a>
+
+
+            <a href="#trades" class="study-card">
+
+                <div class="study-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Skilled Trades
+                </h3>
+
+                <p>
+                    Technical, industrial and hands-on professions.
+                </p>
+
+            </a>
+
+
+            <a href="#hospitality" class="study-card">
+
+                <div class="study-icon">
+                    🏨
+                </div>
+
+                <h3>
+                    Hospitality & Tourism
+                </h3>
+
+                <p>
+                    Hotels, travel, tourism and hospitality.
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSE TYPES ================= -->
+
+    <section class="section type-section">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Choose your learning path
+            </h2>
+
+            <p>
+                Not every career requires a traditional degree.
+                Explore different ways to build your future.
+            </p>
+
+        </div>
+
+
+        <div class="type-grid">
+
+
+            <a href="#ug" class="type-card">
+
+                <div class="type-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Undergraduate
+                </h3>
+
+                <p>
+                    Build your foundation
+                </p>
+
+            </a>
+
+
+            <a href="#pg" class="type-card">
+
+                <div class="type-icon">
+                    📘
+                </div>
+
+                <h3>
+                    Postgraduate
+                </h3>
+
+                <p>
+                    Gain specialization
+                </p>
+
+            </a>
+
+
+            <a href="#phd" class="type-card">
+
+                <div class="type-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    PhD
+                </h3>
+
+                <p>
+                    Pursue advanced research
+                </p>
+
+            </a>
+
+
+            <a href="#diploma" class="type-card">
+
+                <div class="type-icon">
+                    🧰
+                </div>
+
+                <h3>
+                    Diploma
+                </h3>
+
+                <p>
+                    Learn practical skills
+                </p>
+
+            </a>
+
+
+            <a href="#certificate" class="type-card">
+
+                <div class="type-icon">
+                    📜
+                </div>
+
+                <h3>
+                    Certificate
+                </h3>
+
+                <p>
+                    Learn focused skills
+                </p>
+
+            </a>
+
+
+            <a href="#professional" class="type-card">
+
+                <div class="type-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Professional / Vocational
+                </h3>
+
+                <p>
+                    Prepare for practical roles
+                </p>
+
+            </a>
+
+
+            <a href="#integrated" class="type-card">
+
+                <div class="type-icon">
+                    🔗
+                </div>
+
+                <h3>
+                    Integrated / Dual Degree
+                </h3>
+
+                <p>
+                    Combine qualifications
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSE EXPLORER ================= -->
+
+    <section class="section explorer">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Explore Courses
+            </h2>
+
+            <p>
+                Narrow down your options based on what you're looking for.
+            </p>
+
+        </div>
+
+
+        <div class="filter-area">
+
+
+            <div class="filter-group">
+
+                <label>
+                    Course Type
+                </label>
+
+                <select>
+
+                    <option>
+                        All Types
+                    </option>
+
+                    <option>
+                        Undergraduate
+                    </option>
+
+                    <option>
+                        Postgraduate
+                    </option>
+
+                    <option>
+                        PhD
+                    </option>
+
+                    <option>
+                        Diploma
+                    </option>
+
+                    <option>
+                        Certificate
+                    </option>
+
+                    <option>
+                        Professional / Vocational
+                    </option>
+
+                    <option>
+                        Integrated / Dual Degree
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label>
+                    Field
+                </label>
+
+                <select>
+
+                    <option>
+                        All Fields
+                    </option>
+
+                    <option>
+                        Computer & IT
+                    </option>
+
+                    <option>
+                        Engineering
+                    </option>
+
+                    <option>
+                        Business
+                    </option>
+
+                    <option>
+                        Science
+                    </option>
+
+                    <option>
+                        Commerce
+                    </option>
+
+                    <option>
+                        Arts
+                    </option>
+
+                    <option>
+                        Design
+                    </option>
+
+                    <option>
+                        Healthcare
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label>
+                    Duration
+                </label>
+
+                <select>
+
+                    <option>
+                        Any Duration
+                    </option>
+
+                    <option>
+                        Under 6 Months
+                    </option>
+
+                    <option>
+                        6 Months – 1 Year
+                    </option>
+
+                    <option>
+                        1 – 2 Years
+                    </option>
+
+                    <option>
+                        2 – 3 Years
+                    </option>
+
+                    <option>
+                        3 – 4 Years
+                    </option>
+
+                    <option>
+                        4+ Years
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label>
+                    Career Goal
+                </label>
+
+                <select>
+
+                    <option>
+                        Any Career
+                    </option>
+
+                    <option>
+                        Software Developer
+                    </option>
+
+                    <option>
+                        Data Analyst
+                    </option>
+
+                    <option>
+                        AI / ML
+                    </option>
+
+                    <option>
+                        Business
+                    </option>
+
+                    <option>
+                        Design
+                    </option>
+
+                    <option>
+                        Healthcare
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ================= COURSE CARDS ================= -->
+
+        <div class="course-grid">
+
+
+            <article class="course-card">
+
+                <div class="course-top">
+
+                    <span class="course-badge">
+                        UG
+                    </span>
+
+                    <span class="course-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Bachelor of Computer Applications
+                </h3>
+
+
+                <p>
+                    Learn programming, databases, web development
+                    and computer application fundamentals.
+                </p>
+
+
+                <div class="course-meta">
+
+                    <span>3–4 Years</span>
+
+                    <span>Computer & IT</span>
+
+                    <span>UG</span>
+
+                </div>
+
+
+                <a href="course-details.html?course=bca"
+                    class="view-course">
+
+                    Explore Course →
+
+                </a>
+
+            </article>
+
+
+            <article class="course-card">
+
+                <div class="course-top">
+
+                    <span class="course-badge">
+                        UG
+                    </span>
+
+                    <span class="course-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Bachelor of Technology
+                </h3>
+
+
+                <p>
+                    Study engineering and technology through
+                    specialized technical disciplines.
+                </p>
+
+
+                <div class="course-meta">
+
+                    <span>4 Years</span>
+
+                    <span>Engineering</span>
+
+                    <span>UG</span>
+
+                </div>
+
+
+                <a href="course-details.html?course=btech"
+                    class="view-course">
+
+                    Explore Course →
+
+                </a>
+
+            </article>
+
+
+            <article class="course-card">
+
+                <div class="course-top">
+
+                    <span class="course-badge">
+                        PG
+                    </span>
+
+                    <span class="course-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Master of Computer Applications
+                </h3>
+
+
+                <p>
+                    Build advanced knowledge in software,
+                    computing, databases and applications.
+                </p>
+
+
+                <div class="course-meta">
+
+                    <span>2 Years</span>
+
+                    <span>Computer & IT</span>
+
+                    <span>PG</span>
+
+                </div>
+
+
+                <a href="course-details.html?course=mca"
+                    class="view-course">
+
+                    Explore Course →
+
+                </a>
+
+            </article>
+
+
+            <article class="course-card">
+
+                <div class="course-top">
+
+                    <span class="course-badge">
+                        PG
+                    </span>
+
+                    <span class="course-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Master of Business Administration
+                </h3>
+
+
+                <p>
+                    Develop knowledge of business, management,
+                    strategy, finance and marketing.
+                </p>
+
+
+                <div class="course-meta">
+
+                    <span>1–2 Years</span>
+
+                    <span>Business</span>
+
+                    <span>PG</span>
+
+                </div>
+
+
+                <a href="course-details.html?course=mba"
+                    class="view-course">
+
+                    Explore Course →
+
+                </a>
+
+            </article>
+
+
+            <article class="course-card">
+
+                <div class="course-top">
+
+                    <span class="course-badge">
+                        Diploma
+                    </span>
+
+                    <span class="course-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Diploma in Web Development
+                </h3>
+
+
+                <p>
+                    Develop practical skills for building
+                    modern websites and web applications.
+                </p>
+
+
+                <div class="course-meta">
+
+                    <span>6–24 Months</span>
+
+                    <span>IT</span>
+
+                    <span>Diploma</span>
+
+                </div>
+
+
+                <a href="course-details.html?course=web-development"
+                    class="view-course">
+
+                    Explore Course →
+
+                </a>
+
+            </article>
+
+
+            <article class="course-card">
+
+                <div class="course-top">
+
+                    <span class="course-badge">
+                        Certificate
+                    </span>
+
+                    <span class="course-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Certificate in Data Analytics
+                </h3>
+
+
+                <p>
+                    Learn data analysis, visualization,
+                    SQL and practical analytics tools.
+                </p>
+
+
+                <div class="course-meta">
+
+                    <span>Short Term</span>
+
+                    <span>Data</span>
+
+                    <span>Certificate</span>
+
+                </div>
+
+
+                <a href="course-details.html?course=data-analytics"
+                    class="view-course">
+
+                    Explore Course →
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEW — FREE LEARNING HUB
+         ===================================================== -->
+
+    <section class="section learning-resources"
+        id="learning-resources">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Free Learning Hub
+            </h2>
+
+            <p>
+                Search free learning materials, books,
+                curriculum and educational resources from
+                open platforms.
+            </p>
+
+        </div>
+
+
+        <!-- RESOURCE SEARCH -->
+
+        <div class="resource-search-area">
+
+
+            <div class="resource-search-box">
+
+                <input
+                    type="text"
+                    id="resourceSearchInput"
+                    placeholder="Search JavaScript, Python, data science, HTML, SQL..."
+                >
+
+
+                <button
+                    class="resource-search-btn"
+                    id="resourceSearchBtn">
+
+                    Search
+
+                </button>
+
+            </div>
+
+
+            <div class="resource-controls">
+
+                <label>
+                    Search learning sources
+                </label>
+
+
+                <select id="resourceSource">
+
+                    <option value="all">
+                        All Sources
+                    </option>
+
+                    <option value="freecodecamp">
+                        freeCodeCamp
+                    </option>
+
+                    <option value="openlibrary">
+                        Open Library
+                    </option>
+
+                    <option value="archive">
+                        Internet Archive
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div
+            class="resource-status"
+            id="resourceStatus">
+
+            Search for a topic to find free learning resources.
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div
+            class="resource-grid"
+            id="resourceGrid">
+
+        </div>
+
+
+        <div class="resource-note">
+
+            <strong>Note:</strong>
+            Skill2Career discovers resources from external
+            platforms. Availability and licensing can vary by
+            individual item. Check the original resource page
+            before downloading, redistributing or reusing material.
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= LEARNING PATH ================= -->
+
+    <section class="section path-section">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Your Course Is Part of a Bigger Path
+            </h2>
+
+            <p>
+                Skill2Career connects education with the skills,
+                experience and career you want.
+            </p>
+
+        </div>
+
+
+        <div class="path-grid">
+
+
+            <div class="path-card">
+
+                <span class="path-number">
+                    01 — COURSE
+                </span>
+
+                <h3>
+                    Choose What to Learn
+                </h3>
+
+                <p>
+                    Select a degree, diploma, certificate
+                    or professional learning path.
+                </p>
+
+            </div>
+
+
+            <div class="path-card">
+
+                <span class="path-number">
+                    02 — SKILLS
+                </span>
+
+                <h3>
+                    Build Relevant Skills
+                </h3>
+
+                <p>
+                    Discover the technical and soft skills
+                    connected to your chosen path.
+                </p>
+
+            </div>
+
+
+            <div class="path-card">
+
+                <span class="path-number">
+                    03 — EXPERIENCE
+                </span>
+
+                <h3>
+                    Gain Experience
+                </h3>
+
+                <p>
+                    Use projects, internships and practical
+                    learning to strengthen your profile.
+                </p>
+
+            </div>
+
+
+            <div class="path-card">
+
+                <span class="path-number">
+                    04 — CAREER
+                </span>
+
+                <h3>
+                    Explore Career Options
+                </h3>
+
+                <p>
+                    Understand which career opportunities
+                    connect with your learning path.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DECISION MATRIX ================= -->
+
+    <section class="decision">
+
+
+        <div class="decision-content">
+
+            <h2>
+                Still confused about what to choose?
+            </h2>
+
+
+            <p>
+                Compare your goals, interests, skills,
+                time and priorities before choosing a
+                course or career path.
+            </p>
+
+
+            <a href="decision-matrix.html"
+                class="decision-btn">
+
+                Use Decision Matrix →
+
+            </a>
+
+        </div>
+
+
+        <div class="decision-circle"></div>
+
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>
+                    Skill2Career
+                </h3>
+
+                <p>
+                    Explore courses, understand careers,
+                    build skills and create your learning path.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="courses.html">
+                    Courses
+                </a>
+
+                <a href="careers.html">
+                    Careers
+                </a>
+
+                <a href="skills.html">
+                    Skills
+                </a>
+
+                <a href="roadmaps.html">
+                    Roadmaps
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Resources
+                </h3>
+
+                <a href="resources.html">
+                    Study Materials
+                </a>
+
+                <a href="updates.html">
+                    Updates
+                </a>
+
+                <a href="decision-matrix.html">
+                    Decision Matrix
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Platform
+                </h3>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Sign Up
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Skill2Career. All rights reserved.
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT — FREE LEARNING APIs
+         ===================================================== -->
+
+    <script>
+
+        /* =====================================================
+           ELEMENTS
+        ===================================================== */
+
+        const heroSearchInput =
+            document.getElementById("heroSearchInput");
+
+        const heroSearchBtn =
+            document.getElementById("heroSearchBtn");
+
+        const resourceSearchInput =
+            document.getElementById("resourceSearchInput");
+
+        const resourceSearchBtn =
+            document.getElementById("resourceSearchBtn");
+
+        const resourceSource =
+            document.getElementById("resourceSource");
+
+        const resourceGrid =
+            document.getElementById("resourceGrid");
+
+        const resourceStatus =
+            document.getElementById("resourceStatus");
+
+
+        /* =====================================================
+           API URLS
+        ===================================================== */
+
+        const FREECODECAMP_API =
+            "https://curriculum-db.freecodecamp.org/graphql";
+
+        const OPEN_LIBRARY_API =
+            "https://openlibrary.org/search.json";
+
+        const INTERNET_ARCHIVE_API =
+            "https://archive.org/advancedsearch.php";
+
+
+        /* =====================================================
+           UTILITY
+        ===================================================== */
+
+        function escapeHTML(value) {
+
+            if (!value) {
+                return "";
+            }
+
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+
+        function createTitleFromSlug(slug) {
+
+            return slug
+                .replace(/-v9$/, "")
+                .replace(/-22$/, "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, char => char.toUpperCase());
+        }
+
+
+        function truncate(text, length = 150) {
+
+            if (!text) {
+                return "Learning resource available from this platform.";
+
+            }
+
+            text = String(text);
+
+            if (text.length <= length) {
+                return text;
+            }
+
+            return text.substring(0, length) + "...";
+        }
+
+
+        /* =====================================================
+           FREECODECAMP API
+        ===================================================== */
+
+        async function searchFreeCodeCamp(query) {
+
+            const graphqlQuery = `
+
+                query {
+
+                    curriculum {
+
+                        superblocks
+
+                        certifications
+
+                    }
+
+                }
+
+            `;
+
+
+            const response = await fetch(
+                FREECODECAMP_API,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        query: graphqlQuery
+                    })
+                }
+            );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "freeCodeCamp API request failed"
+                );
+
+            }
+
+
+            const data = await response.json();
+
+
+            const curriculum =
+                data?.data?.curriculum;
+
+
+            if (!curriculum) {
+
+                return [];
+
+            }
+
+
+            const superblocks =
+                Array.isArray(curriculum.superblocks)
+                    ? curriculum.superblocks
+                    : [];
+
+
+            const certifications =
+                Array.isArray(curriculum.certifications)
+                    ? curriculum.certifications
+                    : [];
+
+
+            const allItems =
+                [...new Set([
+                    ...superblocks,
+                    ...certifications
+                ])];
+
+
+            const normalizedQuery =
+                query.toLowerCase().trim();
+
+
+            const filtered =
+                allItems.filter(item => {
+
+                    const searchable =
+                        item
+                            .replace(/-/g, " ")
+                            .toLowerCase();
+
+                    return !normalizedQuery ||
+                        searchable.includes(normalizedQuery);
+
+                });
+
+
+            return filtered
+                .slice(0, 8)
+                .map((slug, index) => {
+
+                    const title =
+                        createTitleFromSlug(slug);
+
+
+                    return {
+
+                        title: title,
+
+                        description:
+                            `Explore the ${title} learning curriculum on freeCodeCamp.`,
+
+                        source:
+                            "freeCodeCamp",
+
+                        type:
+                            "Curriculum",
+
+                        meta:
+                            "Free learning",
+
+                        url:
+                            `https://www.freecodecamp.org/learn/${slug}/`,
+
+                        index:
+                            index
+
+                    };
+
+                });
+
+        }
+
+
+        /* =====================================================
+           OPEN LIBRARY API
+        ===================================================== */
+
+        async function searchOpenLibrary(query) {
+
+            const searchQuery =
+                query
+                    ? `${query} AND ebook_access:public`
+                    : "ebook_access:public";
+
+
+            const url =
+                `${OPEN_LIBRARY_API}?` +
+                `q=${encodeURIComponent(searchQuery)}` +
+                `&fields=key,title,author_name,first_publish_year,cover_i,ebook_access,has_fulltext,ia` +
+                `&limit=8`;
+
+
+            const response =
+                await fetch(url);
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Open Library API request failed"
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            const docs =
+                Array.isArray(data.docs)
+                    ? data.docs
+                    : [];
+
+
+            return docs.map((book, index) => {
+
+
+                let url =
+                    book.key
+                        ? `https://openlibrary.org${book.key}`
+                        : "https://openlibrary.org";
+
+
+                if (
+                    Array.isArray(book.ia) &&
+                    book.ia.length > 0
+                ) {
+
+                    url =
+                        `https://archive.org/details/${book.ia[0]}`;
+
+                }
+
+
+                const author =
+                    Array.isArray(book.author_name)
+                        ? book.author_name[0]
+                        : "";
+
+
+                const year =
+                    book.first_publish_year
+                        ? String(book.first_publish_year)
+                        : "";
+
+
+                return {
+
+                    title:
+                        book.title || "Untitled book",
+
+                    description:
+                        author
+                            ? `By ${author}. Search and access this educational book through Open Library.`
+                            : "Educational book or learning material available through Open Library.",
+
+                    source:
+                        "Open Library",
+
+                    type:
+                        book.has_fulltext
+                            ? "Full-text / Ebook"
+                            : "Book",
+
+                    meta:
+                        year || "Learning material",
+
+                    url:
+                        url,
+
+                    index:
+                        index
+
+                };
+
+            });
+
+        }
+
+
+        /* =====================================================
+           INTERNET ARCHIVE API
+        ===================================================== */
+
+        async function searchInternetArchive(query) {
+
+            const searchQuery =
+                query
+                    ? `${query} AND mediatype:texts`
+                    : "mediatype:texts";
+
+
+            const params =
+                new URLSearchParams();
+
+
+            params.set(
+                "q",
+                searchQuery
+            );
+
+
+            params.append(
+                "fl[]",
+                "identifier"
+            );
+
+
+            params.append(
+                "fl[]",
+                "title"
+            );
+
+
+            params.append(
+                "fl[]",
+                "description"
+            );
+
+
+            params.append(
+                "fl[]",
+                "creator"
+            );
+
+
+            params.append(
+                "fl[]",
+                "format"
+            );
+
+
+            params.append(
+                "rows",
+                "8"
+            );
+
+
+            params.append(
+                "page",
+                "1"
+            );
+
+
+            params.append(
+                "output",
+                "json"
+            );
+
+
+            const response =
+                await fetch(
+                    `${INTERNET_ARCHIVE_API}?${params.toString()}`
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Internet Archive API request failed"
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            const docs =
+                data?.response?.docs || [];
+
+
+            return docs.map((item, index) => {
+
+
+                const formats =
+                    Array.isArray(item.format)
+                        ? item.format
+                        : [];
+
+
+                const hasPDF =
+                    formats.some(format =>
+                        String(format)
+                            .toLowerCase()
+                            .includes("pdf")
+                    );
+
+
+                const creator =
+                    Array.isArray(item.creator)
+                        ? item.creator[0]
+                        : item.creator || "";
+
+
+                return {
+
+                    title:
+                        item.title ||
+                        "Internet Archive resource",
+
+                    description:
+                        creator
+                            ? `Creator: ${creator}. Open the archived learning material to explore available files.`
+                            : truncate(
+                                item.description ||
+                                "Archived educational material available through Internet Archive."
+                            ),
+
+                    source:
+                        "Internet Archive",
+
+                    type:
+                        hasPDF
+                            ? "PDF / Text"
+                            : "Archive Material",
+
+                    meta:
+                        hasPDF
+                            ? "PDF available"
+                            : "Digital archive",
+
+                    url:
+                        item.identifier
+                            ? `https://archive.org/details/${item.identifier}`
+                            : "https://archive.org",
+
+                    index:
+                        index
+
+                };
+
+            });
+
+        }
+
+
+        /* =====================================================
+           CREATE RESOURCE CARD
+        ===================================================== */
+
+        function createResourceCard(resource, index) {
+
+            const card =
+                document.createElement("article");
+
+
+            card.className =
+                "resource-card";
+
+
+            card.style.setProperty(
+                "--i",
+                index
+            );
+
+
+            card.innerHTML = `
+
+                <div class="resource-top">
+
+                    <span class="resource-source">
+                        ${escapeHTML(resource.source)}
+                    </span>
+
+                    <span class="resource-type">
+                        ${escapeHTML(resource.type)}
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    ${escapeHTML(resource.title)}
+                </h3>
+
+
+                <p>
+                    ${escapeHTML(resource.description)}
+                </p>
+
+
+                <div class="resource-meta">
+
+                    <span>
+                        ${escapeHTML(resource.meta)}
+                    </span>
+
+                    <span>
+                        External resource
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="${escapeHTML(resource.url)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="resource-link">
+
+                    Open Resource →
+
+                </a>
+
+            `;
+
+
+            return card;
+
+        }
+
+
+        /* =====================================================
+           DISPLAY RESULTS
+        ===================================================== */
+
+        function displayResults(results) {
+
+            resourceGrid.innerHTML = "";
+
+
+            if (!results.length) {
+
+                resourceStatus.textContent =
+                    "No learning resources found. Try another topic.";
+
+                return;
+
+            }
+
+
+            resourceStatus.textContent =
+                `${results.length} learning resources found.`;
+
+
+            results.forEach((resource, index) => {
+
+                const card =
+                    createResourceCard(
+                        resource,
+                        index
+                    );
+
+
+                resourceGrid.appendChild(card);
+
+            });
+
+        }
+
+
+        /* =====================================================
+           MAIN SEARCH
+        ===================================================== */
+
+        async function searchLearningResources(query) {
+
+            query =
+                query.trim();
+
+
+            if (!query) {
+
+                resourceStatus.textContent =
+                    "Please enter a topic to search.";
+
+                resourceGrid.innerHTML = "";
+
+                return;
+
+            }
+
+
+            resourceStatus.textContent =
+                "Searching free learning platforms...";
+
+
+            resourceGrid.innerHTML = "";
+
+
+            const source =
+                resourceSource.value;
+
+
+            const searches = [];
+
+
+            if (
+                source === "all" ||
+                source === "freecodecamp"
+            ) {
+
+                searches.push(
+                    searchFreeCodeCamp(query)
+                );
+
+            }
+
+
+            if (
+                source === "all" ||
+                source === "openlibrary"
+            ) {
+
+                searches.push(
+                    searchOpenLibrary(query)
+                );
+
+            }
+
+
+            if (
+                source === "all" ||
+                source === "archive"
+            ) {
+
+                searches.push(
+                    searchInternetArchive(query)
+                );
+
+            }
+
+
+            const responses =
+                await Promise.allSettled(
+                    searches
+                );
+
+
+            let results = [];
+
+
+            responses.forEach(response => {
+
+                if (
+                    response.status === "fulfilled"
+                ) {
+
+                    results.push(
+                        ...response.value
+                    );
+
+                }
+
+            });
+
+
+            displayResults(results);
+
+
+            if (!results.length) {
+
+                resourceStatus.textContent =
+                    "The search services did not return results. Try a broader topic.";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           RESOURCE SEARCH BUTTON
+        ===================================================== */
+
+        resourceSearchBtn.addEventListener(
+            "click",
+            () => {
+
+                searchLearningResources(
+                    resourceSearchInput.value
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           ENTER KEY — RESOURCE SEARCH
+        ===================================================== */
+
+        resourceSearchInput.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    searchLearningResources(
+                        resourceSearchInput.value
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           HERO SEARCH
+        ===================================================== */
+
+        heroSearchBtn.addEventListener(
+            "click",
+            () => {
+
+                const query =
+                    heroSearchInput.value.trim();
+
+
+                if (!query) {
+
+                    document
+                        .getElementById(
+                            "learning-resources"
+                        )
+                        .scrollIntoView({
+                            behavior: "smooth"
+                        });
+
+                    resourceSearchInput.focus();
+
+                    return;
+
+                }
+
+
+                resourceSearchInput.value =
+                    query;
+
+
+                document
+                    .getElementById(
+                        "learning-resources"
+                    )
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+
+                searchLearningResources(
+                    query
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           ENTER KEY — HERO SEARCH
+        ===================================================== */
+
+        heroSearchInput.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    heroSearchBtn.click();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           SOURCE FILTER
+        ===================================================== */
+
+        resourceSource.addEventListener(
+            "change",
+            () => {
+
+                const query =
+                    resourceSearchInput.value.trim();
+
+
+                if (query) {
+
+                    searchLearningResources(
+                        query
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Decision Matrix | Skill2Career</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f6f9ff;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            min-height: 72px;
+            background: white;
+            border-bottom: 1px solid #e5eaf2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1769ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 23px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #1769ff;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px 70px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eaf2ff;
+            color: #1769ff;
+
+            padding: 7px 15px;
+            border-radius: 30px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #1769ff;
+        }
+
+        .hero p {
+            color: #667085;
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+
+        /* ================= COMMON ================= */
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 65px 20px;
+        }
+
+        .section-heading {
+            margin-bottom: 30px;
+        }
+
+        .section-heading span {
+            color: #1769ff;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+            margin-top: 5px;
+        }
+
+        .section-heading p {
+            color: #667085;
+            margin-top: 7px;
+        }
+
+
+        /* ================= HOW IT WORKS ================= */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .step {
+            background: white;
+            padding: 25px;
+
+            border: 1px solid #e0e7f1;
+            border-radius: 17px;
+
+            transition: 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            border-color: #9dbfff;
+        }
+
+        .step-number {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #1769ff;
+            color: white;
+
+            border-radius: 10px;
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+
+        /* ================= DECISION BUILDER ================= */
+
+        .builder {
+            background: white;
+            border: 1px solid #dfe6f1;
+            border-radius: 22px;
+
+            padding: 35px;
+        }
+
+        .builder-step {
+            margin-bottom: 35px;
+        }
+
+        .builder-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .builder-step h3 {
+            margin-bottom: 7px;
+        }
+
+        .builder-step > p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= FIELD ================= */
+
+        .field-select {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #d5ddea;
+            border-radius: 10px;
+
+            font-size: 15px;
+            background: white;
+            color: #344054;
+
+            outline: none;
+        }
+
+        .field-select:focus {
+            border-color: #1769ff;
+        }
+
+
+        /* ================= COURSE OPTIONS ================= */
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .course-option {
+            border: 1px solid #dfe6f1;
+            border-radius: 14px;
+
+            padding: 20px;
+
+            background: #fbfcff;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .course-option:hover {
+            border-color: #1769ff;
+        }
+
+        .course-option input {
+            margin-right: 8px;
+        }
+
+        .course-option strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .course-option small {
+            color: #667085;
+            font-size: 13px;
+        }
+
+        .course-option.selected {
+            border-color: #1769ff;
+            background: #f0f5ff;
+        }
+
+
+        /* ================= PRIORITIES ================= */
+
+        .priority-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .priority-card {
+            padding: 20px;
+
+            background: #fbfcff;
+
+            border: 1px solid #e0e7f1;
+            border-radius: 14px;
+        }
+
+        .priority-card label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .priority-card select {
+            width: 100%;
+
+            padding: 11px;
+
+            border: 1px solid #d5ddea;
+            border-radius: 8px;
+
+            background: white;
+        }
+
+
+        /* ================= BUTTONS ================= */
+
+        .button-area {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+
+            padding: 13px 22px;
+
+            border-radius: 9px;
+
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .compare-btn {
+            background: #1769ff;
+            color: white;
+        }
+
+        .compare-btn:hover {
+            background: #0e56d8;
+        }
+
+        .reset-btn {
+            background: #eef2f7;
+            color: #344054;
+        }
+
+
+        /* ================= RESULT ================= */
+
+        #result-section {
+            display: none;
+        }
+
+        .result-header {
+            background: #0d1b35;
+            color: white;
+
+            border-radius: 20px;
+
+            padding: 35px;
+            margin-bottom: 25px;
+        }
+
+        .result-header p {
+            color: #b8c4d7;
+            margin-top: 7px;
+        }
+
+
+        /* ================= MATRIX ================= */
+
+        .matrix-container {
+            background: white;
+
+            border: 1px solid #dfe6f1;
+            border-radius: 18px;
+
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        th,
+        td {
+            padding: 17px;
+            border-bottom: 1px solid #e7ebf2;
+            text-align: center;
+        }
+
+        th {
+            background: #eef4ff;
+            color: #1755c4;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .high {
+            color: #1769ff;
+            font-weight: 800;
+        }
+
+        .medium {
+            color: #667085;
+            font-weight: 700;
+        }
+
+        .low {
+            color: #98a2b3;
+        }
+
+
+        /* ================= COURSE ANALYSIS ================= */
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .analysis-card {
+            background: white;
+
+            padding: 25px;
+
+            border: 1px solid #dfe6f1;
+            border-radius: 17px;
+        }
+
+        .analysis-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .analysis-card h4 {
+            font-size: 13px;
+            color: #1769ff;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .analysis-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+
+        /* ================= PERSONAL INSIGHT ================= */
+
+        .insight {
+            background: #eef5ff;
+
+            border: 1px solid #cddfff;
+            border-radius: 18px;
+
+            padding: 28px;
+        }
+
+        .insight h3 {
+            margin-bottom: 12px;
+        }
+
+        .insight p {
+            color: #53647d;
+            font-size: 15px;
+        }
+
+
+        /* ================= NEXT STEP ================= */
+
+        .next-box {
+            background: #0d1b35;
+            color: white;
+
+            border-radius: 22px;
+
+            padding: 45px;
+        }
+
+        .next-box p {
+            color: #b9c5d8;
+            margin: 8px 0 25px;
+        }
+
+        .next-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .next-links a {
+            text-decoration: none;
+            color: white;
+
+            padding: 17px;
+
+            border: 1px solid #31425f;
+            border-radius: 11px;
+
+            text-align: center;
+        }
+
+        .next-links a:hover {
+            background: #1769ff;
+            border-color: #1769ff;
+        }
+
+
+        /* ================= FAQ ================= */
+
+        details {
+            background: white;
+            border: 1px solid #dfe6f1;
+
+            border-radius: 12px;
+
+            padding: 17px 20px;
+
+            margin-bottom: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        details p {
+            color: #667085;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #081225;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 45px 20px;
+
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #9ca8bb;
+            margin-top: 7px;
+            font-size: 14px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:900px) {
+
+            .steps,
+            .course-grid,
+            .analysis-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+        }
+
+
+        @media(max-width:650px) {
+
+            .navbar {
+                padding: 18px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .builder {
+                padding: 22px;
+            }
+
+            .steps,
+            .course-grid,
+            .priority-grid,
+            .analysis-grid,
+            .next-links {
+                grid-template-columns: 1fr;
+            }
+
+            .button-area {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo"><a href="index.html">
+            Skill2Career</a>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="home.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="courses.html">Courses</a>
+            <a href="careers.html">Careers</a>
+            <a href="roadmap.html">Roadmap</a>
+            <a href="resources.html">Resources</a>
+            <a href="decision-matrix.html" class="active">
+                Decision Matrix
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="badge">
+            DECISION SUPPORT TOOL
+        </div>
+
+        <h1>
+            Compare your options.
+            <span>Choose with clarity.</span>
+        </h1>
+
+        <p>
+            Explore different courses and compare them using
+            factors that actually matter to your goals,
+            interests, time and priorities.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span>How it works</span>
+
+            <h2>
+                From confusion to comparison
+            </h2>
+
+            <p>
+                The matrix does not choose your future for you.
+                It helps you understand your available paths.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Choose a field
+                </h3>
+
+                <p>
+                    Select the area you are interested in,
+                    from technology to arts, business or science.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Select courses
+                </h3>
+
+                <p>
+                    Pick the courses you want to compare.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Set priorities
+                </h3>
+
+                <p>
+                    Tell the matrix what matters most to you.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    Explore differences, strengths and trade-offs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BUILDER ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span>Build your comparison</span>
+
+            <h2>
+                What are you deciding?
+            </h2>
+
+            <p>
+                Start by selecting the area and courses you want to explore.
+            </p>
+
+        </div>
+
+
+        <div class="builder">
+
+
+            <!-- FIELD -->
+
+            <div class="builder-step">
+
+                <h3>
+                    01 — Choose your field
+                </h3>
+
+                <p>
+                    Your field helps Skill2Career show relevant course options.
+                </p>
+
+                <select id="fieldSelect" class="field-select">
+
+                    <option value="">
+                        Select a field
+                    </option>
+
+                    <option value="technology">
+                        Computer & IT
+                    </option>
+
+                    <option value="engineering">
+                        Engineering
+                    </option>
+
+                    <option value="business">
+                        Business & Management
+                    </option>
+
+                    <option value="commerce">
+                        Commerce & Finance
+                    </option>
+
+                    <option value="science">
+                        Science
+                    </option>
+
+                    <option value="arts">
+                        Arts & Humanities
+                    </option>
+
+                    <option value="design">
+                        Design & Creative Arts
+                    </option>
+
+                    <option value="health">
+                        Health & Medical
+                    </option>
+
+                    <option value="law">
+                        Law
+                    </option>
+
+                    <option value="education">
+                        Education
+                    </option>
+
+                    <option value="general">
+                        Other / General
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- COURSES -->
+
+            <div class="builder-step">
+
+                <h3>
+                    02 — Select courses
+                </h3>
+
+                <p>
+                    Choose two or three courses to compare.
+                </p>
+
+                <div id="courseContainer" class="course-grid">
+
+                    <div class="course-option">
+
+                        <strong>
+                            Select a field first
+                        </strong>
+
+                        <small>
+                            Available courses will appear here.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRIORITIES -->
+
+            <div class="builder-step">
+
+                <h3>
+                    03 — Set your priorities
+                </h3>
+
+                <p>
+                    Your priorities make the comparison personal.
+                </p>
+
+
+                <div class="priority-grid">
+
+
+                    <div class="priority-card">
+
+                        <label>
+                            Career Goal
+                        </label>
+
+                        <select id="careerGoal">
+
+                            <option>
+                                Job / Employment
+                            </option>
+
+                            <option>
+                                Entrepreneurship
+                            </option>
+
+                            <option>
+                                Higher Studies
+                            </option>
+
+                            <option>
+                                Professional Practice
+                            </option>
+
+                            <option>
+                                Research
+                            </option>
+
+                            <option>
+                                Still Exploring
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="priority-card">
+
+                        <label>
+                            Budget Priority
+                        </label>
+
+                        <select id="budget">
+
+                            <option value="high">
+                                Keeping cost low is very important
+                            </option>
+
+                            <option value="medium" selected>
+                                Moderate budget
+                            </option>
+
+                            <option value="low">
+                                Cost is less important
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="priority-card">
+
+                        <label>
+                            Time Preference
+                        </label>
+
+                        <select id="time">
+
+                            <option>
+                                Shorter path
+                            </option>
+
+                            <option selected>
+                                Balanced
+                            </option>
+
+                            <option>
+                                Longer study is okay
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="priority-card">
+
+                        <label>
+                            Practical Learning
+                        </label>
+
+                        <select id="practical">
+
+                            <option>
+                                Very important
+                            </option>
+
+                            <option selected>
+                                Important
+                            </option>
+
+                            <option>
+                                Less important
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="priority-card">
+
+                        <label>
+                            Specialization
+                        </label>
+
+                        <select id="specialization">
+
+                            <option>
+                                Very important
+                            </option>
+
+                            <option selected>
+                                Important
+                            </option>
+
+                            <option>
+                                Less important
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="priority-card">
+
+                        <label>
+                            Interest Level
+                        </label>
+
+                        <select id="interest">
+
+                            <option>
+                                I want to explore first
+                            </option>
+
+                            <option selected>
+                                I have some interest
+                            </option>
+
+                            <option>
+                                I am strongly interested
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-area">
+
+                <button
+                    class="compare-btn"
+                    onclick="generateMatrix()">
+
+                    Compare Options
+
+                </button>
+
+
+                <button
+                    class="reset-btn"
+                    onclick="resetMatrix()">
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= RESULTS ================= -->
+
+    <section
+        class="section"
+        id="result-section">
+
+
+        <div class="result-header">
+
+            <h2>
+                Your Comparison
+            </h2>
+
+            <p id="resultDescription">
+                Here is your selected comparison.
+            </p>
+
+        </div>
+
+
+
+        <!-- MATRIX -->
+
+        <div class="section-heading">
+
+            <span>Comparison matrix</span>
+
+            <h2>
+                Compare important factors
+            </h2>
+
+        </div>
+
+
+        <div class="matrix-container">
+
+            <table>
+
+                <thead>
+
+                    <tr id="matrixHead">
+
+                        <th>
+                            Factor
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="matrixBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- ANALYSIS -->
+
+        <div
+            class="section-heading"
+            style="margin-top:60px;">
+
+            <span>Understand the options</span>
+
+            <h2>
+                Course analysis
+            </h2>
+
+        </div>
+
+
+        <div
+            class="analysis-grid"
+            id="analysisContainer">
+
+        </div>
+
+
+
+        <!-- INSIGHT -->
+
+        <div
+            class="section-heading"
+            style="margin-top:60px;">
+
+            <span>Your priorities</span>
+
+            <h2>
+                What your choices tell you
+            </h2>
+
+        </div>
+
+
+        <div class="insight">
+
+            <h3>
+                Personalized consideration
+            </h3>
+
+            <p id="personalInsight">
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= NEXT STEP ================= -->
+
+    <section class="section">
+
+        <div class="next-box">
+
+            <h2>
+                Ready for the next step?
+            </h2>
+
+            <p>
+                Use your comparison as a starting point and explore
+                the courses, careers, roadmaps and resources connected
+                to your decision.
+            </p>
+
+
+            <div class="next-links">
+
+                <a href="courses.html">
+                    Explore Courses
+                </a>
+
+                <a href="careers.html">
+                    Explore Careers
+                </a>
+
+                <a href="roadmap.html">
+                    View Roadmaps
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FAQ ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <span>FAQ</span>
+
+            <h2>
+                About the Decision Matrix
+            </h2>
+
+        </div>
+
+
+        <details>
+
+            <summary>
+                Is this only for technology courses?
+            </summary>
+
+            <p>
+                No. The matrix includes fields such as business,
+                commerce, science, arts, design, engineering,
+                health, law and education.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Can I compare any two courses?
+            </summary>
+
+            <p>
+                The system is designed so that courses can be added
+                and compared across different fields as the platform
+                grows.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Does the matrix tell me which course is best?
+            </summary>
+
+            <p>
+                No. Different courses suit different goals and
+                circumstances. The matrix shows differences and
+                trade-offs so you can make your own decision.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Can my priorities change the comparison?
+            </summary>
+
+            <p>
+                Yes. Your priorities are important because the same
+                course can make sense for one student and not for
+                another depending on goals, budget, time and interests.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Does the result guarantee a career or job?
+            </summary>
+
+            <p>
+                No. The matrix is a decision-support tool and does
+                not guarantee employment, salary or career outcomes.
+            </p>
+
+        </details>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>
+            Skill2Career
+        </h3>
+
+        <p>
+            Explore. Compare. Learn. Build your path.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+   <script>
+
+    const courseData = {
+
+        technology: [
+            {
+                name: "BCA",
+                duration: "3 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A computer applications degree focused on programming, software and application development."
+            },
+            {
+                name: "B.Tech / BE",
+                duration: "4 Years",
+                cost: "Moderate / High",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "An engineering-focused undergraduate program with technical foundations and specialization."
+            },
+            {
+                name: "B.Sc Computer Science",
+                duration: "3 Years",
+                cost: "Low / Moderate",
+                practical: "Medium",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A science-oriented program covering computer science concepts and foundations."
+            },
+            {
+                name: "MCA",
+                duration: "2 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A postgraduate computer applications program for advanced study in computing."
+            }
+        ],
+
+        engineering: [
+            {
+                name: "B.Tech / BE",
+                duration: "4 Years",
+                cost: "Moderate / High",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "An engineering degree combining technical theory, practical work and specialization."
+            },
+            {
+                name: "B.Sc",
+                duration: "3 Years",
+                cost: "Low / Moderate",
+                practical: "Medium",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A science-oriented undergraduate pathway with opportunities for higher studies."
+            },
+            {
+                name: "Diploma",
+                duration: "2–3 Years",
+                cost: "Low / Moderate",
+                practical: "High",
+                specialization: "Medium",
+                flexibility: "Medium",
+                description: "A focused technical education path with practical and vocational learning."
+            }
+        ],
+
+        business: [
+            {
+                name: "BBA",
+                duration: "3 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A business-focused undergraduate program covering management and organizational fundamentals."
+            },
+            {
+                name: "BMS",
+                duration: "3 Years",
+                cost: "Moderate",
+                practical: "Medium",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A management-focused course covering business operations and organizational studies."
+            },
+            {
+                name: "BBM",
+                duration: "3 Years",
+                cost: "Moderate",
+                practical: "Medium",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "An undergraduate management pathway covering business and management concepts."
+            }
+        ],
+
+        commerce: [
+            {
+                name: "B.Com",
+                duration: "3 Years",
+                cost: "Low / Moderate",
+                practical: "Medium",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A commerce degree covering accounting, finance, business and related subjects."
+            },
+            {
+                name: "B.Com Honours",
+                duration: "3–4 Years",
+                cost: "Moderate",
+                practical: "Medium",
+                specialization: "High",
+                flexibility: "High",
+                description: "A focused commerce program with deeper study in selected areas."
+            },
+            {
+                name: "CA Path",
+                duration: "Varies",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A professional accounting pathway involving examinations and practical training."
+            }
+        ],
+
+        science: [
+            {
+                name: "B.Sc",
+                duration: "3–4 Years",
+                cost: "Low / Moderate",
+                practical: "Medium",
+                specialization: "High",
+                flexibility: "High",
+                description: "An undergraduate science pathway allowing specialization in a selected discipline."
+            },
+            {
+                name: "B.Sc Honours",
+                duration: "3–4 Years",
+                cost: "Moderate",
+                practical: "Medium",
+                specialization: "High",
+                flexibility: "High",
+                description: "A focused science program with deeper study in a chosen subject."
+            },
+            {
+                name: "Integrated Science",
+                duration: "4–5 Years",
+                cost: "Moderate",
+                practical: "Medium",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A longer structured path combining undergraduate study with advanced learning."
+            }
+        ],
+
+        arts: [
+            {
+                name: "BA",
+                duration: "3–4 Years",
+                cost: "Low / Moderate",
+                practical: "Medium",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A broad humanities and social sciences degree with multiple subject choices."
+            },
+            {
+                name: "BA Honours",
+                duration: "3–4 Years",
+                cost: "Low / Moderate",
+                practical: "Medium",
+                specialization: "High",
+                flexibility: "High",
+                description: "A focused undergraduate humanities pathway with deeper subject study."
+            },
+            {
+                name: "Liberal Arts",
+                duration: "3–4 Years",
+                cost: "Moderate / High",
+                practical: "High",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "An interdisciplinary education combining humanities, social sciences and other areas."
+            }
+        ],
+
+        design: [
+            {
+                name: "B.Des",
+                duration: "4 Years",
+                cost: "Moderate / High",
+                practical: "Very High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A design-focused degree emphasizing creative thinking, design processes and practical projects."
+            },
+            {
+                name: "BFA",
+                duration: "3–4 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "An undergraduate fine arts pathway focused on artistic practice and creative development."
+            },
+            {
+                name: "Diploma in Design",
+                duration: "1–3 Years",
+                cost: "Low / Moderate",
+                practical: "Very High",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A shorter design education path focused on practical creative skills."
+            }
+        ],
+
+        health: [
+            {
+                name: "B.Sc Nursing",
+                duration: "4 Years",
+                cost: "Moderate",
+                practical: "Very High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A professional healthcare program combining academic study with clinical practice."
+            },
+            {
+                name: "B.Pharm",
+                duration: "4 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A pharmacy-focused undergraduate program covering pharmaceutical science and practice."
+            },
+            {
+                name: "Allied Health",
+                duration: "Varies",
+                cost: "Moderate",
+                practical: "Very High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "Healthcare pathways focused on specific clinical and healthcare support areas."
+            }
+        ],
+
+        law: [
+            {
+                name: "LLB",
+                duration: "3 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A professional law degree for graduates interested in legal education and practice."
+            },
+            {
+                name: "Integrated Law",
+                duration: "5 Years",
+                cost: "Moderate / High",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "An integrated undergraduate and law pathway."
+            },
+            {
+                name: "BA + LLB",
+                duration: "5 Years",
+                cost: "Moderate / High",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "An integrated pathway combining humanities education with legal studies."
+            }
+        ],
+
+        education: [
+            {
+                name: "B.Ed",
+                duration: "2 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A professional education program focused on teaching methods and classroom practice."
+            },
+            {
+                name: "Integrated Teacher Education",
+                duration: "4 Years",
+                cost: "Moderate",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "An integrated pathway combining subject education with teacher preparation."
+            },
+            {
+                name: "Education Diploma",
+                duration: "1–2 Years",
+                cost: "Low / Moderate",
+                practical: "High",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A shorter pathway focused on teaching and education-related practical skills."
+            }
+        ],
+
+        general: [
+            {
+                name: "Bachelor's Degree",
+                duration: "3–4 Years",
+                cost: "Varies",
+                practical: "Medium",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A general undergraduate pathway that can lead toward employment or higher education."
+            },
+            {
+                name: "Professional Degree",
+                duration: "3–5 Years",
+                cost: "Varies",
+                practical: "High",
+                specialization: "High",
+                flexibility: "Medium",
+                description: "A professionally oriented education pathway designed around a specific field."
+            },
+            {
+                name: "Diploma / Certificate",
+                duration: "1–3 Years",
+                cost: "Low / Moderate",
+                practical: "High",
+                specialization: "Medium",
+                flexibility: "High",
+                description: "A shorter route for developing specific knowledge or skills."
+            }
+        ]
+
+    };
+
+
+    /* ================= ELEMENTS ================= */
+
+    const fieldSelect = document.getElementById("fieldSelect");
+
+    const courseContainer =
+        document.getElementById("courseContainer");
+
+    const resultSection =
+        document.getElementById("result-section");
+
+
+    /* ================= LOAD COURSES ================= */
+
+    fieldSelect.addEventListener("change", function () {
+
+        const field = fieldSelect.value;
+
+        courseContainer.innerHTML = "";
+
+        if (field === "") {
+
+            courseContainer.innerHTML = `
+                <div class="course-option">
+
+                    <strong>Select a field first</strong>
+
+                    <small>
+                        Available courses will appear here.
+                    </small>
+
+                </div>
+            `;
+
+            return;
+        }
+
+
+        courseData[field].forEach((course, index) => {
+
+            courseContainer.innerHTML += `
+
+                <label class="course-option">
+
+                    <input
+                        type="checkbox"
+                        value="${index}"
+                        onchange="updateSelection(this)"
+                    >
+
+                    <strong>
+                        ${course.name}
+                    </strong>
+
+                    <small>
+                        ${course.description}
+                    </small>
+
+                </label>
+
+            `;
+
+        });
+
+    });
+
+
+    /* ================= COURSE SELECTION ================= */
+
+    function updateSelection(input) {
+
+        const card =
+            input.closest(".course-option");
+
+        if (input.checked) {
+
+            card.classList.add("selected");
+
+        } else {
+
+            card.classList.remove("selected");
+
+        }
+
+    }
+
+
+    /* ================= GENERATE MATRIX ================= */
+
+    function generateMatrix() {
+
+        const field = fieldSelect.value;
+
+
+        if (field === "") {
+
+            alert("Please select a field first.");
+
+            return;
+
+        }
+
+
+        const selectedInputs =
+            document.querySelectorAll(
+                "#courseContainer input:checked"
+            );
+
+
+        if (selectedInputs.length < 2) {
+
+            alert("Please select at least two courses.");
+
+            return;
+
+        }
+
+
+        if (selectedInputs.length > 3) {
+
+            alert("Please select a maximum of three courses.");
+
+            return;
+
+        }
+
+
+        const selectedCourses =
+            Array.from(selectedInputs).map(input => {
+
+                return courseData[field][
+                    Number(input.value)
+                ];
+
+            });
+
+
+        createMatrix(selectedCourses);
+
+        createAnalysis(selectedCourses);
+
+        createInsight(selectedCourses);
+
+
+        resultSection.style.display = "block";
+
+
+        resultSection.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* ================= MATRIX ================= */
+
+    function createMatrix(courses) {
+
+        const matrixHead =
+            document.getElementById("matrixHead");
+
+        const matrixBody =
+            document.getElementById("matrixBody");
+
+
+        matrixHead.innerHTML = `
+            <th>Factor</th>
+        `;
+
+
+        courses.forEach(course => {
+
+            matrixHead.innerHTML += `
+                <th>${course.name}</th>
+            `;
+
+        });
+
+
+        const factors = [
+
+            ["Duration", "duration"],
+
+            ["Cost", "cost"],
+
+            ["Practical Learning", "practical"],
+
+            ["Specialization", "specialization"],
+
+            ["Flexibility", "flexibility"]
+
+        ];
+
+
+        matrixBody.innerHTML = "";
+
+
+        factors.forEach(factor => {
+
+            let row = `
+                <tr>
+
+                    <td>
+                        ${factor[0]}
+                    </td>
+            `;
+
+
+            courses.forEach(course => {
+
+                const value =
+                    course[factor[1]];
+
+
+                let className = "";
+
+
+                if (
+                    value === "High" ||
+                    value === "Very High"
+                ) {
+
+                    className = "high";
+
+                }
+
+                else if (value === "Medium") {
+
+                    className = "medium";
+
+                }
+
+                else if (value === "Low") {
+
+                    className = "low";
+
+                }
+
+
+                row += `
+                    <td class="${className}">
+                        ${value}
+                    </td>
+                `;
+
+            });
+
+
+            row += `
+                </tr>
+            `;
+
+
+            matrixBody.innerHTML += row;
+
+        });
+
+    }
+
+
+    /* ================= COURSE ANALYSIS ================= */
+
+    function createAnalysis(courses) {
+
+        const container =
+            document.getElementById(
+                "analysisContainer"
+            );
+
+
+        container.innerHTML = "";
+
+
+        courses.forEach(course => {
+
+            container.innerHTML += `
+
+                <div class="analysis-card">
+
+                    <h3>
+                        ${course.name}
+                    </h3>
+
+                    <p>
+                        ${course.description}
+                    </p>
+
+                    <h4>
+                        Duration
+                    </h4>
+
+                    <p>
+                        ${course.duration}
+                    </p>
+
+                    <h4>
+                        Cost
+                    </h4>
+
+                    <p>
+                        ${course.cost}
+                    </p>
+
+                    <h4>
+                        Practical Learning
+                    </h4>
+
+                    <p>
+                        ${course.practical}
+                    </p>
+
+                    <h4>
+                        Specialization
+                    </h4>
+
+                    <p>
+                        ${course.specialization}
+                    </p>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    /* ================= PERSONAL INSIGHT ================= */
+
+    function createInsight(courses) {
+
+        const goal =
+            document.getElementById(
+                "careerGoal"
+            ).value;
+
+
+        const budget =
+            document.getElementById(
+                "budget"
+            ).value;
+
+
+        const time =
+            document.getElementById(
+                "time"
+            ).value;
+
+
+        const practical =
+            document.getElementById(
+                "practical"
+            ).value;
+
+
+        const specialization =
+            document.getElementById(
+                "specialization"
+            ).value;
+
+
+        const courseNames =
+            courses
+                .map(course => course.name)
+                .join(", ");
+
+
+        let message = `
+
+            You are comparing
+            <strong>${courseNames}</strong>.
+
+            Your current goal is
+            <strong>${goal}</strong>.
+        `;
+
+
+        if (budget === "high") {
+
+            message += `
+
+                Keeping costs low is important to you.
+                Compare tuition fees, additional expenses
+                and the total cost of each option carefully.
+
+            `;
+
+        }
+
+
+        if (time === "Shorter path") {
+
+            message += `
+
+                You prefer a shorter path.
+                Pay attention to the duration of each course
+                and the time required before moving to your
+                next career step.
+
+            `;
+
+        }
+
+
+        if (practical === "Very important") {
+
+            message += `
+
+                Practical learning is a major priority.
+                Look closely at projects, internships,
+                laboratory work, fieldwork and practical training.
+
+            `;
+
+        }
+
+
+        if (specialization === "Very important") {
+
+            message += `
+
+                Specialization is highly important to you.
+                Compare how deeply each course allows you
+                to focus on your intended subject or profession.
+
+            `;
+
+        }
+
+
+        message += `
+
+            Remember that the matrix does not identify a
+            universal "best" course. Your decision should
+            also consider eligibility, institution quality,
+            curriculum, career requirements, interests and
+            personal circumstances.
+
+        `;
+
+
+        document.getElementById(
+            "personalInsight"
+        ).innerHTML = message;
+
+    }
+
+
+    /* ================= RESET ================= */
+
+    function resetMatrix() {
+
+        fieldSelect.value = "";
+
+
+        courseContainer.innerHTML = `
+
+            <div class="course-option">
+
+                <strong>
+                    Select a field first
+                </strong>
+
+                <small>
+                    Available courses will appear here.
+                </small>
+
+            </div>
+
+        `;
+
+
+        resultSection.style.display = "none";
+
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

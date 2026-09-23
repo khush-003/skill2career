@@ -1,0 +1,2055 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resources | Skill2Career</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" 
+    rel="stylesheet" 
+> 
+ 
+<!-- Page CSS --> 
+<link rel="stylesheet" href="resources.css"> 
+ 
+</head> 
+ 
+<body> 
+ 
+<!-- ========================================================= 
+     NAVBAR 
+========================================================= --> 
+ 
+<header class="navbar"> 
+ 
+ 
+<a href="#" class="logo"> 
+    Skill<span>2</span>Career 
+</a> 
+ 
+<ul class="nav-links"> 
+ 
+    <li> 
+        <a href="home.html">Home</a> 
+    </li> 
+ 
+    <li> 
+        <a href="careers.html">Careers</a> 
+    </li> 
+ 
+    <li> 
+        <a href="courses.html">Courses</a> 
+    </li> 
+ 
+    <li> 
+        <a href="#" class="active"> 
+            Resources 
+        </a> 
+    </li> 
+ 
+    <li> 
+        <a href="roadmap.html">Roadmaps</a> 
+    </li> 
+ 
+    <li> 
+        <a href="#" class="nav-btn"> 
+            Explore 
+        </a> 
+    </li> 
+ 
+</ul> 
+``` 
+ 
+</header> 
+ 
+<!-- ========================================================= 
+     HERO / SEARCH 
+========================================================= --> 
+ 
+<section class="hero"> 
+ 
+ 
+<div class="hero-content"> 
+ 
+    <div class="hero-tag"> 
+        LEARNING RESOURCE LIBRARY 
+    </div> 
+ 
+    <h1> 
+        Learn better.<br> 
+        <span>Build your future.</span> 
+    </h1> 
+ 
+    <p> 
+        Find structured study materials, subject resources, 
+        career guides and learning references designed to help 
+        you move from where you are today to where you want to be. 
+    </p> 
+ 
+ 
+    <!-- SEARCH --> 
+ 
+    <div class="search-box"> 
+ 
+        <span class="search-icon"> 
+            ⌕ 
+        </span> 
+ 
+        <input 
+            type="text" 
+            id="resourceSearch" 
+            placeholder="Search subjects, courses, topics or resources..." 
+        > 
+ 
+        <button 
+            class="search-btn" 
+            id="searchBtn" 
+            type="button" 
+        > 
+            Search 
+        </button> 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+<!-- HERO VISUAL --> 
+ 
+<div class="hero-visual"> 
+ 
+    <div class="visual-card main-resource-card"> 
+ 
+        <div class="resource-icon-large"> 
+            ▣ 
+        </div> 
+ 
+        <h3> 
+            Study Library 
+        </h3> 
+ 
+        <p> 
+            Organized resources for subjects, 
+            courses and career preparation. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="visual-card mini-card one"> 
+ 
+        <div class="mini-dot"> 
+            PDF 
+        </div> 
+ 
+        Notes 
+ 
+    </div> 
+ 
+ 
+    <div class="visual-card mini-card two"> 
+ 
+        <div class="mini-dot"> 
+            ✓ 
+        </div> 
+ 
+        Roadmaps 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     SEARCH RESULTS 
+========================================================= --> 
+ 
+<section 
+    class="section search-results-section" 
+    id="searchResultsSection" 
+    style="display: none;" 
+> 
+ 
+ 
+<div class="section-header"> 
+ 
+    <div class="section-label"> 
+        Search 
+    </div> 
+ 
+    <h2> 
+        Search results 
+    </h2> 
+ 
+    <p id="searchResultText"> 
+        Resources related to your search. 
+    </p> 
+ 
+</div> 
+ 
+ 
+<div 
+    class="resource-grid" 
+    id="searchResultsGrid" 
+></div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     RESOURCE TYPES 
+========================================================= --> 
+ 
+<section class="section resource-types"> 
+ 
+ 
+<div class="section-header"> 
+ 
+    <div class="section-label"> 
+        Explore 
+    </div> 
+ 
+    <h2> 
+        Everything you need to learn 
+    </h2> 
+ 
+    <p> 
+        Resources are organized according to how students 
+        actually learn and make career decisions. 
+    </p> 
+ 
+</div> 
+ 
+ 
+<div class="type-grid"> 
+ 
+ 
+    <!-- STUDY NOTES --> 
+ 
+    <div 
+        class="type-card" 
+        data-resource-type="Notes" 
+    > 
+ 
+        <div class="type-icon"> 
+            ▤ 
+        </div> 
+ 
+        <h3> 
+            Study Notes 
+        </h3> 
+ 
+        <p> 
+            Topic-wise notes and important concepts 
+            for your academic subjects. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <!-- COURSE MATERIAL --> 
+ 
+    <div 
+        class="type-card" 
+        data-resource-type="Course Material" 
+    > 
+ 
+        <div class="type-icon"> 
+            ◫ 
+        </div> 
+ 
+        <h3> 
+            Course Material 
+        </h3> 
+ 
+        <p> 
+            Learning resources organized according 
+            to different courses and programs. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <!-- CAREER GUIDES --> 
+ 
+    <div 
+        class="type-card" 
+        data-resource-type="Career Guide" 
+    > 
+ 
+        <div class="type-icon"> 
+            ◎ 
+        </div> 
+ 
+        <h3> 
+            Career Guides 
+        </h3> 
+ 
+        <p> 
+            Understand career paths, requirements, 
+            skills and possible opportunities. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <!-- ROADMAPS --> 
+ 
+    <div 
+        class="type-card" 
+        data-resource-type="Roadmap" 
+    > 
+ 
+        <div class="type-icon"> 
+            ↗ 
+        </div> 
+ 
+        <h3> 
+            Roadmaps 
+        </h3> 
+ 
+        <p> 
+            Step-by-step learning paths that connect 
+            subjects, skills and careers. 
+        </p> 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     RESOURCE LIBRARY 
+      
+     DATA HIERARCHY 
+ 
+     Career 
+        ↓ 
+     Course 
+        ↓ 
+     Level 
+        ↓ 
+     Subject 
+        ↓ 
+     Topic 
+        ↓ 
+     Skill 
+        ↓ 
+     Resource 
+        ↓ 
+     Source 
+========================================================= --> 
+ 
+<section class="section library" id="resourceLibrary"> 
+ 
+ 
+<div class="section-header"> 
+ 
+    <div class="section-label"> 
+        Resource Library 
+    </div> 
+ 
+    <h2> 
+        Find resources for your learning path 
+    </h2> 
+ 
+    <p> 
+        Explore resources by career, course, level, 
+        subject, topic and skill. 
+    </p> 
+ 
+</div> 
+ 
+ 
+ 
+<!-- ===================================================== 
+     CAREER PATH 
+====================================================== --> 
+ 
+<div class="career-path-box"> 
+ 
+ 
+    <div class="career-path-heading"> 
+ 
+        <div class="section-label"> 
+            Career Learning Path 
+        </div> 
+ 
+        <h3> 
+            Start with your career goal 
+        </h3> 
+ 
+        <p> 
+            Choose a career to discover its related 
+            skills, subjects, courses and resources. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="career-path-selector"> 
+ 
+        <select id="careerPathSelect"> 
+ 
+            <option value=""> 
+                Choose a career path 
+            </option> 
+ 
+            <option value="Software Developer"> 
+                Software Developer 
+            </option> 
+ 
+            <option value="Frontend Developer"> 
+                Frontend Developer 
+            </option> 
+ 
+            <option value="Backend Developer"> 
+                Backend Developer 
+            </option> 
+ 
+            <option value="Full Stack Developer"> 
+                Full Stack Developer 
+            </option> 
+ 
+            <option value="Data Analyst"> 
+                Data Analyst 
+            </option> 
+ 
+            <option value="Data Scientist"> 
+                Data Scientist 
+            </option> 
+ 
+            <option value="AI / ML Engineer"> 
+                AI / ML Engineer 
+            </option> 
+ 
+            <option value="Cybersecurity Analyst"> 
+                Cybersecurity Analyst 
+            </option> 
+ 
+            <option value="UI/UX Designer"> 
+                UI/UX Designer 
+            </option> 
+ 
+            <option value="Cloud Engineer"> 
+                Cloud Engineer 
+            </option> 
+ 
+        </select> 
+ 
+    </div> 
+ 
+ 
+    <!-- JS will populate this --> 
+ 
+    <div 
+        id="careerPathResults" 
+        class="career-path-results" 
+    ></div> 
+ 
+</div> 
+ 
+ 
+ 
+<!-- ===================================================== 
+     RESOURCE FILTERS 
+====================================================== --> 
+ 
+<div class="filter-bar"> 
+ 
+    <div class="filter-title"> 
+        Filter resources 
+    </div> 
+ 
+ 
+    <!-- COURSE --> 
+ 
+    <select 
+        id="courseFilter" 
+        data-filter="course" 
+    > 
+ 
+        <option value="All Courses"> 
+            All Courses 
+        </option> 
+ 
+        <option value="BCA"> 
+            BCA 
+        </option> 
+ 
+        <option value="B.Tech"> 
+            B.Tech 
+        </option> 
+ 
+        <option value="MCA"> 
+            MCA 
+        </option> 
+ 
+        <option value="MBA"> 
+            MBA 
+        </option> 
+ 
+        <option value="Computer Science"> 
+            Computer Science 
+        </option> 
+ 
+    </select> 
+ 
+ 
+    <!-- SUBJECT --> 
+ 
+    <select 
+        id="subjectFilter" 
+        data-filter="subject" 
+    > 
+ 
+        <option value="All Subjects"> 
+            All Subjects 
+        </option> 
+ 
+        <option value="Programming"> 
+            Programming 
+        </option> 
+ 
+        <option value="Data Structures"> 
+            Data Structures 
+        </option> 
+ 
+        <option value="Algorithms"> 
+            Algorithms 
+        </option> 
+ 
+        <option value="DBMS"> 
+            DBMS 
+        </option> 
+ 
+        <option value="Operating Systems"> 
+            Operating Systems 
+        </option> 
+ 
+        <option value="Computer Networks"> 
+            Computer Networks 
+        </option> 
+ 
+        <option value="Web Development"> 
+            Web Development 
+        </option> 
+ 
+        <option value="Mathematics"> 
+            Mathematics 
+        </option> 
+ 
+        <option value="Statistics"> 
+            Statistics 
+        </option> 
+ 
+        <option value="Software Engineering"> 
+            Software Engineering 
+        </option> 
+ 
+        <option value="Computer Graphics"> 
+            Computer Graphics 
+        </option> 
+ 
+        <option value="Artificial Intelligence"> 
+            Artificial Intelligence 
+        </option> 
+ 
+    </select> 
+ 
+ 
+    <!-- LEVEL --> 
+ 
+    <select 
+        id="levelFilter" 
+        data-filter="level" 
+    > 
+ 
+        <option value="All Levels"> 
+            All Levels 
+        </option> 
+ 
+        <option value="Beginner"> 
+            Beginner 
+        </option> 
+ 
+        <option value="Intermediate"> 
+            Intermediate 
+        </option> 
+ 
+        <option value="Advanced"> 
+            Advanced 
+        </option> 
+ 
+    </select> 
+ 
+ 
+    <!-- RESOURCE TYPE --> 
+ 
+    <select 
+        id="resourceTypeFilter" 
+        data-filter="type" 
+    > 
+ 
+        <option value="All Types"> 
+            All Resource Types 
+        </option> 
+ 
+        <option value="Notes"> 
+            Notes 
+        </option> 
+ 
+        <option value="Guide"> 
+            Guide 
+        </option> 
+ 
+        <option value="Tutorial"> 
+            Tutorial 
+        </option> 
+ 
+        <option value="Practice"> 
+            Practice 
+        </option> 
+ 
+        <option value="Book"> 
+            Book 
+        </option> 
+ 
+        <option value="Video"> 
+            Video 
+        </option> 
+ 
+        <option value="Documentation"> 
+            Documentation 
+        </option> 
+ 
+    </select> 
+ 
+</div> 
+ 
+ 
+ 
+<!-- ===================================================== 
+     RESOURCE CARDS 
+====================================================== --> 
+ 
+<div 
+    class="resource-grid" 
+    id="resourceGrid" 
+> 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 01 
+ 
+         BCA 
+          ↓ 
+         Beginner 
+          ↓ 
+         Programming 
+          ↓ 
+         Programming Fundamentals 
+          ↓ 
+         C / C++ 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Software Developer,Frontend Developer,Backend Developer,Full Stack Developer" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Beginner" 
+ 
+        data-subject="Programming" 
+ 
+        data-topic="Programming Fundamentals" 
+ 
+        data-skills="C,C++,Programming Logic" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Beginner 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Programming Fundamentals 
+        </h3> 
+ 
+ 
+        <p> 
+            Understand variables, operators, conditions, 
+            loops, functions and basic programming logic. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                Programming 
+            </span> 
+ 
+            <span class="meta"> 
+                C / C++ 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 02 
+ 
+         BCA 
+          ↓ 
+         Intermediate 
+          ↓ 
+         Data Structures 
+          ↓ 
+         DSA 
+          ↓ 
+         Arrays / Linked Lists / etc. 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Software Developer,Frontend Developer,Backend Developer,Full Stack Developer" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Intermediate" 
+ 
+        data-subject="Data Structures" 
+ 
+        data-topic="Data Structures & Algorithms" 
+ 
+        data-skills="Arrays,Linked Lists,Stacks,Queues,Trees,Graphs" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Intermediate 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Data Structures & Algorithms 
+        </h3> 
+ 
+ 
+        <p> 
+            Learn arrays, linked lists, stacks, queues, 
+            trees, graphs and algorithmic thinking. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                DSA 
+            </span> 
+ 
+            <span class="meta"> 
+                Practice 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 03 
+ 
+         BCA 
+          ↓ 
+         Intermediate 
+          ↓ 
+         DBMS 
+          ↓ 
+         Database Management Systems 
+          ↓ 
+         SQL 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Software Developer,Backend Developer,Full Stack Developer,Data Analyst" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Intermediate" 
+ 
+        data-subject="DBMS" 
+ 
+        data-topic="Database Management Systems" 
+ 
+        data-skills="SQL,Normalization,Transactions,Database Design" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Intermediate 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Database Management Systems 
+        </h3> 
+ 
+ 
+        <p> 
+            Learn database concepts, SQL, normalization, 
+            transactions and database design. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                DBMS 
+            </span> 
+ 
+            <span class="meta"> 
+                SQL 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 04 
+ 
+         BCA 
+          ↓ 
+         Intermediate 
+          ↓ 
+         Operating Systems 
+          ↓ 
+         Processes / Threads / Memory 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Software Developer,Backend Developer,Cloud Engineer,Cybersecurity Analyst" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Intermediate" 
+ 
+        data-subject="Operating Systems" 
+ 
+        data-topic="Operating Systems" 
+ 
+        data-skills="Processes,Threads,Scheduling,Memory Management,File Systems" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Intermediate 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Operating Systems 
+        </h3> 
+ 
+ 
+        <p> 
+            Explore processes, threads, scheduling, 
+            memory management, file systems and security. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                OS 
+            </span> 
+ 
+            <span class="meta"> 
+                Theory 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 05 
+ 
+         BCA 
+          ↓ 
+         Intermediate 
+          ↓ 
+         Computer Networks 
+          ↓ 
+         TCP/IP / OSI / Protocols 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Software Developer,Backend Developer,Full Stack Developer,Cloud Engineer,Cybersecurity Analyst" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Intermediate" 
+ 
+        data-subject="Computer Networks" 
+ 
+        data-topic="Computer Networks" 
+ 
+        data-skills="Networking,OSI,TCP/IP,Protocols,Network Security" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Intermediate 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Computer Networks 
+        </h3> 
+ 
+ 
+        <p> 
+            Learn networking fundamentals, protocols, 
+            OSI model, TCP/IP and network security. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                Networking 
+            </span> 
+ 
+            <span class="meta"> 
+                TCP/IP 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 06 
+ 
+         Web Development 
+          ↓ 
+         Beginner 
+          ↓ 
+         Web Development 
+          ↓ 
+         HTML / CSS / JavaScript 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Frontend Developer,Backend Developer,Full Stack Developer" 
+ 
+        data-course="BCA,Computer Science" 
+ 
+        data-level="Beginner" 
+ 
+        data-subject="Web Development" 
+ 
+        data-topic="Web Development" 
+ 
+        data-skills="HTML,CSS,JavaScript,Responsive Design" 
+ 
+        data-resource-type="Guide" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Guide 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Beginner 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Web Development 
+        </h3> 
+ 
+ 
+        <p> 
+            Build your foundation in HTML, CSS and JavaScript 
+            and gradually move toward modern web development. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                Web 
+            </span> 
+ 
+            <span class="meta"> 
+                HTML 
+            </span> 
+ 
+            <span class="meta"> 
+                CSS 
+            </span> 
+ 
+            <span class="meta"> 
+                JS 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 07 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Data Analyst,Data Scientist,Software Developer" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Beginner" 
+ 
+        data-subject="Mathematics" 
+ 
+        data-topic="Mathematics" 
+ 
+        data-skills="Mathematical Concepts,Problem Solving" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Beginner 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Mathematics 
+        </h3> 
+ 
+ 
+        <p> 
+            Important mathematical concepts required 
+            for computer applications and technical studies. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                Maths 
+            </span> 
+ 
+            <span class="meta"> 
+                Practice 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 08 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Data Analyst,Data Scientist,AI / ML Engineer" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Beginner" 
+ 
+        data-subject="Statistics" 
+ 
+        data-topic="Statistics" 
+ 
+        data-skills="Probability,Distributions,Descriptive Statistics,Data" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Beginner 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Statistics 
+        </h3> 
+ 
+ 
+        <p> 
+            Learn descriptive statistics, probability, 
+            distributions and essential data concepts. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                Statistics 
+            </span> 
+ 
+            <span class="meta"> 
+                Data 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+ 
+    <!-- ================================================= 
+         RESOURCE 09 
+    ================================================== --> 
+ 
+    <article 
+        class="resource-card" 
+ 
+        data-career="Software Developer,Frontend Developer,Backend Developer,Full Stack Developer" 
+ 
+        data-course="BCA" 
+ 
+        data-level="Intermediate" 
+ 
+        data-subject="Software Engineering" 
+ 
+        data-topic="Software Engineering" 
+ 
+        data-skills="SDLC,Requirements,Testing,Project Management" 
+ 
+        data-resource-type="Notes" 
+ 
+        data-source="Skill2Career" 
+    > 
+ 
+        <div class="resource-top"> 
+ 
+            <span class="resource-type"> 
+                Notes 
+            </span> 
+ 
+            <span class="resource-level"> 
+                Intermediate 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <h3> 
+            Software Engineering 
+        </h3> 
+ 
+ 
+        <p> 
+            Understand software development life cycles, 
+            requirements, testing and project management. 
+        </p> 
+ 
+ 
+        <div class="resource-meta"> 
+ 
+            <span class="meta"> 
+                BCA 
+            </span> 
+ 
+            <span class="meta"> 
+                SE 
+            </span> 
+ 
+            <span class="meta"> 
+                Theory 
+            </span> 
+ 
+        </div> 
+ 
+ 
+        <div class="resource-footer"> 
+ 
+            <span class="source"> 
+                SOURCE: SKILL2CAREER 
+            </span> 
+ 
+            <a 
+                href="#" 
+                class="view-btn" 
+            > 
+                View Resource → 
+            </a> 
+ 
+        </div> 
+ 
+    </article> 
+ 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     SUBJECT LIBRARY 
+========================================================= --> 
+ 
+<section class="section subjects"> 
+ 
+ 
+<div class="section-header"> 
+ 
+    <div class="section-label"> 
+        Subject Library 
+    </div> 
+ 
+    <h2> 
+        Explore by subject 
+    </h2> 
+ 
+    <p> 
+        Jump directly into the subjects that are part 
+        of your current learning journey. 
+    </p> 
+ 
+</div> 
+ 
+ 
+<div class="subject-grid"> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Programming" 
+    > 
+        <span class="subject-name"> 
+            Programming 
+        </span> 
+ 
+        <span class="subject-count"> 
+            12+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Data Structures" 
+    > 
+        <span class="subject-name"> 
+            Data Structures 
+        </span> 
+ 
+        <span class="subject-count"> 
+            10+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Algorithms" 
+    > 
+        <span class="subject-name"> 
+            Algorithms 
+        </span> 
+ 
+        <span class="subject-count"> 
+            9+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="DBMS" 
+    > 
+        <span class="subject-name"> 
+            DBMS 
+        </span> 
+ 
+        <span class="subject-count"> 
+            8+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Operating Systems" 
+    > 
+        <span class="subject-name"> 
+            Operating Systems 
+        </span> 
+ 
+        <span class="subject-count"> 
+            7+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Computer Networks" 
+    > 
+        <span class="subject-name"> 
+            Computer Networks 
+        </span> 
+ 
+        <span class="subject-count"> 
+            8+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Web Development" 
+    > 
+        <span class="subject-name"> 
+            Web Development 
+        </span> 
+ 
+        <span class="subject-count"> 
+            15+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Mathematics" 
+    > 
+        <span class="subject-name"> 
+            Mathematics 
+        </span> 
+ 
+        <span class="subject-count"> 
+            11+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Statistics" 
+    > 
+        <span class="subject-name"> 
+            Statistics 
+        </span> 
+ 
+        <span class="subject-count"> 
+            6+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Software Engineering" 
+    > 
+        <span class="subject-name"> 
+            Software Engineering 
+        </span> 
+ 
+        <span class="subject-count"> 
+            7+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Computer Graphics" 
+    > 
+        <span class="subject-name"> 
+            Computer Graphics 
+        </span> 
+ 
+        <span class="subject-count"> 
+            6+ 
+        </span> 
+    </div> 
+ 
+ 
+    <div 
+        class="subject" 
+        data-subject="Artificial Intelligence" 
+    > 
+        <span class="subject-name"> 
+            Artificial Intelligence 
+        </span> 
+ 
+        <span class="subject-count"> 
+            10+ 
+        </span> 
+    </div> 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     CAREER GUIDE 
+========================================================= --> 
+ 
+<section class="section career-guide"> 
+ 
+ 
+<div class="guide-box"> 
+ 
+    <div class="guide-content"> 
+ 
+        <div class="section-label"> 
+            Beyond academics 
+        </div> 
+ 
+        <h2> 
+            Don't just study a subject. 
+            Understand where it can take you. 
+        </h2> 
+ 
+        <p> 
+            Connect what you are learning with real career 
+            possibilities. Explore required skills, alternative 
+            paths and the next steps after your course. 
+        </p> 
+ 
+        <a 
+            href="#" 
+            class="guide-btn" 
+        > 
+            Explore Career Guides → 
+        </a> 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     LEARNING JOURNEY 
+========================================================= --> 
+ 
+<section class="section journey"> 
+ 
+ 
+<div class="section-header"> 
+ 
+    <div class="section-label"> 
+        Learning Journey 
+    </div> 
+ 
+    <h2> 
+        Turn resources into progress 
+    </h2> 
+ 
+    <p> 
+        A resource becomes more useful when you know 
+        what to learn first and what comes next. 
+    </p> 
+ 
+</div> 
+ 
+ 
+<div class="journey-grid"> 
+ 
+ 
+    <div class="journey-step"> 
+ 
+        <div class="step-number"> 
+            01 
+        </div> 
+ 
+        <h3> 
+            Choose your goal 
+        </h3> 
+ 
+        <p> 
+            Start with a career, course or skill 
+            you want to understand. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="journey-step"> 
+ 
+        <div class="step-number"> 
+            02 
+        </div> 
+ 
+        <h3> 
+            Understand subjects 
+        </h3> 
+ 
+        <p> 
+            Discover the subjects and concepts 
+            connected to your chosen path. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="journey-step"> 
+ 
+        <div class="step-number"> 
+            03 
+        </div> 
+ 
+        <h3> 
+            Learn & practice 
+        </h3> 
+ 
+        <p> 
+            Use notes, references and learning resources 
+            to build your foundation. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="journey-step"> 
+ 
+        <div class="step-number"> 
+            04 
+        </div> 
+ 
+        <h3> 
+            Move forward 
+        </h3> 
+ 
+        <p> 
+            Follow a roadmap and identify the next 
+            skills required for your goal. 
+        </p> 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     FAQ 
+========================================================= --> 
+ 
+<section class="section faq"> 
+ 
+ 
+<div class="section-header"> 
+ 
+    <div class="section-label"> 
+        FAQ 
+    </div> 
+ 
+    <h2> 
+        Frequently asked questions 
+    </h2> 
+ 
+    <p> 
+        A few things to know about the Skill2Career 
+        resource library. 
+    </p> 
+ 
+</div> 
+ 
+ 
+<div class="faq-list"> 
+ 
+ 
+    <div class="faq-item"> 
+ 
+        <h3> 
+            What type of resources can I find here? 
+        </h3> 
+ 
+        <p> 
+            The library is designed for notes, study materials, 
+            subject references, career guides and learning roadmaps. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="faq-item"> 
+ 
+        <h3> 
+            Can I find resources according to my course? 
+        </h3> 
+ 
+        <p> 
+            Yes. Resources can be organized around courses, 
+            subjects, academic levels and learning goals. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="faq-item"> 
+ 
+        <h3> 
+            How do resources connect with careers? 
+        </h3> 
+ 
+        <p> 
+            Resources can be linked with the subjects and skills 
+            required for particular career paths. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="faq-item"> 
+ 
+        <h3> 
+            Are all resources official study materials? 
+        </h3> 
+ 
+        <p> 
+            Resource sources should be clearly identified so that 
+            learners can understand where each material comes from. 
+        </p> 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     CTA 
+========================================================= --> 
+ 
+<section class="cta"> 
+ 
+ 
+<div class="cta-box"> 
+ 
+    <h2> 
+        Not sure what to learn next? 
+    </h2> 
+ 
+    <p> 
+        Start with your career goal and let Skill2Career 
+        help you understand the courses, subjects and 
+        skills connected to it. 
+    </p> 
+ 
+    <a 
+        href="#" 
+        class="cta-btn" 
+    > 
+        Explore Your Career Path → 
+    </a> 
+ 
+</div> 
+ 
+ 
+</section> 
+ 
+<!-- ========================================================= 
+     FOOTER 
+========================================================= --> 
+ 
+<footer> 
+ 
+<div class="footer-grid"> 
+ 
+ 
+    <div class="footer-brand"> 
+ 
+        <h2> 
+            Skill2Career 
+        </h2> 
+ 
+        <p> 
+            Helping students understand careers, courses, 
+            skills and learning paths so they can make 
+            informed career decisions. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="footer-column"> 
+ 
+        <h3> 
+            Explore 
+        </h3> 
+ 
+        <a href="#"> 
+            Careers 
+        </a> 
+ 
+        <a href="#"> 
+            Courses 
+        </a> 
+ 
+        <a href="#"> 
+            Resources 
+        </a> 
+ 
+        <a href="#"> 
+            Roadmaps 
+        </a> 
+ 
+    </div> 
+ 
+ 
+    <div class="footer-column"> 
+ 
+        <h3> 
+            Learn 
+        </h3> 
+ 
+        <a href="#"> 
+            Subjects 
+        </a> 
+ 
+        <a href="#"> 
+            Study Materials 
+        </a> 
+ 
+        <a href="#"> 
+            Skill Gaps 
+        </a> 
+ 
+        <a href="#"> 
+            Learning Paths 
+        </a> 
+ 
+    </div> 
+ 
+ 
+    <div class="footer-column"> 
+ 
+        <h3> 
+            Skill2Career 
+        </h3> 
+ 
+        <a href="#"> 
+            About 
+        </a> 
+ 
+        <a href="#"> 
+            Contact 
+        </a> 
+ 
+        <a href="#"> 
+            Updates 
+        </a> 
+ 
+        <a href="#"> 
+            FAQ 
+        </a> 
+ 
+    </div> 
+ 
+</div> 
+ 
+ 
+<div class="copyright"> 
+ 
+    © 2026 Skill2Career. 
+    Built for learning and career exploration. 
+ 
+</div> 
+ 
+ 
+</footer> 
+ 
+<!-- ========================================================= 
+     JAVASCRIPT 
+========================================================= --> 
+ 
+<script src="resources.js"></script> 
+ 
+</body> 
+ 
+</html> 

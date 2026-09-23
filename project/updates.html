@@ -1,0 +1,2583 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skill2Career | Updates</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f6f9ff;
+            color: #172033;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+
+            width: 100%;
+            min-height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(255,255,255,.95);
+
+            border-bottom: 1px solid #e4eaf5;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(12px);
+
+        }
+
+        .logo {
+
+            font-size: 25px;
+            font-weight: 800;
+
+            color: #246bfe;
+
+        }
+
+        .nav-links {
+
+            display: flex;
+            align-items: center;
+            gap: 23px;
+
+        }
+
+        .nav-links a {
+
+            color: #536078;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+
+            color: #246bfe;
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            position: relative;
+
+            padding: 90px 7% 80px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    #cfe0ff,
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 15% 80%,
+                    #e6efff,
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #edf4ff
+                );
+
+        }
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            border: 1px solid #bcd1ff;
+
+            border-radius: 50%;
+
+            right: -80px;
+            top: -80px;
+
+        }
+
+        .hero-content {
+
+            position: relative;
+            z-index: 2;
+
+            max-width: 900px;
+
+        }
+
+        .badge {
+
+            display: inline-flex;
+
+            padding: 8px 14px;
+
+            border-radius: 30px;
+
+            background: #e7efff;
+
+            color: #246bfe;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
+
+            letter-spacing: .5px;
+
+        }
+
+        .hero h1 {
+
+            font-size: clamp(42px, 6vw, 72px);
+
+            line-height: 1.02;
+
+            margin-bottom: 22px;
+
+            letter-spacing: -2px;
+
+        }
+
+        .hero h1 span {
+
+            color: #246bfe;
+
+        }
+
+        .hero p {
+
+            max-width: 750px;
+
+            color: #657189;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* LIVE STATUS */
+
+        .status-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 30px;
+
+            color: #6e7a90;
+
+            font-size: 13px;
+
+        }
+
+        .status-dot {
+
+            width: 9px;
+            height: 9px;
+
+            background: #1fb56c;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 5px rgba(31,181,108,.12);
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+
+            width: 86%;
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 75px 0;
+
+        }
+
+
+        /* =========================
+           SECTION HEADER
+        ========================= */
+
+        .section-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .section-header h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+
+        }
+
+        .section-header p {
+
+            color: #758198;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================
+           REFRESH BUTTON
+        ========================= */
+
+        .refresh-btn {
+
+            border: 1px solid #d6e0f2;
+
+            background: white;
+
+            color: #246bfe;
+
+            padding: 11px 18px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            font-weight: 700;
+
+            transition: .3s;
+
+        }
+
+        .refresh-btn:hover {
+
+            background: #246bfe;
+
+            color: white;
+
+            border-color: #246bfe;
+
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-box {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .search-box input {
+
+            flex: 1;
+
+            border: 1px solid #dce4f2;
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 15px 18px;
+
+            outline: none;
+
+            color: #172033;
+
+        }
+
+        .search-box input:focus {
+
+            border-color: #246bfe;
+
+            box-shadow:
+                0 0 0 4px rgba(36,107,254,.08);
+
+        }
+
+
+        /* =========================
+           FIELD CARDS
+        ========================= */
+
+        .field-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 70px;
+
+        }
+
+        .field-card {
+
+            background: white;
+
+            border: 1px solid #e0e7f3;
+
+            border-radius: 17px;
+
+            padding: 20px;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+        .field-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #a9c4ff;
+
+            box-shadow:
+                0 15px 35px rgba(36,107,254,.09);
+
+        }
+
+        .field-icon {
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #edf3ff;
+
+            font-size: 21px;
+
+            margin-bottom: 14px;
+
+        }
+
+        .field-card h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 5px;
+
+        }
+
+        .field-card p {
+
+            font-size: 12px;
+
+            color: #7a8599;
+
+        }
+
+
+        /* =========================
+           FILTERS
+        ========================= */
+
+        .filters {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .filter-btn {
+
+            border: 1px solid #dce4f2;
+
+            background: white;
+
+            color: #536078;
+
+            padding: 10px 17px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+
+            background: #246bfe;
+
+            color: white;
+
+            border-color: #246bfe;
+
+        }
+
+
+        /* =========================
+           UPDATE GRID
+        ========================= */
+
+        .updates-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+        }
+
+
+        /* =========================
+           UPDATE CARD
+        ========================= */
+
+        .update-card {
+
+            background: white;
+
+            border: 1px solid #e1e8f4;
+
+            border-radius: 20px;
+
+            padding: 24px;
+
+            min-height: 300px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition: .3s;
+
+        }
+
+        .update-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color: #b8cdfb;
+
+            box-shadow:
+                0 18px 45px
+                rgba(36,107,254,.10);
+
+        }
+
+        .update-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+        }
+
+        .update-type {
+
+            padding: 6px 10px;
+
+            border-radius: 7px;
+
+            background: #edf3ff;
+
+            color: #246bfe;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+        }
+
+        .update-date {
+
+            font-size: 11px;
+
+            color: #929bad;
+
+        }
+
+        .update-card h3 {
+
+            font-size: 18px;
+
+            line-height: 1.45;
+
+            margin-bottom: 13px;
+
+        }
+
+        .update-card p {
+
+            color: #69758a;
+
+            font-size: 14px;
+
+            line-height: 1.65;
+
+            margin-bottom: 20px;
+
+        }
+
+        .update-bottom {
+
+            margin-top: auto;
+
+            padding-top: 15px;
+
+            border-top: 1px solid #edf0f6;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+        .source {
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            color: #778297;
+
+        }
+
+        .read-more {
+
+            color: #246bfe;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =========================
+           STUDENT SECTION
+        ========================= */
+
+        .student-section {
+
+            margin-top: 90px;
+
+        }
+
+        .student-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+        }
+
+        .student-card {
+
+            background: white;
+
+            border: 1px solid #e1e8f4;
+
+            border-radius: 18px;
+
+            padding: 23px;
+
+            transition: .3s;
+
+        }
+
+        .student-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(36,107,254,.08);
+
+        }
+
+        .student-icon {
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .student-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 9px;
+
+        }
+
+        .student-card p {
+
+            color: #707c91;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+
+        }
+
+        .student-card a {
+
+            color: #246bfe;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =========================
+           API SOURCE BOX
+        ========================= */
+
+        .source-section {
+
+            margin-top: 80px;
+
+            padding: 30px;
+
+            background: #eef4ff;
+
+            border: 1px solid #dce7ff;
+
+            border-radius: 20px;
+
+        }
+
+        .source-section h3 {
+
+            margin-bottom: 10px;
+
+        }
+
+        .source-section p {
+
+            color: #68758b;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+           LOADING
+        ========================= */
+
+        .loading {
+
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 70px 20px;
+
+            color: #6c778c;
+
+        }
+
+        .loader {
+
+            width: 38px;
+            height: 38px;
+
+            border: 4px solid #dce6fb;
+
+            border-top-color: #246bfe;
+
+            border-radius: 50%;
+
+            margin: 0 auto 15px;
+
+            animation: spin 1s linear infinite;
+
+        }
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* =========================
+           EMPTY / ERROR
+        ========================= */
+
+        .empty,
+        .error-box {
+
+            grid-column: 1 / -1;
+
+            padding: 45px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            background: white;
+
+            border: 1px solid #e1e8f4;
+
+            color: #738097;
+
+        }
+
+        .error-box {
+
+            background: #fff6f6;
+
+            border-color: #ffd8d8;
+
+            color: #b23d3d;
+
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            margin-top: 90px;
+
+            padding: 65px 30px;
+
+            text-align: center;
+
+            border-radius: 28px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255,255,255,.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #246bfe,
+                    #4c83ff
+                );
+
+            color: white;
+
+        }
+
+        .cta h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .cta p {
+
+            opacity: .9;
+
+            margin-bottom: 25px;
+
+        }
+
+        .cta a {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            background: white;
+
+            color: #246bfe;
+
+            border-radius: 10px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 50px;
+
+            padding: 45px 7%;
+
+            background: #101827;
+
+            color: #aeb9ca;
+
+            text-align: center;
+
+        }
+
+        footer strong {
+
+            color: white;
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:1100px) {
+
+            .field-grid {
+
+                grid-template-columns:
+                    repeat(3,1fr);
+
+            }
+
+            .updates-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+            .student-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+        }
+
+
+        @media(max-width:750px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                padding: 20px;
+
+            }
+
+            .nav-links {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+
+            }
+
+            .field-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+            .updates-grid {
+
+                grid-template-columns:1fr;
+
+            }
+
+            .student-grid {
+
+                grid-template-columns:1fr;
+
+            }
+
+            .section-header {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+            main {
+
+                width: 90%;
+
+            }
+
+            .hero {
+
+                padding: 65px 5%;
+
+            }
+
+        }
+
+
+        @media(max-width:450px) {
+
+            .field-grid {
+
+                grid-template-columns:1fr;
+
+            }
+
+            .hero h1 {
+
+                letter-spacing: -1px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Skill2Career
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="explore.html">
+                Explore
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="careers.html">
+                Careers
+            </a>
+
+            <a href="roadmap.html">
+                Roadmap
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+            <a href="updates.html" class="active">
+                Updates
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                LIVE CAREER • LEARNING • STUDENT UPDATES
+            </span>
+
+            <h1>
+
+                Stay informed.<br>
+
+                <span>Keep growing.</span>
+
+            </h1>
+
+            <p>
+
+                Explore the latest developments across careers,
+                education, technology, industries and student
+                opportunities — all in one place.
+
+            </p>
+
+            <div class="status-row">
+
+                <span class="status-dot"></span>
+
+                <span id="lastUpdated">
+                    Connecting to live sources...
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <main>
+
+
+        <!-- =========================
+             SEARCH
+        ========================= -->
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    Explore Updates
+                </h2>
+
+                <p>
+                    Find information related to your field,
+                    career and student journey.
+                </p>
+
+            </div>
+
+            <button
+                class="refresh-btn"
+                id="refreshBtn"
+            >
+                ↻ Refresh Updates
+            </button>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search updates, careers, technology, internships..."
+            >
+
+        </div>
+
+
+        <!-- =========================
+             FIELD CARDS
+        ========================= -->
+
+        <div class="field-grid">
+
+
+            <div
+                class="field-card"
+                data-field="technology"
+            >
+
+                <div class="field-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Computer & IT
+                </h3>
+
+                <p>
+                    Software, AI, coding and developer trends
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="engineering"
+            >
+
+                <div class="field-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Engineering
+                </h3>
+
+                <p>
+                    Engineering industries and innovations
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="business"
+            >
+
+                <div class="field-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Business
+                </h3>
+
+                <p>
+                    Management, startups and business trends
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="commerce"
+            >
+
+                <div class="field-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Commerce
+                </h3>
+
+                <p>
+                    Finance, accounting and markets
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="science"
+            >
+
+                <div class="field-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Science
+                </h3>
+
+                <p>
+                    Research, discoveries and scientific fields
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="arts"
+            >
+
+                <div class="field-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Arts & Humanities
+                </h3>
+
+                <p>
+                    Humanities, culture and social sciences
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="design"
+            >
+
+                <div class="field-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Design
+                </h3>
+
+                <p>
+                    UI/UX, creative tools and design careers
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="health"
+            >
+
+                <div class="field-icon">
+                    🧬
+                </div>
+
+                <h3>
+                    Health
+                </h3>
+
+                <p>
+                    Healthcare, medicine and life sciences
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="law"
+            >
+
+                <div class="field-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    Law
+                </h3>
+
+                <p>
+                    Legal education and professional updates
+                </p>
+
+            </div>
+
+
+            <div
+                class="field-card"
+                data-field="student"
+            >
+
+                <div class="field-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Student Activities
+                </h3>
+
+                <p>
+                    Internships, hackathons, events and scholarships
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             LIVE UPDATES
+        ========================= -->
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    Latest Updates
+                </h2>
+
+                <p>
+                    Fresh information fetched from external sources.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="technology"
+            >
+                Technology
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="developer"
+            >
+                Developer
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="career"
+            >
+                Career
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="student"
+            >
+                Students
+            </button>
+
+        </div>
+
+
+        <section
+            id="updatesGrid"
+            class="updates-grid"
+        >
+
+            <div class="loading">
+
+                <div class="loader"></div>
+
+                Loading live updates...
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STUDENT ACTIVITIES
+        ========================= -->
+
+        <section class="student-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Student Activity Hub
+                    </h2>
+
+                    <p>
+                        Things students can actively participate in
+                        while building their career.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="student-grid">
+
+
+                <article class="student-card">
+
+                    <div class="student-icon">
+                        💼
+                    </div>
+
+                    <h3>
+                        Internships
+                    </h3>
+
+                    <p>
+                        Discover internship opportunities and gain
+                        practical experience while studying.
+                    </p>
+
+                    <a
+                        href="https://internship.aicte-india.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Explore internships →
+                    </a>
+
+                </article>
+
+
+                <article class="student-card">
+
+                    <div class="student-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Hackathons
+                    </h3>
+
+                    <p>
+                        Build projects, solve real problems and
+                        practice teamwork through competitions.
+                    </p>
+
+                    <a href="https://news.ycombinator.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Explore tech community →
+                    </a>
+
+                </article>
+
+
+                <article class="student-card">
+
+                    <div class="student-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Scholarships
+                    </h3>
+
+                    <p>
+                        Track scholarship and financial-support
+                        opportunities relevant to your education.
+                    </p>
+
+                    <a href="explore.html">
+                        Explore education paths →
+                    </a>
+
+                </article>
+
+
+                <article class="student-card">
+
+                    <div class="student-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Projects & Events
+                    </h3>
+
+                    <p>
+                        Participate in projects, workshops,
+                        communities and learning events.
+                    </p>
+
+                    <a href="roadmap.html">
+                        Build through roadmap →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SOURCES
+        ========================= -->
+
+        <section class="source-section">
+
+            <h3>
+                About these updates
+            </h3>
+
+            <p>
+
+                Skill2Career collects selected information from
+                external public sources. The page does not claim
+                that every external update is an opportunity or
+                recommendation. Always open the original source
+                before acting on deadlines, eligibility,
+                applications or other important details.
+
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================= -->
+
+        <section class="cta">
+
+            <h2>
+                Information becomes useful when you act on it.
+            </h2>
+
+            <p>
+                Find a career direction and turn it into a learning path.
+            </p>
+
+            <a href="roadmap.html">
+                Explore Roadmaps
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+
+            <strong>
+                Skill2Career
+            </strong>
+
+            — Explore careers. Understand courses. Build skills.
+
+        </p>
+
+        <p style="margin-top:10px;font-size:12px;">
+
+            External information is provided by third-party sources.
+
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        const updatesGrid =
+            document.getElementById("updatesGrid");
+
+        const lastUpdated =
+            document.getElementById("lastUpdated");
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const refreshBtn =
+            document.getElementById("refreshBtn");
+
+
+        let allUpdates = [];
+
+        let currentFilter = "all";
+
+        let searchText = "";
+
+
+        /* =====================================================
+           FALLBACK STUDENT DATA
+
+           These are NOT presented as live opportunities.
+           They explain the kinds of activities students
+           should watch for.
+        ===================================================== */
+
+        const studentActivities = [
+
+            {
+                title: "Internship Opportunities",
+
+                description:
+                    "Look for internships related to your course, skills and target career.",
+
+                type: "student",
+
+                category: "student",
+
+                source: "AICTE National Internship Portal",
+
+                url:
+                    "https://internship.aicte-india.org/",
+
+                date: null
+            },
+
+            {
+                title: "Build a Portfolio Project",
+
+                description:
+                    "Turn your learning into a practical project that demonstrates your skills.",
+
+                type: "student",
+
+                category: "student",
+
+                source: "Skill2Career",
+
+                url:
+                    "roadmap.html",
+
+                date: null
+            },
+
+            {
+                title: "Join a Technical Competition",
+
+                description:
+                    "Practice problem solving through hackathons, coding competitions and challenges.",
+
+                type: "student",
+
+                category: "student",
+
+                source: "Skill2Career",
+
+                url:
+                    "explore.html",
+
+                date: null
+            },
+
+            {
+                title: "Attend Workshops & Events",
+
+                description:
+                    "Use workshops and events to explore technologies and understand real-world applications.",
+
+                type: "student",
+
+                category: "student",
+
+                source: "Skill2Career",
+
+                url:
+                    "explore.html",
+
+                date: null
+            }
+
+        ];
+
+
+        /* =====================================================
+           HACKER NEWS API
+
+           Official public API.
+        ===================================================== */
+
+        async function getDeveloperUpdates() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        "https://hacker-news.firebaseio.com/v0/newstories.json"
+                    );
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Hacker News request failed"
+                    );
+
+                }
+
+                const ids =
+                    await response.json();
+
+
+                const selectedIds =
+                    ids.slice(0, 15);
+
+
+                const stories =
+                    await Promise.all(
+
+                        selectedIds.map(
+                            async id => {
+
+                                try {
+
+                                    const response =
+                                        await fetch(
+                                            `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+                                        );
+
+                                    return await response.json();
+
+                                } catch {
+
+                                    return null;
+
+                                }
+
+                            }
+                        )
+
+                    );
+
+
+                return stories
+
+                    .filter(
+                        story =>
+                            story &&
+                            story.title
+                    )
+
+                    .map(story => ({
+
+                        title:
+                            story.title,
+
+                        description:
+                            "A fresh developer or technology discussion from Hacker News.",
+
+                        url:
+                            story.url ||
+                            `https://news.ycombinator.com/item?id=${story.id}`,
+
+                        date:
+                            story.time
+                                ? new Date(
+                                    story.time * 1000
+                                ).toISOString()
+                                : null,
+
+                        source:
+                            "Hacker News",
+
+                        type:
+                            "developer",
+
+                        category:
+                            "developer"
+
+                    }));
+
+
+            } catch (error) {
+
+                console.error(
+                    "Developer API error:",
+                    error
+                );
+
+                return [];
+
+            }
+
+        }
+
+
+        /* =====================================================
+           TECHNOLOGY / GENERAL NEWS
+
+           Guardian's keyless access historically supports
+           headlines, tags and metadata. Because API access
+           policies can change, this endpoint is treated as
+           optional rather than required.
+        ===================================================== */
+
+        async function getTechnologyUpdates() {
+
+            try {
+
+                const url =
+                    "https://content.guardianapis.com/search" +
+                    "?section=technology" +
+                    "&order-by=newest" +
+                    "&page-size=10" +
+                    "&show-fields=trailText" +
+                    "&api-key=test";
+
+                const response =
+                    await fetch(url);
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Technology API unavailable"
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                const results =
+                    data?.response?.results || [];
+
+
+                return results.map(
+                    item => ({
+
+                        title:
+                            item.webTitle,
+
+                        description:
+                            item.fields?.trailText ||
+                            "Latest technology-related update.",
+
+                        url:
+                            item.webUrl,
+
+                        date:
+                            item.webPublicationDate,
+
+                        source:
+                            "The Guardian",
+
+                        type:
+                            "technology",
+
+                        category:
+                            "technology"
+
+                    })
+                );
+
+
+            } catch (error) {
+
+                console.log(
+                    "Technology feed unavailable:",
+                    error
+                );
+
+                return [];
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CAREER DATA
+
+           This creates career-focused entries from the
+           available live developer feed while clearly
+           labelling the source.
+        ===================================================== */
+
+        async function getCareerUpdates() {
+
+            const developerUpdates =
+                await getDeveloperUpdates();
+
+
+            return developerUpdates
+
+                .filter(update => {
+
+                    const text =
+                        (
+                            update.title +
+                            " " +
+                            update.description
+                        ).toLowerCase();
+
+
+                    return (
+
+                        text.includes("job") ||
+                        text.includes("career") ||
+                        text.includes("work") ||
+                        text.includes("hiring") ||
+                        text.includes("intern")
+
+                    );
+
+                })
+
+                .map(update => ({
+
+                    ...update,
+
+                    type:
+                        "career",
+
+                    category:
+                        "career"
+
+                }));
+
+        }
+
+
+        /* =====================================================
+           DATE
+        ===================================================== */
+
+        function formatDate(date) {
+
+            if (!date) {
+
+                return "Activity";
+
+            }
+
+
+            const parsed =
+                new Date(date);
+
+
+            if (
+                Number.isNaN(
+                    parsed.getTime()
+                )
+            ) {
+
+                return "Recently";
+
+            }
+
+
+            return parsed.toLocaleDateString(
+                "en-IN",
+                {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           ESCAPE
+        ===================================================== */
+
+        function escapeHTML(value) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent =
+                value || "";
+
+            return div.innerHTML;
+
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        function createUpdateCard(update) {
+
+            return `
+
+                <article
+                    class="update-card"
+                    data-category="${escapeHTML(
+                        update.category
+                    )}"
+                >
+
+                    <div class="update-top">
+
+                        <span class="update-type">
+
+                            ${escapeHTML(
+                                update.type
+                            )}
+
+                        </span>
+
+
+                        <span class="update-date">
+
+                            ${formatDate(
+                                update.date
+                            )}
+
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        ${escapeHTML(
+                            update.title
+                        )}
+
+                    </h3>
+
+
+                    <p>
+
+                        ${escapeHTML(
+                            update.description
+                        )}
+
+                    </p>
+
+
+                    <div class="update-bottom">
+
+                        <span class="source">
+
+                            SOURCE:
+                            ${escapeHTML(
+                                update.source
+                            )}
+
+                        </span>
+
+
+                        <a
+                            class="read-more"
+                            href="${escapeHTML(
+                                update.url
+                            )}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            Read →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           FILTER
+        ===================================================== */
+
+        function displayUpdates() {
+
+            let filtered =
+                allUpdates;
+
+
+            if (
+                currentFilter !== "all"
+            ) {
+
+                filtered =
+                    filtered.filter(
+                        update =>
+                            update.category ===
+                            currentFilter
+                    );
+
+            }
+
+
+            if (searchText) {
+
+                filtered =
+                    filtered.filter(
+                        update => {
+
+                            const text =
+                                (
+                                    update.title +
+                                    " " +
+                                    update.description +
+                                    " " +
+                                    update.source
+                                ).toLowerCase();
+
+
+                            return text.includes(
+                                searchText
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            if (!filtered.length) {
+
+                updatesGrid.innerHTML = `
+
+                    <div class="empty">
+
+                        No updates found for
+                        your current filter.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            updatesGrid.innerHTML =
+
+                filtered
+
+                    .slice(0, 18)
+
+                    .map(
+                        createUpdateCard
+                    )
+
+                    .join("");
+
+        }
+
+
+        /* =====================================================
+           LOAD
+        ===================================================== */
+
+        async function loadUpdates() {
+
+            updatesGrid.innerHTML = `
+
+                <div class="loading">
+
+                    <div class="loader"></div>
+
+                    Fetching fresh updates...
+
+                </div>
+
+            `;
+
+
+            lastUpdated.textContent =
+                "Fetching fresh information...";
+
+
+            const results =
+                await Promise.allSettled([
+
+                    getDeveloperUpdates(),
+
+                    getTechnologyUpdates(),
+
+                    getCareerUpdates()
+
+                ]);
+
+
+            allUpdates = [];
+
+
+            results.forEach(
+                result => {
+
+                    if (
+                        result.status ===
+                        "fulfilled"
+                    ) {
+
+                        allUpdates.push(
+                            ...result.value
+                        );
+
+                    }
+
+                }
+            );
+
+
+            /*
+             Add student activity information.
+             These are useful activity cards,
+             not claims of live openings.
+            */
+
+            allUpdates.push(
+                ...studentActivities
+            );
+
+
+            /*
+             Remove duplicate titles.
+            */
+
+            const titles =
+                new Set();
+
+
+            allUpdates =
+                allUpdates.filter(
+                    update => {
+
+                        const key =
+                            update.title
+                                .toLowerCase()
+                                .trim();
+
+
+                        if (
+                            titles.has(key)
+                        ) {
+
+                            return false;
+
+                        }
+
+
+                        titles.add(key);
+
+                        return true;
+
+                    }
+                );
+
+
+            /*
+             Newest first.
+            */
+
+            allUpdates.sort(
+                (a, b) => {
+
+                    const aDate =
+                        a.date
+                            ? new Date(
+                                a.date
+                            ).getTime()
+                            : 0;
+
+
+                    const bDate =
+                        b.date
+                            ? new Date(
+                                b.date
+                            ).getTime()
+                            : 0;
+
+
+                    return bDate - aDate;
+
+                }
+            );
+
+
+            displayUpdates();
+
+
+            const now =
+                new Date()
+                    .toLocaleString(
+                        "en-IN",
+                        {
+                            dateStyle:
+                                "medium",
+
+                            timeStyle:
+                                "short"
+                        }
+                    );
+
+
+            lastUpdated.textContent =
+                `Live sources checked: ${now}`;
+
+        }
+
+
+        /* =====================================================
+           FILTER BUTTONS
+        ===================================================== */
+
+        document
+            .querySelectorAll(".filter-btn")
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        document
+                            .querySelectorAll(
+                                ".filter-btn"
+                            )
+                            .forEach(
+                                btn =>
+                                    btn.classList
+                                        .remove(
+                                            "active"
+                                        )
+                            );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        currentFilter =
+                            button.dataset.filter;
+
+
+                        displayUpdates();
+
+                    }
+                );
+
+            });
+
+
+        /* =====================================================
+           SEARCH
+        ===================================================== */
+
+        searchInput.addEventListener(
+            "input",
+            event => {
+
+                searchText =
+                    event.target.value
+                        .toLowerCase()
+                        .trim();
+
+
+                displayUpdates();
+
+            }
+        );
+
+
+        /* =====================================================
+           FIELD CARDS
+        ===================================================== */
+
+        document
+            .querySelectorAll(".field-card")
+            .forEach(card => {
+
+                card.addEventListener(
+                    "click",
+                    () => {
+
+                        const field =
+                            card.dataset.field;
+
+
+                        /*
+                        Student card directly activates
+                        student updates.
+                        */
+
+                        if (
+                            field === "student"
+                        ) {
+
+                            currentFilter =
+                                "student";
+
+                        } else {
+
+                            /*
+                            Technology is the only field
+                            currently backed by the public
+                            live feed. Other fields can be
+                            connected to dedicated sources
+                            later.
+                            */
+
+                            currentFilter =
+                                field ===
+                                "technology"
+                                    ? "technology"
+                                    : "all";
+
+                        }
+
+
+                        document
+                            .querySelectorAll(
+                                ".filter-btn"
+                            )
+                            .forEach(
+                                btn => {
+
+                                    btn.classList
+                                        .toggle(
+                                            "active",
+                                            btn.dataset
+                                                .filter ===
+                                            currentFilter
+                                        );
+
+                                }
+                            );
+
+
+                        document
+                            .getElementById(
+                                "updatesGrid"
+                            )
+                            .scrollIntoView({
+                                behavior: "smooth"
+                            });
+
+
+                        displayUpdates();
+
+                    }
+                );
+
+            });
+
+
+        /* =====================================================
+           REFRESH
+        ===================================================== */
+
+        refreshBtn.addEventListener(
+            "click",
+            loadUpdates
+        );
+
+
+        /* =====================================================
+           INITIAL LOAD
+        ===================================================== */
+
+        loadUpdates();
+
+    </script>
+
+</body>
+
+</html>
+

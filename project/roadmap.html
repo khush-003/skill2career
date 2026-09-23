@@ -1,0 +1,2750 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Roadmaps | Skill2Career</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f7faff;
+            color: #10243e;
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+            height: 72px;
+            padding: 0 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #e1ebf7;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1267d6;
+        }
+
+        .logo span {
+            color: #172b43;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5d7086;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1267d6;
+        }
+
+        .login {
+            padding: 8px 17px;
+
+            border: 1px solid #1267d6;
+            border-radius: 8px;
+
+            color: #1267d6 !important;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 590px;
+
+            padding: 105px 7% 90px;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(#e8f1fb 1px, transparent 1px),
+                linear-gradient(90deg, #e8f1fb 1px, transparent 1px);
+
+            background-size: 45px 45px;
+
+            background-color: #ffffff;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 550px;
+            height: 550px;
+
+            right: -130px;
+            top: 40px;
+
+            border-radius: 50%;
+
+            border: 1px solid #d3e4f8;
+
+            box-shadow:
+                0 0 0 45px rgba(17,103,216,0.025),
+                0 0 0 90px rgba(17,103,216,0.018);
+        }
+
+        .hero-content {
+            max-width: 760px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-flex;
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            background: #edf6ff;
+            border: 1px solid #cce2fa;
+
+            color: #1267d6;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 76px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #1267d6;
+        }
+
+        .hero-description {
+            max-width: 690px;
+
+            color: #647991;
+
+            font-size: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            text-decoration: none;
+
+            padding: 13px 21px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: #1267d6;
+            color: white;
+
+            box-shadow: 0 12px 28px rgba(18,103,214,0.2);
+        }
+
+        .btn-secondary {
+            background: white;
+
+            color: #1267d6;
+
+            border: 1px solid #cbdff5;
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        .section {
+            padding: 90px 7%;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin-bottom: 45px;
+        }
+
+        .section-tag {
+            color: #1267d6;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 9px;
+        }
+
+        .section-heading h2 {
+            font-size: 40px;
+            line-height: 1.15;
+
+            margin-bottom: 14px;
+        }
+
+        .section-heading p {
+            color: #6a7e94;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           HOW ROADMAP WORKS
+        ===================================================== */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 18px;
+        }
+
+        .process-card {
+            position: relative;
+
+            padding: 27px;
+
+            background: white;
+
+            border: 1px solid #dce8f5;
+
+            border-radius: 16px;
+
+            transition: 0.3s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #a9ccef;
+
+            box-shadow: 0 18px 35px rgba(28,78,130,0.08);
+        }
+
+        .process-number {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #eaf4ff;
+            color: #1267d6;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
+        }
+
+        .process-card h3 {
+            font-size: 18px;
+            margin-bottom: 9px;
+        }
+
+        .process-card p {
+            color: #6d8096;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           CAREER SELECTOR
+        ===================================================== */
+
+        .career-section {
+            background: #0b223d;
+            color: white;
+        }
+
+        .career-section .section-heading p {
+            color: #b5c7da;
+        }
+
+        .career-list {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px;
+        }
+
+        .career {
+            padding: 25px;
+
+            background: #102d4c;
+
+            border: 1px solid #294b6d;
+
+            border-radius: 16px;
+
+            transition: 0.3s;
+        }
+
+        .career:hover {
+            transform: translateY(-6px);
+
+            border-color: #62a9f4;
+
+            background: #123353;
+        }
+
+        .career-icon {
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .career h3 {
+            margin-bottom: 8px;
+        }
+
+        .career p {
+            color: #b8c9dc;
+
+            font-size: 13px;
+
+            margin-bottom: 18px;
+        }
+
+        .career a {
+            text-decoration: none;
+
+            color: #72b5ff;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           BLUEPRINT
+        ===================================================== */
+
+        .blueprint-area {
+            background: #ffffff;
+
+            position: relative;
+        }
+
+        .blueprint-title {
+            max-width: 850px;
+            margin-bottom: 55px;
+        }
+
+        .blueprint-title h2 {
+            font-size: 43px;
+            margin-bottom: 12px;
+        }
+
+        .blueprint-title p {
+            color: #687d93;
+        }
+
+        .blueprint {
+            max-width: 1100px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .blueprint-track {
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: repeating-linear-gradient(
+                to bottom,
+                #8ab8e8 0px,
+                #8ab8e8 8px,
+                transparent 8px,
+                transparent 17px
+            );
+
+            transform: translateX(-50%);
+        }
+
+        .blueprint-step {
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr 90px 1fr;
+
+            align-items: center;
+
+            margin-bottom: 55px;
+
+            position: relative;
+        }
+
+        .step-left {
+            grid-column: 1;
+        }
+
+        .step-right {
+            grid-column: 3;
+        }
+
+        .step-node {
+            grid-column: 2;
+
+            width: 72px;
+            height: 72px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: white;
+
+            border: 3px solid #1267d6;
+
+            color: #1267d6;
+
+            font-size: 17px;
+            font-weight: 800;
+
+            z-index: 2;
+
+            box-shadow:
+                0 0 0 9px #edf6ff;
+        }
+
+        .step-card {
+            padding: 28px;
+
+            background: #f8fbff;
+
+            border: 1px solid #dce8f5;
+
+            border-radius: 17px;
+
+            transition: 0.3s;
+        }
+
+        .step-card:hover {
+            border-color: #a9ccef;
+
+            box-shadow: 0 18px 35px rgba(22,75,125,0.08);
+
+            transform: translateY(-4px);
+        }
+
+        .step-label {
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: #e9f4ff;
+
+            color: #1267d6;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+        }
+
+        .step-card h3 {
+            font-size: 23px;
+
+            margin-bottom: 9px;
+        }
+
+        .step-card > p {
+            color: #637890;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .step-info {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 10px;
+        }
+
+        .info {
+            background: white;
+
+            border: 1px solid #e3edf7;
+
+            padding: 14px;
+
+            border-radius: 10px;
+        }
+
+        .info strong {
+            display: block;
+
+            color: #1267d6;
+
+            font-size: 11px;
+
+            margin-bottom: 5px;
+        }
+
+        .info span {
+            color: #647990;
+
+            font-size: 12px;
+        }
+
+        .checkpoint {
+            margin-top: 15px;
+
+            padding: 12px 15px;
+
+            background: #effaf4;
+
+            border-left: 4px solid #38a36a;
+
+            border-radius: 7px;
+
+            color: #47745b;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           CAREER JOURNEY
+        ===================================================== */
+
+        .journey-section {
+            background: #f2f7fc;
+        }
+
+        .journey {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(7,1fr);
+
+            align-items: center;
+        }
+
+        .journey-node {
+            text-align: center;
+        }
+
+        .journey-circle {
+            width: 65px;
+            height: 65px;
+
+            margin: auto auto 10px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: white;
+
+            border: 2px solid #bcd7f3;
+
+            color: #1267d6;
+
+            font-size: 20px;
+        }
+
+        .journey-node strong {
+            display: block;
+
+            font-size: 13px;
+        }
+
+        .journey-node span {
+            color: #74869a;
+
+            font-size: 11px;
+        }
+
+        .journey-arrow {
+            color: #1267d6;
+
+            font-size: 20px;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        .faq-section {
+            background: white;
+        }
+
+        .faq-wrapper {
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+        .faq-intro {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 45px;
+        }
+
+        .faq-intro h2 {
+            font-size: 42px;
+
+            margin-bottom: 12px;
+        }
+
+        .faq-intro p {
+            color: #6b7f94;
+        }
+
+        .faq-item {
+            background: #f9fbfe;
+
+            border: 1px solid #dce7f3;
+
+            border-radius: 13px;
+
+            margin-bottom: 12px;
+
+            overflow: hidden;
+
+            transition: 0.25s;
+        }
+
+        .faq-item:hover {
+            border-color: #b7d2ef;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+
+            padding: 20px 23px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            list-style: none;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            color: #19334f;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+
+            width: 28px;
+            height: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #eaf4ff;
+
+            color: #1267d6;
+
+            font-size: 18px;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 23px 22px;
+
+            color: #687d93;
+
+            font-size: 14px;
+
+            max-width: 820px;
+        }
+
+
+        /* =====================================================
+           BEGINNER GUIDE
+        ===================================================== */
+
+        .guide {
+            background: #f4f8fd;
+        }
+
+        .guide-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            background: #ffffff;
+
+            border: 1px solid #dbe7f4;
+
+            border-radius: 22px;
+
+            padding: 40px;
+        }
+
+        .guide-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 15px;
+        }
+
+        .guide-card {
+            padding: 22px;
+
+            background: #f8fbff;
+
+            border: 1px solid #e1ebf5;
+
+            border-radius: 13px;
+        }
+
+        .guide-card-number {
+            color: #1267d6;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 9px;
+        }
+
+        .guide-card h3 {
+            font-size: 16px;
+
+            margin-bottom: 7px;
+        }
+
+        .guide-card p {
+            color: #6b7f94;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            padding: 100px 7%;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                #0b223d;
+
+            background-size: 35px 35px;
+
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+
+            max-width: 750px;
+
+            margin: auto auto 14px;
+        }
+
+        .cta p {
+            max-width: 650px;
+
+            margin: auto auto 28px;
+
+            color: #b6c8da;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #07192c;
+
+            color: #9db0c4;
+
+            text-align: center;
+
+            padding: 28px;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width:1000px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .process {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .career-list {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .journey {
+                grid-template-columns: repeat(4,1fr);
+
+                gap: 20px;
+            }
+
+            .journey-arrow {
+                display: none;
+            }
+
+        }
+
+
+        @media(max-width:750px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 75px 5%;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section {
+                padding: 70px 5%;
+            }
+
+            .section-heading h2,
+            .blueprint-title h2,
+            .faq-intro h2 {
+                font-size: 32px;
+            }
+
+            .process,
+            .career-list,
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blueprint-track {
+                left: 28px;
+            }
+
+            .blueprint-step {
+                display: grid;
+
+                grid-template-columns: 55px 1fr;
+
+                gap: 15px;
+
+                margin-bottom: 35px;
+            }
+
+            .step-node {
+                grid-column: 1;
+
+                width: 55px;
+                height: 55px;
+
+                font-size: 13px;
+            }
+
+            .step-left,
+            .step-right {
+                grid-column: 2;
+            }
+
+            .step-card {
+                padding: 22px;
+            }
+
+            .step-info {
+                grid-template-columns: 1fr;
+            }
+
+            .journey {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .guide-container {
+                padding: 25px;
+            }
+
+            .cta h2 {
+                font-size: 31px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <nav>
+
+        <div class="logo"><a href="index.html">
+            Skill<span>2</span>Career</a>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="home.html">Home</a>
+
+            <a href="courses.html">Courses</a>
+
+            <a href="careers.html">Careers</a>
+
+            <a href="skills.html">Skills</a>
+
+            <a href="roadmaps.html" class="active">
+                Roadmaps
+            </a>
+
+            <a href="resources.html">Resources</a>
+
+            <a href="updates.html">Updates</a>
+
+            <a href="login.html" class="login">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                CAREER BLUEPRINT
+            </div>
+
+            <h1>
+                From
+                <span>where you are</span>
+                to where you want to go.
+            </h1>
+
+            <p class="hero-description">
+                Roadmaps turn a confusing career goal into a clear
+                learning journey. Understand what to learn, why you
+                need it, what to practice and what comes next.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#blueprint" class="btn-primary">
+                    Explore a Roadmap →
+                </a>
+
+                <a href="#faq" class="btn-secondary">
+                    I'm New Here
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HOW IT WORKS
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-tag">
+                HOW IT WORKS
+            </div>
+
+            <h2>
+                A roadmap answers one question at a time.
+            </h2>
+
+            <p>
+                Instead of overwhelming you with a long list of
+                technologies or courses, the roadmap breaks your
+                journey into smaller and understandable decisions.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Where am I going?
+                </h3>
+
+                <p>
+                    Understand the career, the work involved and
+                    what the destination actually looks like.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    What do I need?
+                </h3>
+
+                <p>
+                    Discover the knowledge, skills, courses and
+                    foundations connected to that career.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    How do I learn?
+                </h3>
+
+                <p>
+                    Follow a structured sequence of learning,
+                    practice and projects.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    What's next?
+                </h3>
+
+                <p>
+                    Identify your skill gaps and move toward
+                    projects, portfolio building and opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CAREER SELECTOR
+    ===================================================== -->
+
+    <section class="section career-section">
+
+        <div class="section-heading">
+
+            <div class="section-tag">
+                CHOOSE YOUR DESTINATION
+            </div>
+
+            <h2>
+                Which path are you exploring?
+            </h2>
+
+            <p>
+                Different careers require different combinations of
+                education, skills, practice and experience.
+            </p>
+
+        </div>
+
+
+        <div class="career-list">
+
+
+            <div class="career">
+
+                <div class="career-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Full Stack Developer
+                </h3>
+
+                <p>
+                    Build interfaces, backend systems, APIs,
+                    databases and complete web applications.
+                </p>
+
+                <a href="#blueprint">
+                    Explore path →
+                </a>
+
+            </div>
+
+
+            <div class="career">
+
+                <div class="career-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Data Analyst
+                </h3>
+
+                <p>
+                    Work with data, SQL, spreadsheets,
+                    visualization and analytical thinking.
+                </p>
+
+                <a href="#">
+                    Explore path →
+                </a>
+
+            </div>
+
+
+            <div class="career">
+
+                <div class="career-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    UI/UX Designer
+                </h3>
+
+                <p>
+                    Understand users, design interfaces,
+                    create wireframes and develop prototypes.
+                </p>
+
+                <a href="#">
+                    Explore path →
+                </a>
+
+            </div>
+
+
+            <div class="career">
+
+                <div class="career-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI / ML Engineer
+                </h3>
+
+                <p>
+                    Build foundations in programming, mathematics,
+                    data and machine learning.
+                </p>
+
+                <a href="#">
+                    Explore path →
+                </a>
+
+            </div>
+
+
+            <div class="career">
+
+                <div class="career-icon">
+                    ☁️
+                </div>
+
+                <h3>
+                    Cloud Engineer
+                </h3>
+
+                <p>
+                    Explore infrastructure, networking,
+                    cloud platforms and deployment.
+                </p>
+
+                <a href="#">
+                    Explore path →
+                </a>
+
+            </div>
+
+
+            <div class="career">
+
+                <div class="career-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Cybersecurity
+                </h3>
+
+                <p>
+                    Learn systems, networks, security concepts
+                    and defensive security practices.
+                </p>
+
+                <a href="#">
+                    Explore path →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BLUEPRINT
+    ===================================================== -->
+
+    <section class="section blueprint-area" id="blueprint">
+
+        <div class="blueprint-title">
+
+            <div class="section-tag">
+                CAREER BLUEPRINT
+            </div>
+
+            <h2>
+                Full Stack Developer
+            </h2>
+
+            <p>
+                Here's what a complete learning journey can look like.
+                Each stage tells you what to learn, why it matters,
+                what to practice and how to know when you're ready
+                to move forward.
+            </p>
+
+        </div>
+
+
+        <div class="blueprint">
+
+            <div class="blueprint-track"></div>
+
+
+            <!-- STEP 01 -->
+
+            <div class="blueprint-step">
+
+                <div class="step-left">
+
+                    <div class="step-card">
+
+                        <span class="step-label">
+                            START HERE
+                        </span>
+
+                        <h3>
+                            Understand the Career
+                        </h3>
+
+                        <p>
+                            Before learning technologies, understand
+                            what a Full Stack Developer actually does
+                            and how frontend, backend and databases
+                            fit together.
+                        </p>
+
+                        <div class="step-info">
+
+                            <div class="info">
+
+                                <strong>
+                                    LEARN
+                                </strong>
+
+                                <span>
+                                    Frontend, backend, APIs,
+                                    databases and deployment
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    WHY
+                                </strong>
+
+                                <span>
+                                    Know your destination before
+                                    choosing what to learn
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    EXPLORE
+                                </strong>
+
+                                <span>
+                                    Related courses and career roles
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    LEVEL
+                                </strong>
+
+                                <span>
+                                    Beginner
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkpoint">
+                            ✓ You should be able to explain what
+                            the career involves before moving ahead.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="step-node">
+                    01
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 02 -->
+
+            <div class="blueprint-step">
+
+                <div class="step-node">
+                    02
+                </div>
+
+                <div class="step-right">
+
+                    <div class="step-card">
+
+                        <span class="step-label">
+                            FOUNDATION
+                        </span>
+
+                        <h3>
+                            Learn Web Basics
+                        </h3>
+
+                        <p>
+                            Learn how websites are structured,
+                            styled and made responsive.
+                        </p>
+
+                        <div class="step-info">
+
+                            <div class="info">
+
+                                <strong>
+                                    LEARN
+                                </strong>
+
+                                <span>
+                                    HTML, CSS, Flexbox,
+                                    Grid and responsive design
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    BUILD
+                                </strong>
+
+                                <span>
+                                    Landing pages,
+                                    portfolios and websites
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    SKILLS
+                                </strong>
+
+                                <span>
+                                    Layout, styling and
+                                    responsive design
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    LEVEL
+                                </strong>
+
+                                <span>
+                                    Beginner
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkpoint">
+                            ✓ You are ready when you can create
+                            a responsive webpage independently.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 03 -->
+
+            <div class="blueprint-step">
+
+                <div class="step-left">
+
+                    <div class="step-card">
+
+                        <span class="step-label">
+                            PROGRAMMING
+                        </span>
+
+                        <h3>
+                            JavaScript & Logic
+                        </h3>
+
+                        <p>
+                            Move from static pages to interactive
+                            applications and start developing
+                            programming logic.
+                        </p>
+
+                        <div class="step-info">
+
+                            <div class="info">
+
+                                <strong>
+                                    LEARN
+                                </strong>
+
+                                <span>
+                                    Variables, conditions,
+                                    loops, functions and arrays
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    THEN
+                                </strong>
+
+                                <span>
+                                    DOM, events, APIs,
+                                    JSON and asynchronous JavaScript
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    PRACTICE
+                                </strong>
+
+                                <span>
+                                    Games, todo apps,
+                                    calculators and API projects
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    SUPPORT
+                                </strong>
+
+                                <span>
+                                    Git, GitHub and basic DSA
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkpoint">
+                            ✓ Move ahead when you can build
+                            interactive applications and solve
+                            basic programming problems.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="step-node">
+                    03
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 04 -->
+
+            <div class="blueprint-step">
+
+                <div class="step-node">
+                    04
+                </div>
+
+                <div class="step-right">
+
+                    <div class="step-card">
+
+                        <span class="step-label">
+                            SPECIALIZATION
+                        </span>
+
+                        <h3>
+                            Frontend Development
+                        </h3>
+
+                        <p>
+                            Learn how modern frontend applications
+                            are structured using reusable components
+                            and application state.
+                        </p>
+
+                        <div class="step-info">
+
+                            <div class="info">
+
+                                <strong>
+                                    LEARN
+                                </strong>
+
+                                <span>
+                                    React, JSX, components,
+                                    props and hooks
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    PRACTICE
+                                </strong>
+
+                                <span>
+                                    Dashboards,
+                                    ecommerce and task applications
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    SKILLS
+                                </strong>
+
+                                <span>
+                                    Components, routing
+                                    and state management
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    LEVEL
+                                </strong>
+
+                                <span>
+                                    Intermediate
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkpoint">
+                            ✓ Build a multi-page frontend application
+                            before moving to backend development.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 05 -->
+
+            <div class="blueprint-step">
+
+                <div class="step-left">
+
+                    <div class="step-card">
+
+                        <span class="step-label">
+                            BACKEND
+                        </span>
+
+                        <h3>
+                            Backend & Databases
+                        </h3>
+
+                        <p>
+                            Understand what happens behind the interface:
+                            servers, APIs, authentication and data.
+                        </p>
+
+                        <div class="step-info">
+
+                            <div class="info">
+
+                                <strong>
+                                    LEARN
+                                </strong>
+
+                                <span>
+                                    Node.js, Express,
+                                    REST APIs and authentication
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    DATABASE
+                                </strong>
+
+                                <span>
+                                    SQL, database design
+                                    and CRUD operations
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    BUILD
+                                </strong>
+
+                                <span>
+                                    Login systems,
+                                    APIs and full stack applications
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    LEVEL
+                                </strong>
+
+                                <span>
+                                    Intermediate
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkpoint">
+                            ✓ Connect your frontend to a backend
+                            and store/retrieve real data.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="step-node">
+                    05
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 06 -->
+
+            <div class="blueprint-step">
+
+                <div class="step-node">
+                    06
+                </div>
+
+                <div class="step-right">
+
+                    <div class="step-card">
+
+                        <span class="step-label">
+                            BUILD
+                        </span>
+
+                        <h3>
+                            Real Projects
+                        </h3>
+
+                        <p>
+                            Projects are where your learning becomes
+                            something you can demonstrate and explain.
+                        </p>
+
+                        <div class="step-info">
+
+                            <div class="info">
+
+                                <strong>
+                                    BUILD
+                                </strong>
+
+                                <span>
+                                    Ecommerce, dashboards,
+                                    learning or booking applications
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    INCLUDE
+                                </strong>
+
+                                <span>
+                                    APIs, authentication,
+                                    database and responsive UI
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    SHOW
+                                </strong>
+
+                                <span>
+                                    GitHub, live project
+                                    and project explanation
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    GOAL
+                                </strong>
+
+                                <span>
+                                    Demonstrate practical ability
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkpoint">
+                            ✓ You should be able to plan, build,
+                            debug and explain your projects.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STEP 07 -->
+
+            <div class="blueprint-step">
+
+                <div class="step-left">
+
+                    <div class="step-card">
+
+                        <span class="step-label">
+                            CAREER READY
+                        </span>
+
+                        <h3>
+                            Portfolio & Opportunities
+                        </h3>
+
+                        <p>
+                            Present what you have learned and identify
+                            the areas that still need improvement.
+                        </p>
+
+                        <div class="step-info">
+
+                            <div class="info">
+
+                                <strong>
+                                    PREPARE
+                                </strong>
+
+                                <span>
+                                    Portfolio, resume,
+                                    GitHub and interview preparation
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    CHECK
+                                </strong>
+
+                                <span>
+                                    Skill gaps and weak areas
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    EXPLORE
+                                </strong>
+
+                                <span>
+                                    Internships, jobs,
+                                    certifications or higher study
+                                </span>
+
+                            </div>
+
+                            <div class="info">
+
+                                <strong>
+                                    NEXT
+                                </strong>
+
+                                <span>
+                                    Keep improving and specializing
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="checkpoint">
+                            🚀 The roadmap does not end here.
+                            Your next stage can be specialization,
+                            experience or continuous learning.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="step-node">
+                    07
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PLATFORM JOURNEY
+    ===================================================== -->
+
+    <section class="section journey-section">
+
+        <div class="section-heading">
+
+            <div class="section-tag">
+                THE SKILL2CAREER JOURNEY
+            </div>
+
+            <h2>
+                One platform. One connected journey.
+            </h2>
+
+            <p>
+                Skill2Career connects the questions students usually
+                have while planning their education and career.
+            </p>
+
+        </div>
+
+
+        <div class="journey">
+
+            <div class="journey-node">
+
+                <div class="journey-circle">
+                    🎯
+                </div>
+
+                <strong>
+                    Career
+                </strong>
+
+                <span>
+                    Where do I want to go?
+                </span>
+
+            </div>
+
+
+            <div class="journey-arrow">
+                →
+            </div>
+
+
+            <div class="journey-node">
+
+                <div class="journey-circle">
+                    🎓
+                </div>
+
+                <strong>
+                    Courses
+                </strong>
+
+                <span>
+                    What can I study?
+                </span>
+
+            </div>
+
+
+            <div class="journey-arrow">
+                →
+            </div>
+
+
+            <div class="journey-node">
+
+                <div class="journey-circle">
+                    🧠
+                </div>
+
+                <strong>
+                    Skills
+                </strong>
+
+                <span>
+                    What do I need?
+                </span>
+
+            </div>
+
+
+            <div class="journey-arrow">
+                →
+            </div>
+
+
+            <div class="journey-node">
+
+                <div class="journey-circle">
+                    🗺️
+                </div>
+
+                <strong>
+                    Roadmap
+                </strong>
+
+                <span>
+                    How do I learn?
+                </span>
+
+            </div>
+
+
+            <div class="journey-arrow">
+                →
+            </div>
+
+
+            <div class="journey-node">
+
+                <div class="journey-circle">
+                    📚
+                </div>
+
+                <strong>
+                    Resources
+                </strong>
+
+                <span>
+                    Where can I learn?
+                </span>
+
+            </div>
+
+
+            <div class="journey-arrow">
+                →
+            </div>
+
+
+            <div class="journey-node">
+
+                <div class="journey-circle">
+                    🛠️
+                </div>
+
+                <strong>
+                    Projects
+                </strong>
+
+                <span>
+                    Can I apply it?
+                </span>
+
+            </div>
+
+
+            <div class="journey-arrow">
+                →
+            </div>
+
+
+            <div class="journey-node">
+
+                <div class="journey-circle">
+                    🚀
+                </div>
+
+                <strong>
+                    Opportunities
+                </strong>
+
+                <span>
+                    What's next?
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+    ===================================================== -->
+
+    <section class="section faq-section" id="faq">
+
+        <div class="faq-wrapper">
+
+            <div class="faq-intro">
+
+                <div class="section-tag">
+                    NEW TO CAREER PLANNING?
+                </div>
+
+                <h2>
+                    Let's clear up the basics.
+                </h2>
+
+                <p>
+                    You don't need to understand everything before
+                    using Skill2Career. Start with the questions
+                    you already have.
+                </p>
+
+            </div>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is Skill2Career?
+                </summary>
+
+                <div class="faq-answer">
+                    Skill2Career is a career exploration and learning
+                    guidance platform. It brings careers, courses,
+                    skills, roadmaps and learning resources together
+                    so students can understand their possible paths
+                    more clearly.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What problem is Skill2Career trying to solve?
+                </summary>
+
+                <div class="faq-answer">
+                    Career information is often scattered across
+                    different websites and resources. A student may
+                    know the name of a course but not know what careers
+                    it can lead to, which skills are useful, or what
+                    they should learn next. Skill2Career connects
+                    these pieces.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Who can use Skill2Career?
+                </summary>
+
+                <div class="faq-answer">
+                    Students and learners exploring education,
+                    careers, skills or learning paths can use the
+                    platform to organize their exploration and
+                    understand possible next steps.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is a career?
+                </summary>
+
+                <div class="faq-answer">
+                    A career represents the type of professional work
+                    a person may pursue. A career page can explain
+                    what the role involves, typical activities,
+                    skills, education paths and related opportunities.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is a course?
+                </summary>
+
+                <div class="faq-answer">
+                    A course is a structured learning or educational
+                    path. It can be a degree, diploma, certificate,
+                    professional program or another form of education.
+                    Different courses can connect to different careers.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is a skill?
+                </summary>
+
+                <div class="faq-answer">
+                    A skill is an ability that you develop through
+                    learning and practice. Different careers require
+                    different combinations of technical, analytical,
+                    creative, communication or other skills.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Why do I need a roadmap?
+                </summary>
+
+                <div class="faq-answer">
+                    A roadmap helps organize learning. Instead of
+                    asking "What should I learn next?" every time,
+                    you can see how foundational knowledge, skills,
+                    practice and projects can fit together.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Is a roadmap the same as a course?
+                </summary>
+
+                <div class="faq-answer">
+                    No. A course is something you study. A roadmap
+                    is a structured path that can connect multiple
+                    courses, skills, resources and projects toward
+                    a particular goal.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Do I need a degree for every career?
+                </summary>
+
+                <div class="faq-answer">
+                    Different careers have different education and
+                    qualification requirements. Some may require
+                    specific qualifications, while other roles can
+                    place significant emphasis on skills, experience,
+                    projects or certifications. The requirements
+                    should be checked for the specific career.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What if I don't know which career to choose?
+                </summary>
+
+                <div class="faq-answer">
+                    You can start by exploring different career areas,
+                    understanding what the work involves, looking at
+                    required skills and checking possible education
+                    paths. You do not need to know your final career
+                    before beginning the exploration process.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Can I change my roadmap later?
+                </summary>
+
+                <div class="faq-answer">
+                    Yes. Your learning path can change as your interests,
+                    skills and goals change. Exploring another career
+                    can also reveal skills that overlap with what you
+                    have already learned.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Why are projects part of the roadmap?
+                </summary>
+
+                <div class="faq-answer">
+                    Projects allow you to apply concepts instead of
+                    only reading or watching lessons. They can help
+                    you identify gaps in your understanding and can
+                    eventually demonstrate your practical skills.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What are resources?
+                </summary>
+
+                <div class="faq-answer">
+                    Resources are learning materials connected to a
+                    career, course, skill or roadmap stage. They can
+                    include tutorials, documentation, books, videos,
+                    practice platforms and other references. The
+                    platform can also display the source of each
+                    resource.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is Skill Gap Analysis?
+                </summary>
+
+                <div class="faq-answer">
+                    Skill Gap Analysis helps identify the difference
+                    between skills associated with a target career
+                    and the skills a learner currently has. This can
+                    help identify areas that may need more learning
+                    or practice.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is the Decision Matrix?
+                </summary>
+
+                <div class="faq-answer">
+                    The Decision Matrix is a structured decision-support
+                    feature. It can help organize factors such as career
+                    goals, current skills, time, financial priorities,
+                    specialization needs and alternative paths when
+                    comparing education or career options.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Where should I start if I am completely confused?
+                </summary>
+
+                <div class="faq-answer">
+                    Start with Careers. Understand what different
+                    careers involve, then explore the skills associated
+                    with the careers that interest you. After that,
+                    look at courses and roadmaps to understand possible
+                    learning paths.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Does following a roadmap guarantee a job?
+                </summary>
+
+                <div class="faq-answer">
+                    No. A roadmap is a planning and learning tool.
+                    Career outcomes depend on many factors including
+                    skills, qualifications, experience, projects,
+                    hiring requirements and individual circumstances.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Is Skill2Career itself a learning platform?
+                </summary>
+
+                <div class="faq-answer">
+                    Its primary purpose is to organize career and
+                    learning guidance. It can connect users to useful
+                    resources while helping them understand careers,
+                    courses, skills and learning paths. It does not
+                    need to replace dedicated learning platforms.
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+                    How should I use Skill2Career?
+                </summary>
+
+                <div class="faq-answer">
+                    A simple journey is:
+                    explore a career → understand its requirements →
+                    explore courses → identify skills → follow a
+                    roadmap → use resources → build projects →
+                    review skill gaps → prepare for your next step.
+                </div>
+
+            </details>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BEGINNER GUIDE
+    ===================================================== -->
+
+    <section class="section guide">
+
+        <div class="section-heading">
+
+            <div class="section-tag">
+                YOUR STARTING POINT
+            </div>
+
+            <h2>
+                You don't have to figure everything out at once.
+            </h2>
+
+            <p>
+                Start with the question that matters to you right now.
+                Skill2Career can then guide you toward the next question.
+            </p>
+
+        </div>
+
+
+        <div class="guide-container">
+
+            <div class="guide-grid">
+
+                <div class="guide-card">
+
+                    <div class="guide-card-number">
+                        01 — CAREER
+                    </div>
+
+                    <h3>
+                        What can I become?
+                    </h3>
+
+                    <p>
+                        Explore careers and understand what
+                        professionals actually do.
+                    </p>
+
+                </div>
+
+
+                <div class="guide-card">
+
+                    <div class="guide-card-number">
+                        02 — COURSE
+                    </div>
+
+                    <h3>
+                        What can I study?
+                    </h3>
+
+                    <p>
+                        Explore degree, diploma, certificate,
+                        professional and integrated paths.
+                    </p>
+
+                </div>
+
+
+                <div class="guide-card">
+
+                    <div class="guide-card-number">
+                        03 — SKILLS
+                    </div>
+
+                    <h3>
+                        What do I need?
+                    </h3>
+
+                    <p>
+                        Understand the skills connected to
+                        your selected career.
+                    </p>
+
+                </div>
+
+
+                <div class="guide-card">
+
+                    <div class="guide-card-number">
+                        04 — ROADMAP
+                    </div>
+
+                    <h3>
+                        What should I learn first?
+                    </h3>
+
+                    <p>
+                        Follow a structured learning sequence
+                        instead of learning randomly.
+                    </p>
+
+                </div>
+
+
+                <div class="guide-card">
+
+                    <div class="guide-card-number">
+                        05 — RESOURCES
+                    </div>
+
+                    <h3>
+                        Where can I learn?
+                    </h3>
+
+                    <p>
+                        Find learning materials connected
+                        to your selected path.
+                    </p>
+
+                </div>
+
+
+                <div class="guide-card">
+
+                    <div class="guide-card-number">
+                        06 — NEXT STEP
+                    </div>
+
+                    <h3>
+                        What should I do now?
+                    </h3>
+
+                    <p>
+                        Use projects, skill-gap analysis and
+                        career preparation to move forward.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ===================================================== -->
+
+    <section class="cta">
+
+        <h2>
+            Start with a destination. Build your path.
+        </h2>
+
+        <p>
+            You don't need to know everything today.
+            You just need to know what you want to understand next.
+        </p>
+
+        <a href="careers.html" class="btn-primary">
+            Explore Careers →
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        © 2026 Skill2Career — Explore. Learn. Build. Move Forward.
+
+    </footer>
+
+
+</body>
+
+</html>
+```
