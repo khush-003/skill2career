@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Skill2Career</title>
+
+    <style>
+        
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7faff;
+    color: #172033;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+
+    background: #ffffff;
+
+    padding: 42px;
+
+    border: 1px solid #e4eaf2;
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(18, 100, 232, 0.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.logo {
+    display: inline-block;
+
+    margin-bottom: 28px;
+
+    color: #172033;
+    text-decoration: none;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+.logo span {
+    color: #1264e8;
+}
+
+
+.login-header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+.login-header p {
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d9e0ea;
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+
+.form-group input:focus {
+    border-color: #1264e8;
+
+    box-shadow: 0 0 0 3px rgba(18, 100, 232, 0.1);
+}
+
+/* =========================
+   LOGIN MESSAGE
+========================= */
+
+.login-message {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    min-height: 20px;
+}
+
+.login-message.error {
+    color: #dc2626;
+}
+
+.login-message.success {
+    color: #16a34a;
+}
+
+
+/* =========================
+   SHOW PASSWORD
+========================= */
+
+.show-password {
+    border: none;
+
+    background: none;
+
+    color: #1264e8;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    padding: 0;
+}
+
+.show-password:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   DISABLED LOGIN BUTTON
+========================= */
+
+.login-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+
+/* =========================
+   PASSWORD LABEL
+========================= */
+
+.password-label {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.password-label a {
+    color: #1264e8;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   REMEMBER ME
+========================= */
+
+.remember-me {
+    margin-bottom: 22px;
+
+    font-size: 14px;
+    color: #596273;
+}
+
+
+.remember-me label {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #1264e8;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.login-btn:hover {
+    background: #0d55c7;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+    color: #9aa3b2;
+
+    font-size: 13px;
+}
+
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e4e8ef;
+}
+
+
+/* =========================
+   SIGNUP
+========================= */
+
+.signup-text {
+    text-align: center;
+
+    color: #687385;
+
+    font-size: 14px;
+}
+
+
+.signup-text a {
+    color: #1264e8;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   GUEST ACCESS
+========================= */
+
+.guest-access {
+    text-align: center;
+
+    margin-top: 22px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+
+.guest-access a {
+    color: #4d596b;
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+
+.guest-access a:hover,
+.signup-text a:hover,
+.password-label a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 18px;
+    }
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .login-header h1 {
+        font-size: 26px;
+    }
+
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <div class="login-header">
+
+                <a href="index.html" class="logo">
+                    Skill<span>2</span>Career
+                </a>
+
+                <h1>Welcome back</h1>
+
+                <p>
+                    Login to continue your career exploration journey.
+                </p>
+
+            </div>
+
+
+            <form class="login-form">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="password-label">
+                        <label for="password">Password</label>
+
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="remember-me">
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+
+                </div>
+
+
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+
+            <div class="signup-text">
+                Don't have an account?
+                <a href="signup.html">Create an account</a>
+            </div>
+
+
+            <div class="guest-access">
+                <a href="index.html">
+                    Continue without an account →
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+<script>
+
+// =====================================================
+// LOGIN FORM
+// =====================================================
+
+const loginForm = document.querySelector(".login-form");
+
+const emailInput = document.querySelector("#email");
+
+const passwordInput = document.querySelector("#password");
+
+const loginButton = document.querySelector(".login-btn");
+
+const rememberCheckbox = document.querySelector(
+    '.remember-me input[type="checkbox"]'
+);
+
+
+// =====================================================
+// CREATE ERROR MESSAGE
+// =====================================================
+
+const message = document.createElement("p");
+
+message.className = "login-message";
+
+loginForm.appendChild(message);
+
+
+// =====================================================
+// PASSWORD VISIBILITY
+// =====================================================
+
+const passwordLabel = document.querySelector(".password-label");
+
+const showPassword = document.createElement("button");
+
+showPassword.type = "button";
+
+showPassword.textContent = "Show";
+
+showPassword.className = "show-password";
+
+passwordLabel.appendChild(showPassword);
+
+
+showPassword.addEventListener("click", () => {
+
+    if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+
+        showPassword.textContent = "Hide";
+
+    } else {
+
+        passwordInput.type = "password";
+
+        showPassword.textContent = "Show";
+
+    }
+
+});
+
+
+// =====================================================
+// EMAIL VALIDATION
+// =====================================================
+
+function isValidEmail(email) {
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailPattern.test(email);
+}
+
+
+// =====================================================
+// SHOW MESSAGE
+// =====================================================
+
+function showMessage(text, type) {
+
+    message.textContent = text;
+
+    message.className = `login-message ${type}`;
+
+}
+
+
+// =====================================================
+// CLEAR MESSAGE
+// =====================================================
+
+function clearMessage() {
+
+    message.textContent = "";
+
+    message.className = "login-message";
+
+}
+
+
+// =====================================================
+// LOAD REMEMBERED EMAIL
+// =====================================================
+
+const savedEmail = localStorage.getItem("skill2careerEmail");
+
+
+if (savedEmail) {
+
+    emailInput.value = savedEmail;
+
+    rememberCheckbox.checked = true;
+
+}
+
+
+// =====================================================
+// CLEAR MESSAGE WHEN USER TYPES
+// =====================================================
+
+emailInput.addEventListener("input", clearMessage);
+
+passwordInput.addEventListener("input", clearMessage);
+
+
+// =====================================================
+// LOGIN FORM SUBMIT
+// =====================================================
+
+loginForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+
+    const email = emailInput.value.trim();
+
+    const password = passwordInput.value.trim();
+
+
+    // -------------------------------------------------
+    // EMPTY FIELD VALIDATION
+    // -------------------------------------------------
+
+    if (!email || !password) {
+
+        showMessage(
+            "Please enter your email and password.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // -------------------------------------------------
+    // EMAIL VALIDATION
+    // -------------------------------------------------
+
+    if (!isValidEmail(email)) {
+
+        showMessage(
+            "Please enter a valid email address.",
+            "error"
+        );
+
+        emailInput.focus();
+
+        return;
+    }
+
+
+    // -------------------------------------------------
+    // PASSWORD VALIDATION
+    // -------------------------------------------------
+
+    if (password.length < 6) {
+
+        showMessage(
+            "Password must contain at least 6 characters.",
+            "error"
+        );
+
+        passwordInput.focus();
+
+        return;
+    }
+
+
+    // -------------------------------------------------
+    // REMEMBER EMAIL
+    // -------------------------------------------------
+
+    if (rememberCheckbox.checked) {
+
+        localStorage.setItem(
+            "skill2careerEmail",
+            email
+        );
+
+    } else {
+
+        localStorage.removeItem(
+            "skill2careerEmail"
+        );
+
+    }
+
+
+    // -------------------------------------------------
+    // LOGIN LOADING STATE
+    // -------------------------------------------------
+
+    loginButton.disabled = true;
+
+    loginButton.textContent = "Logging in...";
+
+
+    // -------------------------------------------------
+    // DEMO LOGIN
+    // -------------------------------------------------
+
+    setTimeout(() => {
+
+        showMessage(
+            "Login successful! Redirecting...",
+            "success"
+        );
+
+
+        // Demo user information
+        localStorage.setItem(
+            "skill2careerLoggedIn",
+            "true"
+        );
+
+
+        localStorage.setItem(
+            "skill2careerUser",
+            email
+        );
+
+
+        // Redirect to homepage
+        setTimeout(() => {
+
+            window.location.href = "index.html";
+
+        }, 1000);
+
+
+    }, 800);
+
+});
+
+
+</script>
+</body>
+
+</html>
+
