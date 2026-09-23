@@ -1,0 +1,6724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Skill2Career</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+   <style>
+    /* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f7faff;
+    color: #172033;
+    line-height: 1.6;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e7edf7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: auto;
+    min-height: 72px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1264e8;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #172033;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.nav-links a {
+    color: #667085;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #1264e8;
+}
+
+.login-btn {
+    background: #1264e8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    max-width: 1400px;
+    min-height: 470px;
+    margin: auto;
+    padding: 75px 40px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+    margin-bottom: 18px;
+
+    background: #eaf2ff;
+    color: #1264e8;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #1264e8;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #667085;
+    font-size: 17px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 35px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font-size: 27px;
+    color: #1264e8;
+}
+
+.hero-stats span {
+    color: #667085;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    height: 330px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-orbit {
+    width: 250px;
+    height: 250px;
+
+    border: 1px dashed #b9d2f8;
+    border-radius: 50%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-icon {
+    width: 100px;
+    height: 100px;
+
+    background: #1264e8;
+    color: white;
+
+    border-radius: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+
+    box-shadow: 0 20px 45px rgba(18, 100, 232, 0.25);
+}
+
+.orbit-icon {
+    width: 48px;
+    height: 48px;
+
+    position: absolute;
+
+    background: white;
+    border: 1px solid #e0e8f5;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #1264e8;
+    font-size: 21px;
+
+    box-shadow: 0 8px 25px rgba(24, 53, 93, 0.1);
+}
+
+.icon-one {
+    top: 0;
+    left: 100px;
+}
+
+.icon-two {
+    right: 0;
+    bottom: 45px;
+}
+
+.icon-three {
+    left: 0;
+    bottom: 45px;
+}
+
+.floating-card {
+    position: absolute;
+
+    padding: 13px 18px;
+
+    background: white;
+    border: 1px solid #e3eaf5;
+
+    border-radius: 12px;
+
+    box-shadow: 0 12px 30px rgba(24, 53, 93, 0.09);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.floating-card i {
+    color: #1264e8;
+}
+
+.card-one {
+    top: 25px;
+    left: 5px;
+}
+
+.card-two {
+    right: 0;
+    bottom: 20px;
+}
+
+
+/* =========================================================
+   PROJECT SECTION
+========================================================= */
+
+.project-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 75px 40px;
+}
+
+.section-label {
+    color: #1264e8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+    font-size: 34px;
+}
+
+.section-heading p {
+    color: #667085;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    margin-top: 35px;
+
+    height: 56px;
+
+    background: white;
+    border: 1px solid #dce5f2;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.search-box > i {
+    color: #98a2b3;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+
+    padding: 0 14px;
+
+    font-size: 14px;
+    color: #172033;
+}
+
+.search-box button {
+    border: none;
+    background: transparent;
+    color: #98a2b3;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.filters select {
+    min-width: 170px;
+
+    border: 1px solid #dce5f2;
+    background: white;
+
+    border-radius: 9px;
+
+    padding: 11px 13px;
+
+    color: #475467;
+    outline: none;
+}
+
+.reset-btn {
+    border: none;
+    background: #eaf2ff;
+    color: #1264e8;
+
+    border-radius: 9px;
+
+    padding: 0 18px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESULT BAR
+========================================================= */
+
+.result-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 35px 0 20px;
+}
+
+.result-bar p {
+    color: #667085;
+    font-size: 14px;
+}
+
+.result-bar strong {
+    color: #1264e8;
+}
+
+.view-options {
+    display: flex;
+    gap: 5px;
+}
+
+.view-btn {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #dce5f2;
+    background: white;
+
+    border-radius: 7px;
+
+    color: #98a2b3;
+}
+
+.view-btn.active {
+    background: #1264e8;
+    color: white;
+    border-color: #1264e8;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #e1e8f2;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #b9d2f8;
+    box-shadow: 0 15px 35px rgba(24, 53, 93, 0.09);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+
+    background: #eaf2ff;
+    color: #1264e8;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.difficulty {
+    padding: 5px 9px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.difficulty.beginner {
+    background: #e9f9ef;
+    color: #16834d;
+}
+
+.difficulty.intermediate {
+    background: #fff5d9;
+    color: #a76b00;
+}
+
+.difficulty.advanced {
+    background: #ffe8e8;
+    color: #c93636;
+}
+
+.project-card h3 {
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+.project-description {
+    color: #667085;
+    font-size: 13px;
+    margin-top: 8px;
+
+    min-height: 63px;
+}
+
+.card-career {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 16px;
+
+    color: #475467;
+    font-size: 12px;
+}
+
+.card-career i {
+    color: #1264e8;
+}
+
+.skill-tags,
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.skill-tag,
+.tag {
+    padding: 5px 9px;
+
+    background: #f2f6fc;
+    color: #475467;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+}
+
+.card-footer {
+    margin-top: 22px;
+    padding-top: 16px;
+
+    border-top: 1px solid #edf1f6;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-time {
+    color: #667085;
+    font-size: 12px;
+}
+
+.view-project {
+    border: none;
+    background: transparent;
+
+    color: #1264e8;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.no-results i {
+    font-size: 45px;
+    color: #b9c8dc;
+}
+
+.no-results h3 {
+    margin-top: 15px;
+}
+
+.no-results p {
+    color: #667085;
+}
+
+.no-results button {
+    margin-top: 18px;
+
+    border: none;
+    background: #1264e8;
+    color: white;
+
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   CAREER CONNECTION
+========================================================= */
+
+.career-connection {
+    background: #1264e8;
+    color: white;
+
+    padding: 70px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.connection-content {
+    max-width: 600px;
+}
+
+.connection-content .section-label {
+    color: #bcd7ff;
+}
+
+.connection-content h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+.connection-content h2 span {
+    color: #dceaff;
+}
+
+.connection-content p {
+    color: #e2edff;
+    margin-top: 15px;
+}
+
+.career-flow {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.flow-item {
+    text-align: center;
+}
+
+.flow-icon {
+    width: 55px;
+    height: 55px;
+
+    background: white;
+    color: #1264e8;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 8px;
+}
+
+.career-flow > i {
+    color: #bcd7ff;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(10, 25, 50, 0.65);
+
+    z-index: 2000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.project-modal {
+    background: white;
+
+    width: 100%;
+    max-width: 1050px;
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    background: #f1f5fa;
+
+    border-radius: 50%;
+
+    color: #475467;
+}
+
+.modal-header {
+    display: flex;
+    gap: 18px;
+
+    padding-right: 45px;
+}
+
+.modal-icon {
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    background: #eaf2ff;
+    color: #1264e8;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.modal-category {
+    color: #1264e8;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.modal-header h2 {
+    font-size: 29px;
+    margin-top: 3px;
+}
+
+.modal-header p {
+    color: #667085;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MODAL META
+========================================================= */
+
+.modal-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.modal-meta div {
+    background: #f7f9fc;
+
+    border-radius: 10px;
+
+    padding: 13px 15px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+}
+
+.modal-meta i {
+    grid-row: span 2;
+    color: #1264e8;
+}
+
+.modal-meta span {
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+.modal-meta strong {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.project-progress-section {
+    margin-top: 25px;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 13px;
+}
+
+.progress-heading strong {
+    color: #1264e8;
+}
+
+.progress-track {
+    height: 8px;
+    background: #e9eef5;
+
+    border-radius: 20px;
+
+    margin-top: 8px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: #1264e8;
+
+    border-radius: inherit;
+
+    transition: 0.4s;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.modal-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    margin-top: 30px;
+}
+
+.detail-block {
+    margin-bottom: 28px;
+}
+
+.detail-block h3 {
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-block h3 i {
+    color: #1264e8;
+}
+
+.detail-block ul {
+    margin-top: 12px;
+    padding-left: 20px;
+
+    color: #667085;
+    font-size: 13px;
+}
+
+.detail-block li {
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   ROADMAP
+========================================================= */
+
+.roadmap {
+    margin-top: 14px;
+}
+
+.roadmap-step {
+    display: flex;
+    gap: 12px;
+
+    position: relative;
+
+    padding-bottom: 16px;
+}
+
+.roadmap-step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: calc(100% - 25px);
+
+    left: 12px;
+    top: 25px;
+
+    background: #dce5f2;
+}
+
+.step-number {
+    width: 25px;
+    height: 25px;
+
+    flex-shrink: 0;
+
+    background: #eaf2ff;
+    color: #1264e8;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    z-index: 1;
+}
+
+.step-text {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CHALLENGES
+========================================================= */
+
+.challenges {
+    margin-top: 14px;
+
+    display: grid;
+    gap: 9px;
+}
+
+.challenge {
+    padding: 11px 13px;
+
+    background: #f7f9fc;
+
+    border-radius: 8px;
+
+    color: #475467;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CAREER VALUE
+========================================================= */
+
+.career-value {
+    background: #eef5ff;
+
+    border: 1px solid #d8e7ff;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    display: flex;
+    gap: 14px;
+
+    margin-top: 5px;
+}
+
+.value-icon {
+    width: 38px;
+    height: 38px;
+
+    background: #1264e8;
+    color: white;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.career-value h3 {
+    font-size: 14px;
+}
+
+.career-value p {
+    color: #667085;
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   RESOURCES
+========================================================= */
+
+.resources-section {
+    margin-top: 25px;
+}
+
+.resources-section h3 {
+    font-size: 15px;
+}
+
+.resources-section h3 i {
+    color: #1264e8;
+}
+
+.resource-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.resource-tag {
+    background: #f2f6fc;
+
+    padding: 7px 12px;
+
+    border-radius: 7px;
+
+    color: #475467;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e9eef5;
+}
+
+.start-btn,
+.complete-btn {
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.start-btn {
+    background: #1264e8;
+    color: white;
+
+    border: 1px solid #1264e8;
+}
+
+.complete-btn {
+    background: white;
+    color: #1264e8;
+
+    border: 1px solid #1264e8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: white;
+    border-top: 1px solid #e7edf7;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: auto;
+
+    padding: 35px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container p {
+    color: #667085;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .career-connection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .career-flow {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        padding: 0 18px;
+    }
+
+    .hero,
+    .project-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters select,
+    .reset-btn {
+        width: 100%;
+    }
+
+    .modal-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .project-modal {
+        padding: 22px;
+    }
+
+    .modal-header {
+        flex-direction: column;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .start-btn,
+    .complete-btn {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+   </style>
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                Skill<span>2</span>Career
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="home.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="courses.html">Courses</a>
+                <a href="careers.html">Careers</a>
+                <a href="skills.html">Skills</a>
+                <a href="roadmap.html">Roadmap</a>
+                <a href="resources.html">Resources</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="updates.html">Updates</a>
+
+            </nav>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-code"></i>
+                    Learn Through Practice
+                </span>
+
+                <h1>
+                    Build.
+                    <span>Practice.</span>
+                    Grow.
+                </h1>
+
+                <p>
+                    Explore practical projects designed to help you
+                    turn your learning into real-world skills and
+                    career-ready experience.
+                </p>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong id="totalProjects">0</strong>
+                        <span>Projects</span>
+                    </div>
+
+                    <div>
+                        <strong id="totalCareers">0</strong>
+                        <span>Career Paths</span>
+                    </div>
+
+                    <div>
+                        <strong>3</strong>
+                        <span>Difficulty Levels</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="floating-card card-one">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Build Skills</span>
+                </div>
+
+                <div class="project-orbit">
+
+                    <div class="orbit-icon icon-one">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+
+                    <div class="orbit-icon icon-two">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+
+                    <div class="orbit-icon icon-three">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+
+                    <div class="center-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-two">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Grow Your Career</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECT EXPLORER ================= -->
+
+        <section class="project-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PROJECT LIBRARY
+                    </span>
+
+                    <h2>
+                        Find Your Next Project
+                    </h2>
+
+                    <p>
+                        Choose a project based on your career,
+                        skills and current learning level.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="projectSearch"
+                    placeholder="Search projects, skills or technologies..."
+                >
+
+                <button id="clearSearch">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="filters">
+
+                <select id="careerFilter">
+
+                    <option value="all">
+                        All Careers
+                    </option>
+
+                </select>
+
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                </select>
+
+
+                <select id="difficultyFilter">
+
+                    <option value="all">
+                        All Difficulties
+                    </option>
+
+                    <option value="Beginner">
+                        Beginner
+                    </option>
+
+                    <option value="Intermediate">
+                        Intermediate
+                    </option>
+
+                    <option value="Advanced">
+                        Advanced
+                    </option>
+
+                </select>
+
+
+                <select id="technologyFilter">
+
+                    <option value="all">
+                        All Technologies
+                    </option>
+
+                </select>
+
+
+                <button id="resetFilters" class="reset-btn">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Reset
+
+                </button>
+
+            </div>
+
+
+            <!-- RESULT INFORMATION -->
+
+            <div class="result-bar">
+
+                <p>
+                    Showing
+                    <strong id="resultCount">0</strong>
+                    projects
+                </p>
+
+                <div class="view-options">
+
+                    <button class="view-btn active">
+                        <i class="fa-solid fa-grip"></i>
+                    </button>
+
+                    <button class="view-btn">
+                        <i class="fa-solid fa-list"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT CARDS -->
+
+            <div
+                class="project-grid"
+                id="projectContainer"
+            ></div>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                class="no-results"
+                id="noResults"
+            >
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <h3>
+                    No projects found
+                </h3>
+
+                <p>
+                    Try changing your search or filters.
+                </p>
+
+                <button id="clearNoResults">
+                    Clear Filters
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CAREER CONNECTION ================= -->
+
+        <section class="career-connection">
+
+            <div class="connection-content">
+
+                <span class="section-label">
+                    CAREER CONNECTION
+                </span>
+
+                <h2>
+                    Learn Skills.
+                    <span>Build Projects.</span>
+                    Move Towards Your Career.
+                </h2>
+
+                <p>
+                    Skill2Career connects projects with the skills
+                    required for different career paths, helping you
+                    understand why a project matters to your learning
+                    journey.
+                </p>
+
+            </div>
+
+
+            <div class="career-flow">
+
+                <div class="flow-item">
+                    <div class="flow-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <strong>Career</strong>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <div class="flow-item">
+                    <div class="flow-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <strong>Skills</strong>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <div class="flow-item">
+                    <div class="flow-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <strong>Projects</strong>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <div class="flow-item">
+                    <div class="flow-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <strong>Growth</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= PROJECT MODAL ================= -->
+
+    <div
+        class="modal-overlay"
+        id="projectModal"
+    >
+
+        <div class="project-modal">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <div class="modal-header">
+
+                <div class="modal-icon" id="modalIcon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div>
+
+                    <span
+                        class="modal-category"
+                        id="modalCategory"
+                    ></span>
+
+                    <h2 id="modalTitle"></h2>
+
+                    <p id="modalDescription"></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project Meta -->
+
+            <div class="modal-meta">
+
+                <div>
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Career</span>
+                    <strong id="modalCareer"></strong>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-signal"></i>
+                    <span>Difficulty</span>
+                    <strong id="modalDifficulty"></strong>
+                </div>
+
+                <div>
+                    <i class="fa-regular fa-clock"></i>
+                    <span>Estimated Time</span>
+                    <strong id="modalTime"></strong>
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+
+            <div class="project-progress-section">
+
+                <div class="progress-heading">
+
+                    <span>
+                        Project Progress
+                    </span>
+
+                    <strong id="modalProgressText">
+                        0%
+                    </strong>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-bar"
+                        id="modalProgressBar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Modal Content -->
+
+            <div class="modal-content-grid">
+
+
+                <!-- LEFT -->
+
+                <div>
+
+                    <div class="detail-block">
+
+                        <h3>
+                            <i class="fa-solid fa-bullseye"></i>
+                            Learning Objectives
+                        </h3>
+
+                        <ul id="modalObjectives"></ul>
+
+                    </div>
+
+
+                    <div class="detail-block">
+
+                        <h3>
+                            <i class="fa-solid fa-list-check"></i>
+                            Prerequisites
+                        </h3>
+
+                        <div
+                            class="tag-container"
+                            id="modalPrerequisites"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="detail-block">
+
+                        <h3>
+                            <i class="fa-solid fa-layer-group"></i>
+                            Tech Stack
+                        </h3>
+
+                        <div
+                            class="tag-container"
+                            id="modalTech"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT -->
+
+                <div>
+
+                    <div class="detail-block">
+
+                        <h3>
+                            <i class="fa-solid fa-route"></i>
+                            Project Roadmap
+                        </h3>
+
+                        <div
+                            class="roadmap"
+                            id="modalRoadmap"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="detail-block">
+
+                        <h3>
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                            Challenges
+                        </h3>
+
+                        <div
+                            class="challenges"
+                            id="modalChallenges"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Career Value -->
+
+            <div class="career-value">
+
+                <div class="value-icon">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        How this helps your career
+                    </h3>
+
+                    <p id="modalCareerValue"></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Resources -->
+
+            <div class="resources-section">
+
+                <h3>
+                    <i class="fa-solid fa-book-open"></i>
+                    Related Resources
+                </h3>
+
+                <div
+                    class="resource-tags"
+                    id="modalResources"
+                ></div>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="modal-actions">
+
+                <button
+                    class="start-btn"
+                    id="startProject"
+                >
+                    <i class="fa-solid fa-play"></i>
+                    Start Project
+                </button>
+
+                <button
+                    class="complete-btn"
+                    id="completeProject"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    Mark Complete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+
+                <a href="index.html" class="logo">
+                    Skill<span>2</span>Career
+                </a>
+
+                <p>
+                    From skills to career — make better
+                    career decisions.
+                </p>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Skill2Career. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script > 
+
+/* =========================================================
+   SKILL2CAREER
+   PROJECT LIBRARY
+   ========================================================= */
+
+/*
+    Project structure:
+
+    Course
+        ↓
+    Career
+        ↓
+    Category
+        ↓
+    Skills / Technologies
+        ↓
+    Project
+        ↓
+    Challenges
+        ↓
+    Resources
+*/
+
+
+const projectsData = [
+
+    /* =====================================================
+       BCA / COMPUTER APPLICATIONS
+    ===================================================== */
+
+    {
+        id: 1,
+        title: "Student Management System",
+        description: "Create a system to manage student records, courses, marks and basic academic information.",
+        course: "BCA",
+        career: "Software Developer",
+        category: "Computer Applications",
+        difficulty: "Beginner",
+        type: "Mini Project",
+        time: "4–6 days",
+        icon: "fa-solid fa-user-graduate",
+
+        technologies: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+
+        prerequisites: [
+            "HTML basics",
+            "CSS basics",
+            "JavaScript basics",
+            "DOM basics"
+        ],
+
+        objectives: [
+            "Create and manage student records",
+            "Practice CRUD-style operations",
+            "Work with JavaScript objects and arrays",
+            "Create interactive forms",
+            "Store data using LocalStorage"
+        ],
+
+        roadmap: [
+            "Plan the student data structure",
+            "Create the student form",
+            "Display student records",
+            "Add edit and delete functionality",
+            "Add search and filtering",
+            "Test the application"
+        ],
+
+        challenges: [
+            "Add a new student",
+            "Search students",
+            "Edit student information",
+            "Delete a student record"
+        ],
+
+        careerValue:
+            "This project builds programming logic and data-management skills useful for software development.",
+
+        resources: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "DOM",
+            "LocalStorage"
+        ]
+    },
+
+
+    {
+        id: 2,
+        title: "College ERP Interface",
+        description: "Design a college management interface containing students, teachers, courses and academic information.",
+        course: "BCA",
+        career: "Frontend Developer",
+        category: "Computer Applications",
+        difficulty: "Intermediate",
+        type: "Major Project",
+        time: "7–12 days",
+        icon: "fa-solid fa-school",
+
+        technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Bootstrap"
+        ],
+
+        objectives: [
+            "Design a multi-section application",
+            "Create reusable UI components",
+            "Practice responsive design",
+            "Create dashboards",
+            "Manage multiple views"
+        ],
+
+        roadmap: [
+            "Plan application modules",
+            "Design dashboard",
+            "Create student section",
+            "Create course section",
+            "Add responsive layouts",
+            "Test navigation"
+        ],
+
+        challenges: [
+            "Create dashboard cards",
+            "Create student table",
+            "Create course filters",
+            "Create responsive navigation"
+        ],
+
+        careerValue:
+            "A multi-page academic system demonstrates UI organization, responsive design and application structure.",
+
+        resources: [
+            "Bootstrap",
+            "Responsive Design",
+            "JavaScript DOM",
+            "UI Design"
+        ]
+    },
+
+
+    {
+        id: 3,
+        title: "Library Management System",
+        description: "Build a system for managing books, members and borrowing records.",
+        course: "BCA",
+        career: "Software Developer",
+        category: "Computer Applications",
+        difficulty: "Intermediate",
+        type: "Mini Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-book",
+
+        technologies: ["JavaScript", "HTML", "CSS", "LocalStorage"],
+
+        prerequisites: [
+            "JavaScript",
+            "Arrays",
+            "Objects",
+            "DOM"
+        ],
+
+        objectives: [
+            "Manage structured records",
+            "Implement search",
+            "Track book availability",
+            "Practice application logic"
+        ],
+
+        roadmap: [
+            "Create book records",
+            "Create member records",
+            "Implement borrowing",
+            "Implement returning",
+            "Add search",
+            "Test records"
+        ],
+
+        challenges: [
+            "Add books",
+            "Search books",
+            "Borrow a book",
+            "Return a book"
+        ],
+
+        careerValue:
+            "The project provides practice with data management and application logic.",
+
+        resources: [
+            "JavaScript Objects",
+            "Arrays",
+            "DOM",
+            "LocalStorage"
+        ]
+    },
+
+
+    /* =====================================================
+       WEB DEVELOPMENT
+    ===================================================== */
+
+    {
+        id: 4,
+        title: "Personal Portfolio Website",
+        description: "Create a responsive portfolio to showcase your skills, projects and professional profile.",
+        course: "Web Development",
+        career: "Frontend Developer",
+        category: "Web Development",
+        difficulty: "Beginner",
+        type: "Portfolio Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-id-card",
+
+        technologies: ["HTML", "CSS", "JavaScript"],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "Basic JavaScript"
+        ],
+
+        objectives: [
+            "Build a responsive website",
+            "Practice semantic HTML",
+            "Create modern layouts",
+            "Add JavaScript interactions"
+        ],
+
+        roadmap: [
+            "Plan website sections",
+            "Build HTML structure",
+            "Style the website",
+            "Add interactions",
+            "Make it responsive",
+            "Deploy the website"
+        ],
+
+        challenges: [
+            "Create navigation",
+            "Build skills section",
+            "Create project cards",
+            "Create contact section"
+        ],
+
+        careerValue:
+            "A portfolio gives developers a practical way to demonstrate their skills and projects.",
+
+        resources: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive Design"
+        ]
+    },
+
+
+    {
+        id: 5,
+        title: "Todo List Application",
+        description: "Create an interactive task management application.",
+        course: "Web Development",
+        career: "Frontend Developer",
+        category: "Web Development",
+        difficulty: "Beginner",
+        type: "Practice Project",
+        time: "2–4 days",
+        icon: "fa-solid fa-list-check",
+
+        technologies: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+
+        prerequisites: [
+            "JavaScript basics",
+            "DOM",
+            "Events"
+        ],
+
+        objectives: [
+            "Practice DOM manipulation",
+            "Handle events",
+            "Work with arrays",
+            "Use LocalStorage"
+        ],
+
+        roadmap: [
+            "Design interface",
+            "Create task input",
+            "Add tasks",
+            "Complete and delete tasks",
+            "Add LocalStorage"
+        ],
+
+        challenges: [
+            "Add a task",
+            "Complete a task",
+            "Delete a task",
+            "Save tasks after refresh"
+        ],
+
+        careerValue:
+            "This project demonstrates basic JavaScript logic and interactive UI development.",
+
+        resources: [
+            "JavaScript",
+            "DOM",
+            "Events",
+            "LocalStorage"
+        ]
+    },
+
+
+    {
+        id: 6,
+        title: "Weather Dashboard",
+        description: "Build a weather dashboard that retrieves and displays weather information.",
+        course: "Web Development",
+        career: "Frontend Developer",
+        category: "Web Development",
+        difficulty: "Intermediate",
+        type: "Practice Project",
+        time: "4–7 days",
+        icon: "fa-solid fa-cloud-sun",
+
+        technologies: ["HTML", "CSS", "JavaScript", "Fetch API"],
+
+        prerequisites: [
+            "JavaScript",
+            "Promises",
+            "JSON",
+            "DOM"
+        ],
+
+        objectives: [
+            "Work with APIs",
+            "Understand JSON",
+            "Use Fetch",
+            "Handle asynchronous operations"
+        ],
+
+        roadmap: [
+            "Create UI",
+            "Create location search",
+            "Connect API",
+            "Fetch data",
+            "Display results",
+            "Handle errors"
+        ],
+
+        challenges: [
+            "Search city",
+            "Display temperature",
+            "Display weather condition",
+            "Handle invalid city"
+        ],
+
+        careerValue:
+            "API projects demonstrate practical asynchronous JavaScript skills.",
+
+        resources: [
+            "Fetch API",
+            "Promises",
+            "Async JavaScript",
+            "JSON"
+        ]
+    },
+
+
+    {
+        id: 7,
+        title: "E-Commerce Website",
+        description: "Create an online shopping interface with products, categories, cart and search.",
+        course: "Full Stack Development",
+        career: "Full Stack Developer",
+        category: "Web Development",
+        difficulty: "Advanced",
+        type: "Major Project",
+        time: "10–20 days",
+        icon: "fa-solid fa-cart-shopping",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "API"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "DOM",
+            "APIs",
+            "Responsive Design"
+        ],
+
+        objectives: [
+            "Build a larger web application",
+            "Create product filtering",
+            "Implement cart logic",
+            "Work with API data"
+        ],
+
+        roadmap: [
+            "Design product interface",
+            "Create product cards",
+            "Implement search",
+            "Implement cart",
+            "Add product filtering",
+            "Test application"
+        ],
+
+        challenges: [
+            "Create product cards",
+            "Add products to cart",
+            "Calculate total",
+            "Filter products"
+        ],
+
+        careerValue:
+            "An e-commerce application demonstrates multiple frontend and application-development concepts.",
+
+        resources: [
+            "JavaScript",
+            "APIs",
+            "DOM",
+            "Responsive Design"
+        ]
+    },
+
+
+    {
+        id: 8,
+        title: "Blog Platform",
+        description: "Build a blogging platform where users can view and manage articles.",
+        course: "Full Stack Development",
+        career: "Full Stack Developer",
+        category: "Web Development",
+        difficulty: "Advanced",
+        type: "Major Project",
+        time: "10–15 days",
+        icon: "fa-solid fa-blog",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "HTTP basics",
+            "APIs",
+            "Python basics"
+        ],
+
+        objectives: [
+            "Understand client-server architecture",
+            "Create article interfaces",
+            "Work with APIs",
+            "Understand CRUD concepts"
+        ],
+
+        roadmap: [
+            "Design blog interface",
+            "Create article layout",
+            "Create API structure",
+            "Connect frontend",
+            "Implement article operations",
+            "Test application"
+        ],
+
+        challenges: [
+            "Create article",
+            "Edit article",
+            "Delete article",
+            "Search articles"
+        ],
+
+        careerValue:
+            "A blog platform introduces full-stack application architecture and CRUD functionality.",
+
+        resources: [
+            "JavaScript",
+            "HTTP",
+            "REST APIs",
+            "Python"
+        ]
+    },
+
+
+    /* =====================================================
+       PYTHON
+    ===================================================== */
+
+    {
+        id: 9,
+        title: "Python Calculator",
+        description: "Create a calculator application using Python functions and user input.",
+        course: "Python",
+        career: "Python Developer",
+        category: "Python",
+        difficulty: "Beginner",
+        type: "Practice Project",
+        time: "1–2 days",
+        icon: "fa-brands fa-python",
+
+        technologies: ["Python"],
+
+        prerequisites: [
+            "Variables",
+            "Operators",
+            "Functions"
+        ],
+
+        objectives: [
+            "Practice Python syntax",
+            "Use functions",
+            "Handle user input",
+            "Implement conditions"
+        ],
+
+        roadmap: [
+            "Create menu",
+            "Create arithmetic functions",
+            "Accept user input",
+            "Handle invalid input",
+            "Test calculations"
+        ],
+
+        challenges: [
+            "Addition",
+            "Subtraction",
+            "Multiplication",
+            "Division"
+        ],
+
+        careerValue:
+            "A beginner Python project strengthens programming fundamentals.",
+
+        resources: [
+            "Python Basics",
+            "Functions",
+            "Conditions"
+        ]
+    },
+
+
+    {
+        id: 10,
+        title: "Expense Tracker",
+        description: "Build a Python application for tracking income and expenses.",
+        course: "Python",
+        career: "Python Developer",
+        category: "Python",
+        difficulty: "Intermediate",
+        type: "Practice Project",
+        time: "4–7 days",
+        icon: "fa-solid fa-wallet",
+
+        technologies: ["Python"],
+
+        prerequisites: [
+            "Python",
+            "Lists",
+            "Dictionaries",
+            "Functions"
+        ],
+
+        objectives: [
+            "Store financial records",
+            "Calculate totals",
+            "Practice data structures",
+            "Create reusable functions"
+        ],
+
+        roadmap: [
+            "Create transaction structure",
+            "Add income",
+            "Add expenses",
+            "Calculate balance",
+            "Display records"
+        ],
+
+        challenges: [
+            "Add income",
+            "Add expense",
+            "Calculate balance",
+            "Display transaction history"
+        ],
+
+        careerValue:
+            "This project develops Python logic and structured data handling.",
+
+        resources: [
+            "Python",
+            "Lists",
+            "Dictionaries",
+            "Functions"
+        ]
+    },
+
+
+    {
+        id: 11,
+        title: "File Organizer",
+        description: "Create a Python utility that organizes files into folders based on their file types.",
+        course: "Python",
+        career: "Python Developer",
+        category: "Python",
+        difficulty: "Intermediate",
+        type: "Automation Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-folder-tree",
+
+        technologies: ["Python", "OS Module"],
+
+        prerequisites: [
+            "Python",
+            "Functions",
+            "File handling"
+        ],
+
+        objectives: [
+            "Work with files",
+            "Use Python modules",
+            "Automate repetitive tasks",
+            "Handle directories"
+        ],
+
+        roadmap: [
+            "Read directory",
+            "Identify file extensions",
+            "Create folders",
+            "Move files",
+            "Handle errors"
+        ],
+
+        challenges: [
+            "Detect file type",
+            "Create folders automatically",
+            "Move files",
+            "Handle duplicate files"
+        ],
+
+        careerValue:
+            "Automation projects demonstrate practical Python programming beyond basic exercises.",
+
+        resources: [
+            "Python OS Module",
+            "File Handling",
+            "Python Functions"
+        ]
+    },
+
+
+    /* =====================================================
+       JAVA
+    ===================================================== */
+
+    {
+        id: 12,
+        title: "Java Banking System",
+        description: "Create a basic banking application with accounts, deposits, withdrawals and balance checking.",
+        course: "Java",
+        career: "Java Developer",
+        category: "Java",
+        difficulty: "Intermediate",
+        type: "Major Project",
+        time: "6–10 days",
+        icon: "fa-brands fa-java",
+
+        technologies: ["Java", "OOP"],
+
+        prerequisites: [
+            "Java basics",
+            "Classes",
+            "Objects",
+            "Methods"
+        ],
+
+        objectives: [
+            "Practice OOP",
+            "Create classes",
+            "Implement methods",
+            "Manage account data"
+        ],
+
+        roadmap: [
+            "Create account class",
+            "Implement deposit",
+            "Implement withdrawal",
+            "Implement balance",
+            "Add account search"
+        ],
+
+        challenges: [
+            "Create account",
+            "Deposit money",
+            "Withdraw money",
+            "Display balance"
+        ],
+
+        careerValue:
+            "A banking system provides practical experience with Java OOP and application logic.",
+
+        resources: [
+            "Java Basics",
+            "Java OOP",
+            "Classes",
+            "Methods"
+        ]
+    },
+
+
+    {
+        id: 13,
+        title: "Java Library Management",
+        description: "Develop a Java application for managing books and members.",
+        course: "Java",
+        career: "Java Developer",
+        category: "Java",
+        difficulty: "Intermediate",
+        type: "Mini Project",
+        time: "6–9 days",
+        icon: "fa-solid fa-book-open",
+
+        technologies: ["Java", "OOP", "Collections"],
+
+        prerequisites: [
+            "Java OOP",
+            "Arrays",
+            "Collections"
+        ],
+
+        objectives: [
+            "Practice classes",
+            "Use collections",
+            "Manage records",
+            "Implement application logic"
+        ],
+
+        roadmap: [
+            "Create Book class",
+            "Create Member class",
+            "Add books",
+            "Borrow books",
+            "Return books"
+        ],
+
+        challenges: [
+            "Add book",
+            "Register member",
+            "Borrow book",
+            "Return book"
+        ],
+
+        careerValue:
+            "This project strengthens Java OOP and collection-handling skills.",
+
+        resources: [
+            "Java OOP",
+            "Java Collections",
+            "Arrays"
+        ]
+    },
+
+
+    /* =====================================================
+       C / C++
+    ===================================================== */
+
+    {
+        id: 14,
+        title: "C Student Record System",
+        description: "Build a console application for storing and managing student records.",
+        course: "C Programming",
+        career: "Software Developer",
+        category: "Programming",
+        difficulty: "Beginner",
+        type: "Mini Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-c",
+
+        technologies: ["C"],
+
+        prerequisites: [
+            "C syntax",
+            "Functions",
+            "Structures"
+        ],
+
+        objectives: [
+            "Practice C programming",
+            "Use structures",
+            "Handle input and output",
+            "Implement menu-driven programs"
+        ],
+
+        roadmap: [
+            "Create student structure",
+            "Add records",
+            "Display records",
+            "Search records",
+            "Update records"
+        ],
+
+        challenges: [
+            "Add student",
+            "Search student",
+            "Update student",
+            "Delete student"
+        ],
+
+        careerValue:
+            "This project strengthens programming fundamentals and structured data concepts.",
+
+        resources: [
+            "C Basics",
+            "Structures",
+            "Functions"
+        ]
+    },
+
+
+    {
+        id: 15,
+        title: "C++ Quiz Game",
+        description: "Create a console-based quiz game with questions, options and scoring.",
+        course: "C++",
+        career: "C++ Developer",
+        category: "Programming",
+        difficulty: "Beginner",
+        type: "Practice Project",
+        time: "2–4 days",
+        icon: "fa-solid fa-gamepad",
+
+        technologies: ["C++"],
+
+        prerequisites: [
+            "C++ basics",
+            "Conditions",
+            "Loops",
+            "Functions"
+        ],
+
+        objectives: [
+            "Practice conditions",
+            "Use loops",
+            "Create functions",
+            "Calculate scores"
+        ],
+
+        roadmap: [
+            "Create questions",
+            "Add answer options",
+            "Check answers",
+            "Calculate score",
+            "Display result"
+        ],
+
+        challenges: [
+            "Create questions",
+            "Validate answers",
+            "Calculate score",
+            "Add difficulty levels"
+        ],
+
+        careerValue:
+            "The project develops programming logic and basic application design skills.",
+
+        resources: [
+            "C++",
+            "Loops",
+            "Functions",
+            "Conditions"
+        ]
+    },
+
+
+    /* =====================================================
+       DATA ANALYTICS
+    ===================================================== */
+
+    {
+        id: 16,
+        title: "Sales Data Dashboard",
+        description: "Analyze sales data and create a dashboard showing useful business metrics.",
+        course: "Data Analytics",
+        career: "Data Analyst",
+        category: "Data Analytics",
+        difficulty: "Intermediate",
+        type: "Data Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-chart-column",
+
+        technologies: [
+            "Python",
+            "Pandas",
+            "Data Visualization"
+        ],
+
+        prerequisites: [
+            "Python basics",
+            "Basic statistics",
+            "Data handling"
+        ],
+
+        objectives: [
+            "Clean data",
+            "Analyze datasets",
+            "Calculate metrics",
+            "Create visualizations"
+        ],
+
+        roadmap: [
+            "Load dataset",
+            "Clean data",
+            "Analyze sales",
+            "Calculate metrics",
+            "Create charts",
+            "Present findings"
+        ],
+
+        challenges: [
+            "Find total sales",
+            "Find top products",
+            "Compare months",
+            "Create charts"
+        ],
+
+        careerValue:
+            "A data dashboard demonstrates data cleaning, analysis and visualization skills.",
+
+        resources: [
+            "Python",
+            "Pandas",
+            "Statistics",
+            "Data Visualization"
+        ]
+    },
+
+
+    {
+        id: 17,
+        title: "Student Performance Analysis",
+        description: "Analyze student marks to identify performance patterns and trends.",
+        course: "Data Analytics",
+        career: "Data Analyst",
+        category: "Data Analytics",
+        difficulty: "Beginner",
+        type: "Data Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-chart-line",
+
+        technologies: [
+            "Python",
+            "Pandas",
+            "Excel"
+        ],
+
+        prerequisites: [
+            "Basic statistics",
+            "Python basics"
+        ],
+
+        objectives: [
+            "Analyze educational data",
+            "Calculate averages",
+            "Identify patterns",
+            "Create reports"
+        ],
+
+        roadmap: [
+            "Collect dataset",
+            "Clean data",
+            "Calculate statistics",
+            "Compare performance",
+            "Create report"
+        ],
+
+        challenges: [
+            "Calculate average marks",
+            "Find highest scores",
+            "Compare subjects",
+            "Identify weak areas"
+        ],
+
+        careerValue:
+            "This project provides beginner-friendly practice with real-world data analysis.",
+
+        resources: [
+            "Statistics",
+            "Pandas",
+            "Excel"
+        ]
+    },
+
+
+    {
+        id: 18,
+        title: "E-Commerce Sales Analysis",
+        description: "Analyze an e-commerce dataset to discover sales and customer trends.",
+        course: "Data Analytics",
+        career: "Data Analyst",
+        category: "Data Analytics",
+        difficulty: "Intermediate",
+        type: "Data Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-chart-pie",
+
+        technologies: [
+            "Python",
+            "Pandas",
+            "Data Visualization"
+        ],
+
+        prerequisites: [
+            "Python",
+            "Pandas",
+            "Statistics"
+        ],
+
+        objectives: [
+            "Analyze sales data",
+            "Identify trends",
+            "Compare categories",
+            "Create visual reports"
+        ],
+
+        roadmap: [
+            "Load dataset",
+            "Clean records",
+            "Analyze sales",
+            "Analyze customers",
+            "Create visualizations",
+            "Write findings"
+        ],
+
+        challenges: [
+            "Find best-selling category",
+            "Analyze monthly sales",
+            "Find customer patterns",
+            "Create dashboard"
+        ],
+
+        careerValue:
+            "The project demonstrates business-oriented data analysis skills.",
+
+        resources: [
+            "Pandas",
+            "Statistics",
+            "Data Visualization"
+        ]
+    },
+
+
+    /* =====================================================
+       DATA SCIENCE
+    ===================================================== */
+
+    {
+        id: 19,
+        title: "House Price Analysis",
+        description: "Analyze housing data and explore factors associated with house prices.",
+        course: "Data Science",
+        career: "Data Scientist",
+        category: "Data Science",
+        difficulty: "Intermediate",
+        type: "Data Science Project",
+        time: "7–10 days",
+        icon: "fa-solid fa-house",
+
+        technologies: [
+            "Python",
+            "Pandas",
+            "NumPy"
+        ],
+
+        prerequisites: [
+            "Python",
+            "Statistics",
+            "Data Analysis"
+        ],
+
+        objectives: [
+            "Explore datasets",
+            "Analyze relationships",
+            "Clean data",
+            "Prepare data for modeling"
+        ],
+
+        roadmap: [
+            "Collect dataset",
+            "Clean dataset",
+            "Explore variables",
+            "Analyze relationships",
+            "Visualize patterns",
+            "Prepare features"
+        ],
+
+        challenges: [
+            "Identify important variables",
+            "Handle missing values",
+            "Compare property features",
+            "Create visualizations"
+        ],
+
+        careerValue:
+            "This project introduces the data-analysis workflow used in data science.",
+
+        resources: [
+            "Python",
+            "Pandas",
+            "NumPy",
+            "Statistics"
+        ]
+    },
+
+
+    {
+        id: 20,
+        title: "Customer Segmentation",
+        description: "Analyze customer information and group customers based on selected characteristics.",
+        course: "Data Science",
+        career: "Data Scientist",
+        category: "Data Science",
+        difficulty: "Advanced",
+        type: "Data Science Project",
+        time: "10–14 days",
+        icon: "fa-solid fa-users",
+
+        technologies: [
+            "Python",
+            "Pandas",
+            "Scikit-learn"
+        ],
+
+        prerequisites: [
+            "Python",
+            "Statistics",
+            "Basic Machine Learning"
+        ],
+
+        objectives: [
+            "Prepare customer data",
+            "Explore customer patterns",
+            "Apply clustering concepts",
+            "Interpret groups"
+        ],
+
+        roadmap: [
+            "Prepare dataset",
+            "Explore variables",
+            "Prepare features",
+            "Apply clustering",
+            "Visualize groups",
+            "Interpret results"
+        ],
+
+        challenges: [
+            "Clean customer data",
+            "Select useful features",
+            "Create customer groups",
+            "Interpret segments"
+        ],
+
+        careerValue:
+            "This project introduces an important unsupervised learning workflow.",
+
+        resources: [
+            "Pandas",
+            "Scikit-learn",
+            "Statistics",
+            "Machine Learning"
+        ]
+    },
+
+
+    /* =====================================================
+       AI / MACHINE LEARNING
+    ===================================================== */
+
+    {
+        id: 21,
+        title: "Spam Message Detector",
+        description: "Create a machine learning project that classifies messages as spam or non-spam.",
+        course: "Artificial Intelligence & Machine Learning",
+        career: "Machine Learning Engineer",
+        category: "AI & Machine Learning",
+        difficulty: "Advanced",
+        type: "Machine Learning Project",
+        time: "10–14 days",
+        icon: "fa-solid fa-robot",
+
+        technologies: [
+            "Python",
+            "Pandas",
+            "Scikit-learn"
+        ],
+
+        prerequisites: [
+            "Python",
+            "Basic statistics",
+            "Machine learning basics"
+        ],
+
+        objectives: [
+            "Prepare text data",
+            "Train a classification model",
+            "Evaluate predictions",
+            "Understand classification"
+        ],
+
+        roadmap: [
+            "Collect dataset",
+            "Clean text",
+            "Prepare features",
+            "Train model",
+            "Evaluate model",
+            "Test predictions"
+        ],
+
+        challenges: [
+            "Clean messages",
+            "Prepare training data",
+            "Train classifier",
+            "Evaluate results"
+        ],
+
+        careerValue:
+            "This project introduces text classification and the basic machine-learning workflow.",
+
+        resources: [
+            "Python",
+            "Machine Learning",
+            "Scikit-learn",
+            "Data Preparation"
+        ]
+    },
+
+
+    {
+        id: 22,
+        title: "Sentiment Analysis",
+        description: "Analyze text and classify opinions into categories such as positive, negative or neutral.",
+        course: "Artificial Intelligence & Machine Learning",
+        career: "AI Developer",
+        category: "AI & Machine Learning",
+        difficulty: "Advanced",
+        type: "AI Project",
+        time: "10–15 days",
+        icon: "fa-solid fa-comments",
+
+        technologies: [
+            "Python",
+            "NLP",
+            "Scikit-learn"
+        ],
+
+        prerequisites: [
+            "Python",
+            "Machine Learning",
+            "Basic NLP"
+        ],
+
+        objectives: [
+            "Process text",
+            "Understand sentiment",
+            "Prepare training data",
+            "Build classification models"
+        ],
+
+        roadmap: [
+            "Collect text dataset",
+            "Clean text",
+            "Prepare features",
+            "Train model",
+            "Evaluate model",
+            "Test new text"
+        ],
+
+        challenges: [
+            "Clean text",
+            "Handle common words",
+            "Classify sentiment",
+            "Evaluate predictions"
+        ],
+
+        careerValue:
+            "Sentiment analysis introduces NLP concepts and practical text-processing workflows.",
+
+        resources: [
+            "Python",
+            "NLP",
+            "Machine Learning",
+            "Text Processing"
+        ]
+    },
+
+
+    {
+        id: 23,
+        title: "Recommendation System",
+        description: "Create a basic recommendation system that suggests items based on user preferences.",
+        course: "Artificial Intelligence & Machine Learning",
+        career: "Machine Learning Engineer",
+        category: "AI & Machine Learning",
+        difficulty: "Advanced",
+        type: "AI Project",
+        time: "12–18 days",
+        icon: "fa-solid fa-wand-magic-sparkles",
+
+        technologies: [
+            "Python",
+            "Pandas",
+            "Machine Learning"
+        ],
+
+        prerequisites: [
+            "Python",
+            "Statistics",
+            "Machine Learning"
+        ],
+
+        objectives: [
+            "Understand recommendation concepts",
+            "Analyze user-item data",
+            "Create recommendation logic",
+            "Evaluate suggestions"
+        ],
+
+        roadmap: [
+            "Prepare dataset",
+            "Analyze user preferences",
+            "Create recommendation logic",
+            "Generate recommendations",
+            "Evaluate results"
+        ],
+
+        challenges: [
+            "Prepare user data",
+            "Calculate similarity",
+            "Generate recommendations",
+            "Test results"
+        ],
+
+        careerValue:
+            "Recommendation systems expose learners to a common practical machine-learning application.",
+
+        resources: [
+            "Python",
+            "Pandas",
+            "Machine Learning",
+            "Statistics"
+        ]
+    },
+
+
+    /* =====================================================
+       DATABASE / SQL
+    ===================================================== */
+
+    {
+        id: 24,
+        title: "Hospital Database System",
+        description: "Design a relational database for managing patients, doctors, appointments and medical records.",
+        course: "Database Management",
+        career: "Database Developer",
+        category: "Database",
+        difficulty: "Intermediate",
+        type: "Database Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-database",
+
+        technologies: [
+            "SQL",
+            "MySQL"
+        ],
+
+        prerequisites: [
+            "SQL basics",
+            "Database concepts",
+            "ER diagrams"
+        ],
+
+        objectives: [
+            "Design relational tables",
+            "Create relationships",
+            "Write SQL queries",
+            "Use joins"
+        ],
+
+        roadmap: [
+            "Identify entities",
+            "Create ER diagram",
+            "Create tables",
+            "Insert records",
+            "Write queries",
+            "Test database"
+        ],
+
+        challenges: [
+            "Create patient table",
+            "Create doctor table",
+            "Create appointment table",
+            "Write JOIN queries"
+        ],
+
+        careerValue:
+            "This project builds practical relational database design and SQL skills.",
+
+        resources: [
+            "SQL",
+            "MySQL",
+            "DBMS",
+            "ER Diagrams"
+        ]
+    },
+
+
+    {
+        id: 25,
+        title: "Banking Database",
+        description: "Design a database for customers, accounts, transactions and banking operations.",
+        course: "Database Management",
+        career: "Database Developer",
+        category: "Database",
+        difficulty: "Intermediate",
+        type: "Database Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-building-columns",
+
+        technologies: [
+            "SQL",
+            "MySQL"
+        ],
+
+        prerequisites: [
+            "SQL",
+            "DBMS",
+            "Relationships"
+        ],
+
+        objectives: [
+            "Design normalized tables",
+            "Create relationships",
+            "Write queries",
+            "Use constraints"
+        ],
+
+        roadmap: [
+            "Identify entities",
+            "Design schema",
+            "Create tables",
+            "Insert records",
+            "Write queries",
+            "Test constraints"
+        ],
+
+        challenges: [
+            "Create customer table",
+            "Create account table",
+            "Record transactions",
+            "Generate account reports"
+        ],
+
+        careerValue:
+            "The project gives practice with structured data and relational database design.",
+
+        resources: [
+            "SQL",
+            "MySQL",
+            "Normalization",
+            "DBMS"
+        ]
+    },
+
+
+    /* =====================================================
+       CYBERSECURITY
+    ===================================================== */
+
+    {
+        id: 26,
+        title: "Password Strength Checker",
+        description: "Create a tool that evaluates password characteristics and provides strength feedback.",
+        course: "Cybersecurity",
+        career: "Cybersecurity Analyst",
+        category: "Cybersecurity",
+        difficulty: "Beginner",
+        type: "Security Project",
+        time: "2–4 days",
+        icon: "fa-solid fa-shield-halved",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "JavaScript basics",
+            "Regular expressions",
+            "DOM"
+        ],
+
+        objectives: [
+            "Understand password requirements",
+            "Practice validation",
+            "Use regular expressions",
+            "Create security-focused UI"
+        ],
+
+        roadmap: [
+            "Create password input",
+            "Define requirements",
+            "Create validation logic",
+            "Display strength",
+            "Add user feedback"
+        ],
+
+        challenges: [
+            "Check password length",
+            "Check numbers",
+            "Check special characters",
+            "Display strength"
+        ],
+
+        careerValue:
+            "This project introduces basic security concepts and input validation.",
+
+        resources: [
+            "JavaScript",
+            "Regular Expressions",
+            "Web Security"
+        ]
+    },
+
+
+    {
+        id: 27,
+        title: "Security Log Analyzer",
+        description: "Analyze sample system logs and identify patterns that may require attention.",
+        course: "Cybersecurity",
+        career: "Cybersecurity Analyst",
+        category: "Cybersecurity",
+        difficulty: "Advanced",
+        type: "Security Project",
+        time: "7–12 days",
+        icon: "fa-solid fa-file-shield",
+
+        technologies: [
+            "Python",
+            "Log Analysis"
+        ],
+
+        prerequisites: [
+            "Python",
+            "File handling",
+            "Basic cybersecurity"
+        ],
+
+        objectives: [
+            "Read log files",
+            "Identify patterns",
+            "Count events",
+            "Create basic reports"
+        ],
+
+        roadmap: [
+            "Collect sample logs",
+            "Read log file",
+            "Parse records",
+            "Identify patterns",
+            "Generate report"
+        ],
+
+        challenges: [
+            "Count failed logins",
+            "Find repeated events",
+            "Group events",
+            "Generate report"
+        ],
+
+        careerValue:
+            "Log analysis is a practical introduction to monitoring and security data.",
+
+        resources: [
+            "Python",
+            "File Handling",
+            "Cybersecurity Basics"
+        ]
+    },
+
+
+    /* =====================================================
+       UI / UX
+    ===================================================== */
+
+    {
+        id: 28,
+        title: "Mobile Banking UI",
+        description: "Design a modern mobile banking interface with dashboard, transactions and account screens.",
+        course: "UI/UX Design",
+        career: "UI/UX Designer",
+        category: "UI/UX",
+        difficulty: "Beginner",
+        type: "Design Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-mobile-screen",
+
+        technologies: [
+            "Figma",
+            "UI Design"
+        ],
+
+        prerequisites: [
+            "Basic design principles",
+            "Typography",
+            "Color theory"
+        ],
+
+        objectives: [
+            "Create user flows",
+            "Design mobile interfaces",
+            "Practice visual hierarchy",
+            "Create reusable components"
+        ],
+
+        roadmap: [
+            "Research users",
+            "Create user flow",
+            "Create wireframes",
+            "Design UI",
+            "Create prototype"
+        ],
+
+        challenges: [
+            "Create dashboard",
+            "Design transaction screen",
+            "Create navigation",
+            "Build prototype"
+        ],
+
+        careerValue:
+            "This project develops interface design and user-flow planning skills.",
+
+        resources: [
+            "UI Design",
+            "UX Design",
+            "Figma",
+            "Typography"
+        ]
+    },
+
+
+    {
+        id: 29,
+        title: "Education Dashboard UI",
+        description: "Design a responsive dashboard for students to track courses, skills and learning progress.",
+        course: "UI/UX Design",
+        career: "UI/UX Designer",
+        category: "UI/UX",
+        difficulty: "Intermediate",
+        type: "Design Project",
+        time: "4–7 days",
+        icon: "fa-solid fa-chart-pie",
+
+        technologies: [
+            "Figma",
+            "UI Design",
+            "Responsive Design"
+        ],
+
+        prerequisites: [
+            "UI basics",
+            "Layout",
+            "Typography"
+        ],
+
+        objectives: [
+            "Design dashboards",
+            "Create information hierarchy",
+            "Design responsive layouts",
+            "Create reusable components"
+        ],
+
+        roadmap: [
+            "Define user goals",
+            "Create wireframe",
+            "Design dashboard",
+            "Create responsive screens",
+            "Prototype interactions"
+        ],
+
+        challenges: [
+            "Design progress cards",
+            "Create sidebar",
+            "Design course cards",
+            "Create mobile version"
+        ],
+
+        careerValue:
+            "Dashboard design provides practice with information architecture and user-focused interfaces.",
+
+        resources: [
+            "Figma",
+            "UI Design",
+            "UX Design",
+            "Responsive Design"
+        ]
+    },
+
+
+    /* =====================================================
+       MOBILE DEVELOPMENT
+    ===================================================== */
+
+    {
+        id: 30,
+        title: "Notes Mobile App",
+        description: "Create a simple mobile application for creating, editing and organizing notes.",
+        course: "Mobile Development",
+        career: "Mobile App Developer",
+        category: "Mobile Development",
+        difficulty: "Beginner",
+        type: "Practice Project",
+        time: "4–7 days",
+        icon: "fa-solid fa-mobile-screen-button",
+
+        technologies: [
+            "Java",
+            "Android"
+        ],
+
+        prerequisites: [
+            "Java basics",
+            "OOP",
+            "Basic Android concepts"
+        ],
+
+        objectives: [
+            "Create mobile layouts",
+            "Handle user input",
+            "Manage application state",
+            "Create multiple screens"
+        ],
+
+        roadmap: [
+            "Design app screens",
+            "Create note form",
+            "Display notes",
+            "Add edit functionality",
+            "Add delete functionality"
+        ],
+
+        challenges: [
+            "Create note",
+            "Edit note",
+            "Delete note",
+            "Search notes"
+        ],
+
+        careerValue:
+            "This project introduces mobile UI development and application-state concepts.",
+
+        resources: [
+            "Java",
+            "Android",
+            "Mobile UI"
+        ]
+    },
+
+
+    {
+        id: 31,
+        title: "Habit Tracker App",
+        description: "Design a mobile habit tracker that lets users record and monitor daily habits.",
+        course: "Mobile Development",
+        career: "Mobile App Developer",
+        category: "Mobile Development",
+        difficulty: "Intermediate",
+        type: "Practice Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-calendar-check",
+
+        technologies: [
+            "Java",
+            "Android"
+        ],
+
+        prerequisites: [
+            "Java",
+            "Android basics",
+            "UI layouts"
+        ],
+
+        objectives: [
+            "Track user activities",
+            "Create interactive screens",
+            "Display progress",
+            "Manage local data"
+        ],
+
+        roadmap: [
+            "Design habit screen",
+            "Create habit input",
+            "Track completion",
+            "Display progress",
+            "Add history"
+        ],
+
+        challenges: [
+            "Add habit",
+            "Mark habit complete",
+            "Track streak",
+            "Display weekly progress"
+        ],
+
+        careerValue:
+            "The project combines mobile UI, state management and user-focused design.",
+
+        resources: [
+            "Android",
+            "Java",
+            "Mobile UI"
+        ]
+    },
+
+
+    /* =====================================================
+       DIGITAL MARKETING
+    ===================================================== */
+
+    {
+        id: 32,
+        title: "SEO Analysis Dashboard",
+        description: "Create a dashboard that organizes website SEO metrics and improvement areas.",
+        course: "Digital Marketing",
+        career: "Digital Marketer",
+        category: "Digital Marketing",
+        difficulty: "Intermediate",
+        type: "Marketing Project",
+        time: "4–7 days",
+        icon: "fa-solid fa-chart-line",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "Basic SEO",
+            "HTML",
+            "Basic analytics"
+        ],
+
+        objectives: [
+            "Understand SEO metrics",
+            "Organize marketing data",
+            "Create reports",
+            "Design dashboards"
+        ],
+
+        roadmap: [
+            "Define SEO metrics",
+            "Create dashboard layout",
+            "Add metric cards",
+            "Create analysis sections",
+            "Add filters"
+        ],
+
+        challenges: [
+            "Create SEO score",
+            "Display keywords",
+            "Show traffic metrics",
+            "Create improvement checklist"
+        ],
+
+        careerValue:
+            "This project combines digital marketing concepts with practical dashboard design.",
+
+        resources: [
+            "SEO",
+            "Digital Marketing",
+            "HTML",
+            "JavaScript"
+        ]
+    },
+
+
+    {
+        id: 33,
+        title: "Campaign Performance Tracker",
+        description: "Create a dashboard for organizing and comparing marketing campaign performance.",
+        course: "Digital Marketing",
+        career: "Digital Marketer",
+        category: "Digital Marketing",
+        difficulty: "Intermediate",
+        type: "Marketing Project",
+        time: "4–6 days",
+        icon: "fa-solid fa-bullhorn",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "Digital marketing basics",
+            "Basic analytics"
+        ],
+
+        objectives: [
+            "Track campaign metrics",
+            "Compare performance",
+            "Create marketing reports",
+            "Present data visually"
+        ],
+
+        roadmap: [
+            "Define campaign metrics",
+            "Create dashboard",
+            "Add campaign records",
+            "Calculate metrics",
+            "Compare campaigns"
+        ],
+
+        challenges: [
+            "Track clicks",
+            "Track conversions",
+            "Calculate conversion rate",
+            "Compare campaigns"
+        ],
+
+        careerValue:
+            "This project develops analytical thinking for digital marketing.",
+
+        resources: [
+            "Digital Marketing",
+            "Analytics",
+            "Campaign Management"
+        ]
+    },
+
+
+    /* =====================================================
+       BUSINESS / MANAGEMENT
+    ===================================================== */
+
+    {
+        id: 34,
+        title: "Inventory Management System",
+        description: "Build a system for tracking products, stock levels and inventory movements.",
+        course: "Business Management",
+        career: "Business Analyst",
+        category: "Business",
+        difficulty: "Intermediate",
+        type: "Business Project",
+        time: "6–9 days",
+        icon: "fa-solid fa-boxes-stacked",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SQL"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "Basic SQL",
+            "Data management"
+        ],
+
+        objectives: [
+            "Track inventory",
+            "Manage product records",
+            "Calculate stock",
+            "Create reports"
+        ],
+
+        roadmap: [
+            "Create product structure",
+            "Add products",
+            "Track stock",
+            "Record movements",
+            "Create reports"
+        ],
+
+        challenges: [
+            "Add product",
+            "Update stock",
+            "Search products",
+            "Show low-stock items"
+        ],
+
+        careerValue:
+            "The project demonstrates business-process understanding and data management.",
+
+        resources: [
+            "JavaScript",
+            "SQL",
+            "Business Analytics"
+        ]
+    },
+
+
+    {
+        id: 35,
+        title: "Business Analytics Dashboard",
+        description: "Create a dashboard for monitoring business performance indicators.",
+        course: "Business Analytics",
+        career: "Business Analyst",
+        category: "Business",
+        difficulty: "Intermediate",
+        type: "Business Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-chart-simple",
+
+        technologies: [
+            "Excel",
+            "SQL",
+            "Data Visualization"
+        ],
+
+        prerequisites: [
+            "Basic statistics",
+            "Excel",
+            "Data analysis"
+        ],
+
+        objectives: [
+            "Analyze business metrics",
+            "Create KPIs",
+            "Build dashboards",
+            "Communicate insights"
+        ],
+
+        roadmap: [
+            "Define KPIs",
+            "Collect data",
+            "Clean data",
+            "Create dashboard",
+            "Analyze results"
+        ],
+
+        challenges: [
+            "Create KPI cards",
+            "Calculate revenue",
+            "Compare performance",
+            "Present findings"
+        ],
+
+        careerValue:
+            "This project develops analytical and business communication skills.",
+
+        resources: [
+            "Excel",
+            "SQL",
+            "Data Visualization",
+            "Business Analytics"
+        ]
+    },
+
+
+    /* =====================================================
+       ACCOUNTING / FINANCE
+    ===================================================== */
+
+    {
+        id: 36,
+        title: "Personal Budget Tracker",
+        description: "Create a tool for tracking income, expenses, savings and monthly budgets.",
+        course: "Accounting & Finance",
+        career: "Financial Analyst",
+        category: "Finance",
+        difficulty: "Beginner",
+        type: "Finance Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-money-bill",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "Basic JavaScript",
+            "Basic financial concepts"
+        ],
+
+        objectives: [
+            "Track income",
+            "Track expenses",
+            "Calculate savings",
+            "Create financial summaries"
+        ],
+
+        roadmap: [
+            "Create budget interface",
+            "Add income",
+            "Add expenses",
+            "Calculate totals",
+            "Display summary"
+        ],
+
+        challenges: [
+            "Add income",
+            "Add expense",
+            "Calculate savings",
+            "Display monthly report"
+        ],
+
+        careerValue:
+            "The project combines basic financial concepts with practical data-management skills.",
+
+        resources: [
+            "JavaScript",
+            "Personal Finance",
+            "Data Management"
+        ]
+    },
+
+
+    {
+        id: 37,
+        title: "Invoice Management System",
+        description: "Create an application for creating and organizing customer invoices.",
+        course: "Accounting & Finance",
+        career: "Accountant",
+        category: "Finance",
+        difficulty: "Intermediate",
+        type: "Finance Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-file-invoice",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript basics"
+        ],
+
+        objectives: [
+            "Create invoice forms",
+            "Calculate totals",
+            "Manage customer records",
+            "Generate printable invoices"
+        ],
+
+        roadmap: [
+            "Design invoice",
+            "Add customer details",
+            "Add products",
+            "Calculate totals",
+            "Create printable version"
+        ],
+
+        challenges: [
+            "Add customer",
+            "Add invoice items",
+            "Calculate tax",
+            "Generate invoice"
+        ],
+
+        careerValue:
+            "This project demonstrates practical understanding of financial data and business workflows.",
+
+        resources: [
+            "JavaScript",
+            "HTML Forms",
+            "Financial Calculations"
+        ]
+    },
+
+
+    /* =====================================================
+       HR
+    ===================================================== */
+
+    {
+        id: 38,
+        title: "Employee Management Dashboard",
+        description: "Create a dashboard for managing employee information and departments.",
+        course: "Human Resource Management",
+        career: "HR Professional",
+        category: "Human Resources",
+        difficulty: "Intermediate",
+        type: "Business Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-users",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        objectives: [
+            "Manage employee records",
+            "Create dashboards",
+            "Implement search",
+            "Organize departments"
+        ],
+
+        roadmap: [
+            "Create employee structure",
+            "Build dashboard",
+            "Add employee records",
+            "Add search",
+            "Add filters"
+        ],
+
+        challenges: [
+            "Add employee",
+            "Search employees",
+            "Filter departments",
+            "Display employee statistics"
+        ],
+
+        careerValue:
+            "This project combines HR workflows with practical digital application skills.",
+
+        resources: [
+            "JavaScript",
+            "Data Management",
+            "Dashboard Design"
+        ]
+    },
+
+
+    /* =====================================================
+       RESEARCH
+    ===================================================== */
+
+    {
+        id: 39,
+        title: "Research Survey Dashboard",
+        description: "Create a dashboard for organizing survey responses and presenting research findings.",
+        course: "Research",
+        career: "Researcher",
+        category: "Research",
+        difficulty: "Intermediate",
+        type: "Research Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-flask",
+
+        technologies: [
+            "Excel",
+            "Python",
+            "Data Visualization"
+        ],
+
+        prerequisites: [
+            "Basic statistics",
+            "Data handling"
+        ],
+
+        objectives: [
+            "Organize survey data",
+            "Analyze responses",
+            "Calculate statistics",
+            "Present findings"
+        ],
+
+        roadmap: [
+            "Create survey dataset",
+            "Clean responses",
+            "Analyze results",
+            "Create charts",
+            "Write findings"
+        ],
+
+        challenges: [
+            "Calculate response percentages",
+            "Compare groups",
+            "Create charts",
+            "Summarize findings"
+        ],
+
+        careerValue:
+            "The project provides practice with research data analysis and communication.",
+
+        resources: [
+            "Research Methods",
+            "Statistics",
+            "Excel",
+            "Data Visualization"
+        ]
+    },
+
+
+    /* =====================================================
+       CLOUD / DEVOPS
+    ===================================================== */
+
+    {
+        id: 40,
+        title: "Dockerized Web Application",
+        description: "Package a web application into a Docker container and prepare it for deployment.",
+        course: "Cloud & DevOps",
+        career: "DevOps Engineer",
+        category: "Cloud & DevOps",
+        difficulty: "Advanced",
+        type: "DevOps Project",
+        time: "7–10 days",
+        icon: "fa-brands fa-docker",
+
+        technologies: [
+            "Docker",
+            "Linux",
+            "Git"
+        ],
+
+        prerequisites: [
+            "Basic web development",
+            "Git",
+            "Command line"
+        ],
+
+        objectives: [
+            "Understand containers",
+            "Create Docker images",
+            "Run containers",
+            "Understand deployment basics"
+        ],
+
+        roadmap: [
+            "Prepare application",
+            "Create Dockerfile",
+            "Build image",
+            "Run container",
+            "Test application",
+            "Prepare deployment"
+        ],
+
+        challenges: [
+            "Create Dockerfile",
+            "Build image",
+            "Run container",
+            "Expose application port"
+        ],
+
+        careerValue:
+            "This project introduces containerization and basic deployment concepts.",
+
+        resources: [
+            "Docker",
+            "Linux",
+            "Git",
+            "DevOps"
+        ]
+    },
+
+
+    {
+        id: 41,
+        title: "CI/CD Pipeline Demo",
+        description: "Create a basic automated workflow for testing and deploying a project.",
+        course: "Cloud & DevOps",
+        career: "DevOps Engineer",
+        category: "Cloud & DevOps",
+        difficulty: "Advanced",
+        type: "DevOps Project",
+        time: "7–12 days",
+        icon: "fa-solid fa-gears",
+
+        technologies: [
+            "Git",
+            "GitHub Actions",
+            "Docker"
+        ],
+
+        prerequisites: [
+            "Git",
+            "GitHub",
+            "Basic command line"
+        ],
+
+        objectives: [
+            "Understand CI/CD",
+            "Automate project workflows",
+            "Run automated checks",
+            "Understand deployment pipelines"
+        ],
+
+        roadmap: [
+            "Create repository",
+            "Create workflow",
+            "Add tests",
+            "Build application",
+            "Run workflow",
+            "Deploy"
+        ],
+
+        challenges: [
+            "Create workflow",
+            "Run automated checks",
+            "Build project",
+            "Trigger workflow on push"
+        ],
+
+        careerValue:
+            "CI/CD projects introduce automation practices used in modern software development.",
+
+        resources: [
+            "Git",
+            "GitHub Actions",
+            "Docker",
+            "CI/CD"
+        ]
+    },
+
+
+    /* =====================================================
+       EXTRA PROJECTS
+    ===================================================== */
+
+    {
+        id: 42,
+        title: "Online Quiz Application",
+        description: "Build an interactive quiz application with questions, answers, scoring and results.",
+        course: "Web Development",
+        career: "Frontend Developer",
+        category: "Web Development",
+        difficulty: "Beginner",
+        type: "Practice Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-circle-question",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "Arrays",
+            "DOM"
+        ],
+
+        objectives: [
+            "Create interactive interfaces",
+            "Handle user answers",
+            "Calculate scores",
+            "Manage application state"
+        ],
+
+        roadmap: [
+            "Create question data",
+            "Build quiz interface",
+            "Handle answers",
+            "Calculate score",
+            "Display result"
+        ],
+
+        challenges: [
+            "Create questions",
+            "Add answer buttons",
+            "Track score",
+            "Add restart functionality"
+        ],
+
+        careerValue:
+            "Quiz applications provide practice with JavaScript logic and interactive interfaces.",
+
+        resources: [
+            "JavaScript",
+            "Arrays",
+            "DOM",
+            "Events"
+        ]
+    },
+
+
+    {
+        id: 43,
+        title: "Job Portal Interface",
+        description: "Create a job portal interface with job cards, search and filtering.",
+        course: "Full Stack Development",
+        career: "Full Stack Developer",
+        category: "Web Development",
+        difficulty: "Intermediate",
+        type: "Portfolio Project",
+        time: "6–10 days",
+        icon: "fa-solid fa-briefcase",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive Design"
+        ],
+
+        objectives: [
+            "Build search interfaces",
+            "Create filters",
+            "Design job cards",
+            "Practice responsive UI"
+        ],
+
+        roadmap: [
+            "Create job data",
+            "Build job cards",
+            "Create search",
+            "Add filters",
+            "Create job details"
+        ],
+
+        challenges: [
+            "Search jobs",
+            "Filter by location",
+            "Filter by technology",
+            "View job details"
+        ],
+
+        careerValue:
+            "A job portal is a strong practice project for search, filtering and structured UI development.",
+
+        resources: [
+            "JavaScript",
+            "DOM",
+            "Responsive Design",
+            "UI Design"
+        ]
+    },
+
+
+    {
+        id: 44,
+        title: "Chat Application UI",
+        description: "Design a responsive chat application interface with conversations and messaging areas.",
+        course: "Frontend Development",
+        career: "Frontend Developer",
+        category: "Frontend Development",
+        difficulty: "Intermediate",
+        type: "UI Project",
+        time: "4–7 days",
+        icon: "fa-solid fa-comments",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        objectives: [
+            "Design complex interfaces",
+            "Create responsive layouts",
+            "Handle message input",
+            "Create dynamic UI"
+        ],
+
+        roadmap: [
+            "Design chat layout",
+            "Create conversation list",
+            "Create message area",
+            "Add input",
+            "Add responsive layout"
+        ],
+
+        challenges: [
+            "Create conversation list",
+            "Display messages",
+            "Send a message",
+            "Create mobile layout"
+        ],
+
+        careerValue:
+            "Chat interfaces provide practice with dynamic UI and responsive application layouts.",
+
+        resources: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsive Design"
+        ]
+    },
+
+
+    {
+        id: 45,
+        title: "URL Shortener",
+        description: "Create a simple application that converts long URLs into shorter links.",
+        course: "Full Stack Development",
+        career: "Backend Developer",
+        category: "Backend Development",
+        difficulty: "Advanced",
+        type: "Backend Project",
+        time: "7–12 days",
+        icon: "fa-solid fa-link",
+
+        technologies: [
+            "Python",
+            "API",
+            "SQL"
+        ],
+
+        prerequisites: [
+            "Python",
+            "HTTP",
+            "APIs",
+            "SQL"
+        ],
+
+        objectives: [
+            "Understand backend logic",
+            "Create API endpoints",
+            "Store data",
+            "Handle requests"
+        ],
+
+        roadmap: [
+            "Design URL model",
+            "Create API",
+            "Generate short identifier",
+            "Store URLs",
+            "Redirect users",
+            "Test API"
+        ],
+
+        challenges: [
+            "Create short URL",
+            "Store URL",
+            "Redirect URL",
+            "Handle invalid URL"
+        ],
+
+        careerValue:
+            "This project introduces backend APIs, data persistence and request handling.",
+
+        resources: [
+            "Python",
+            "REST APIs",
+            "SQL",
+            "HTTP"
+        ]
+    },
+
+
+    {
+        id: 46,
+        title: "Notes API",
+        description: "Build a backend API for creating, reading, updating and deleting notes.",
+        course: "Backend Development",
+        career: "Backend Developer",
+        category: "Backend Development",
+        difficulty: "Intermediate",
+        type: "Backend Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-server",
+
+        technologies: [
+            "Python",
+            "REST API",
+            "SQL"
+        ],
+
+        prerequisites: [
+            "Python",
+            "HTTP",
+            "SQL"
+        ],
+
+        objectives: [
+            "Understand REST APIs",
+            "Create CRUD endpoints",
+            "Connect a database",
+            "Handle API requests"
+        ],
+
+        roadmap: [
+            "Design note model",
+            "Create API routes",
+            "Connect database",
+            "Implement CRUD",
+            "Test endpoints"
+        ],
+
+        challenges: [
+            "Create note",
+            "Get notes",
+            "Update note",
+            "Delete note"
+        ],
+
+        careerValue:
+            "This project provides practical backend and API development experience.",
+
+        resources: [
+            "Python",
+            "REST APIs",
+            "SQL",
+            "HTTP"
+        ]
+    },
+
+
+    {
+        id: 47,
+        title: "AI Study Assistant",
+        description: "Design a study assistant interface that organizes questions, notes and learning prompts.",
+        course: "Artificial Intelligence",
+        career: "AI Developer",
+        category: "AI & Machine Learning",
+        difficulty: "Advanced",
+        type: "AI Project",
+        time: "10–15 days",
+        icon: "fa-solid fa-brain",
+
+        technologies: [
+            "Python",
+            "JavaScript",
+            "API"
+        ],
+
+        prerequisites: [
+            "Python",
+            "JavaScript",
+            "APIs",
+            "JSON"
+        ],
+
+        objectives: [
+            "Design AI-assisted interfaces",
+            "Work with APIs",
+            "Handle conversational input",
+            "Organize learning information"
+        ],
+
+        roadmap: [
+            "Design interface",
+            "Create question input",
+            "Connect API",
+            "Display response",
+            "Add learning history"
+        ],
+
+        challenges: [
+            "Create chat interface",
+            "Handle user questions",
+            "Display responses",
+            "Create study history"
+        ],
+
+        careerValue:
+            "This project combines frontend development, APIs and AI-assisted application concepts.",
+
+        resources: [
+            "Python",
+            "JavaScript",
+            "APIs",
+            "JSON"
+        ]
+    },
+
+
+    {
+        id: 48,
+        title: "Career Recommendation Interface",
+        description: "Create a frontend decision-support interface that matches user interests and skills with career information.",
+        course: "BCA / Computer Applications",
+        career: "Software Developer",
+        category: "Career Technology",
+        difficulty: "Advanced",
+        type: "Major Project",
+        time: "10–15 days",
+        icon: "fa-solid fa-compass",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "LocalStorage"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "DOM",
+            "Arrays",
+            "Objects"
+        ],
+
+        objectives: [
+            "Create structured career data",
+            "Build decision-support UI",
+            "Use filtering logic",
+            "Connect skills with careers"
+        ],
+
+        roadmap: [
+            "Create career data",
+            "Create user questionnaire",
+            "Process selections",
+            "Display matching careers",
+            "Show required skills",
+            "Create learning direction"
+        ],
+
+        challenges: [
+            "Create career questionnaire",
+            "Match skills",
+            "Display career cards",
+            "Show skill requirements"
+        ],
+
+        careerValue:
+            "This project directly demonstrates how structured career and skill information can be turned into an interactive guidance interface.",
+
+        resources: [
+            "JavaScript",
+            "DOM",
+            "Arrays",
+            "Objects",
+            "LocalStorage"
+        ]
+    },
+
+
+    {
+        id: 49,
+        title: "Learning Progress Tracker",
+        description: "Build an application for tracking courses, skills, projects and learning progress.",
+        course: "Web Development",
+        career: "Frontend Developer",
+        category: "EdTech",
+        difficulty: "Intermediate",
+        type: "Portfolio Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-chart-simple",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "LocalStorage"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "DOM",
+            "LocalStorage"
+        ],
+
+        objectives: [
+            "Track learning activities",
+            "Create progress indicators",
+            "Store user data",
+            "Create dashboard interfaces"
+        ],
+
+        roadmap: [
+            "Create course data",
+            "Create progress cards",
+            "Add progress controls",
+            "Store progress",
+            "Create dashboard"
+        ],
+
+        challenges: [
+            "Add course",
+            "Update progress",
+            "Mark course complete",
+            "Display progress statistics"
+        ],
+
+        careerValue:
+            "This project demonstrates dynamic UI development and practical state-management concepts.",
+
+        resources: [
+            "JavaScript",
+            "DOM",
+            "LocalStorage",
+            "Dashboard Design"
+        ]
+    },
+
+
+    {
+        id: 50,
+        title: "Skill Gap Analyzer",
+        description: "Create a tool that compares current skills with skills required for a selected career.",
+        course: "Career Development",
+        career: "Career Technology",
+        category: "Career Technology",
+        difficulty: "Advanced",
+        type: "Career Project",
+        time: "7–12 days",
+        icon: "fa-solid fa-chart-gap",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "LocalStorage"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "Arrays",
+            "Objects",
+            "DOM"
+        ],
+
+        objectives: [
+            "Compare skill sets",
+            "Calculate skill gaps",
+            "Create progress indicators",
+            "Generate learning priorities"
+        ],
+
+        roadmap: [
+            "Create career skill data",
+            "Create user skill input",
+            "Compare skills",
+            "Calculate gaps",
+            "Display results",
+            "Create learning direction"
+        ],
+
+        challenges: [
+            "Select career",
+            "Add current skills",
+            "Compare requirements",
+            "Display missing skills"
+        ],
+
+        careerValue:
+            "This project demonstrates how career requirements and learner skills can be connected through an interactive application.",
+
+        resources: [
+            "JavaScript",
+            "Arrays",
+            "Objects",
+            "DOM",
+            "LocalStorage"
+        ]
+    },
+
+
+    {
+        id: 51,
+        title: "Online Learning Platform",
+        description: "Create a learning platform interface with courses, lessons, resources and progress tracking.",
+        course: "Full Stack Development",
+        career: "Full Stack Developer",
+        category: "EdTech",
+        difficulty: "Advanced",
+        type: "Major Project",
+        time: "12–20 days",
+        icon: "fa-solid fa-graduation-cap",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "API"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "DOM",
+            "APIs",
+            "Responsive Design"
+        ],
+
+        objectives: [
+            "Create a multi-section platform",
+            "Organize learning content",
+            "Track progress",
+            "Create course interfaces"
+        ],
+
+        roadmap: [
+            "Design platform",
+            "Create course cards",
+            "Create lesson page",
+            "Add resources",
+            "Add progress tracking",
+            "Test platform"
+        ],
+
+        challenges: [
+            "Create course search",
+            "Create lesson interface",
+            "Track lesson completion",
+            "Create progress dashboard"
+        ],
+
+        careerValue:
+            "An education platform combines UI, data organization, application logic and user progress concepts.",
+
+        resources: [
+            "JavaScript",
+            "APIs",
+            "Responsive Design",
+            "UI Design"
+        ]
+    },
+
+
+    {
+        id: 52,
+        title: "Restaurant Management System",
+        description: "Create a system for managing menu items, orders and basic restaurant records.",
+        course: "Computer Applications",
+        career: "Software Developer",
+        category: "Business Applications",
+        difficulty: "Intermediate",
+        type: "Major Project",
+        time: "6–10 days",
+        icon: "fa-solid fa-utensils",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SQL"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "SQL",
+            "DOM"
+        ],
+
+        objectives: [
+            "Manage menu records",
+            "Create order functionality",
+            "Calculate totals",
+            "Practice database concepts"
+        ],
+
+        roadmap: [
+            "Create menu",
+            "Create order interface",
+            "Add order items",
+            "Calculate total",
+            "Store records",
+            "Create reports"
+        ],
+
+        challenges: [
+            "Add menu item",
+            "Create order",
+            "Calculate bill",
+            "Display order history"
+        ],
+
+        careerValue:
+            "This project combines application logic with real-world business workflows.",
+
+        resources: [
+            "JavaScript",
+            "SQL",
+            "DOM",
+            "Database"
+        ]
+    },
+
+
+    {
+        id: 53,
+        title: "Hospital Appointment Interface",
+        description: "Create a responsive interface for searching doctors and scheduling appointments.",
+        course: "Web Development",
+        career: "Frontend Developer",
+        category: "Web Development",
+        difficulty: "Intermediate",
+        type: "Real-World Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-calendar-days",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        objectives: [
+            "Create forms",
+            "Build search interfaces",
+            "Create appointment UI",
+            "Practice responsive design"
+        ],
+
+        roadmap: [
+            "Create doctor data",
+            "Create search",
+            "Create doctor cards",
+            "Create appointment form",
+            "Add validation"
+        ],
+
+        challenges: [
+            "Search doctors",
+            "Filter specialization",
+            "Select date",
+            "Validate appointment form"
+        ],
+
+        careerValue:
+            "This project provides practical experience with forms, filtering and real-world user flows.",
+
+        resources: [
+            "HTML Forms",
+            "JavaScript",
+            "DOM",
+            "Responsive Design"
+        ]
+    },
+
+
+    {
+        id: 54,
+        title: "Movie Recommendation UI",
+        description: "Create a movie discovery interface with categories, search and recommendations.",
+        course: "Frontend Development",
+        career: "Frontend Developer",
+        category: "Frontend Development",
+        difficulty: "Intermediate",
+        type: "Portfolio Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-film",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "API"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "DOM",
+            "APIs",
+            "JSON"
+        ],
+
+        objectives: [
+            "Work with API data",
+            "Create search interfaces",
+            "Create filters",
+            "Build responsive cards"
+        ],
+
+        roadmap: [
+            "Design movie UI",
+            "Connect movie data",
+            "Create search",
+            "Create categories",
+            "Create details page"
+        ],
+
+        challenges: [
+            "Search movies",
+            "Filter genres",
+            "Display ratings",
+            "Create movie details"
+        ],
+
+        careerValue:
+            "This project combines API integration with modern frontend interface development.",
+
+        resources: [
+            "JavaScript",
+            "APIs",
+            "JSON",
+            "CSS"
+        ]
+    },
+
+
+    {
+        id: 55,
+        title: "Real-Time Chat Backend",
+        description: "Create a backend foundation for a messaging application.",
+        course: "Backend Development",
+        career: "Backend Developer",
+        category: "Backend Development",
+        difficulty: "Advanced",
+        type: "Backend Project",
+        time: "10–15 days",
+        icon: "fa-solid fa-server",
+
+        technologies: [
+            "Python",
+            "API",
+            "Database"
+        ],
+
+        prerequisites: [
+            "Python",
+            "HTTP",
+            "APIs",
+            "Database basics"
+        ],
+
+        objectives: [
+            "Understand backend architecture",
+            "Create API endpoints",
+            "Store messages",
+            "Handle users and conversations"
+        ],
+
+        roadmap: [
+            "Design data models",
+            "Create API",
+            "Create user operations",
+            "Store messages",
+            "Retrieve conversations",
+            "Test API"
+        ],
+
+        challenges: [
+            "Create users",
+            "Send messages",
+            "Retrieve messages",
+            "Store conversations"
+        ],
+
+        careerValue:
+            "This project introduces backend architecture and data persistence for a practical application.",
+
+        resources: [
+            "Python",
+            "REST APIs",
+            "Database",
+            "HTTP"
+        ]
+    },
+
+
+    {
+        id: 56,
+        title: "Employee Payroll System",
+        description: "Create an application for managing employee salary and payroll calculations.",
+        course: "Java",
+        career: "Software Developer",
+        category: "Business Applications",
+        difficulty: "Intermediate",
+        type: "Major Project",
+        time: "6–10 days",
+        icon: "fa-solid fa-money-check-dollar",
+
+        technologies: [
+            "Java",
+            "OOP"
+        ],
+
+        prerequisites: [
+            "Java",
+            "OOP",
+            "Methods",
+            "Classes"
+        ],
+
+        objectives: [
+            "Create employee classes",
+            "Calculate salary",
+            "Manage employee records",
+            "Practice OOP"
+        ],
+
+        roadmap: [
+            "Create employee model",
+            "Add salary data",
+            "Calculate payroll",
+            "Generate records",
+            "Test calculations"
+        ],
+
+        challenges: [
+            "Add employee",
+            "Calculate salary",
+            "Apply deductions",
+            "Generate payroll report"
+        ],
+
+        careerValue:
+            "The project provides practical Java OOP and business-logic experience.",
+
+        resources: [
+            "Java",
+            "OOP",
+            "Classes",
+            "Methods"
+        ]
+    },
+
+
+    {
+        id: 57,
+        title: "Network Monitoring Dashboard",
+        description: "Create a dashboard interface for displaying sample network monitoring information.",
+        course: "Cybersecurity",
+        career: "Network Administrator",
+        category: "Networking",
+        difficulty: "Advanced",
+        type: "Networking Project",
+        time: "7–12 days",
+        icon: "fa-solid fa-network-wired",
+
+        technologies: [
+            "Python",
+            "Networking",
+            "Data Visualization"
+        ],
+
+        prerequisites: [
+            "Python",
+            "Networking basics",
+            "Data handling"
+        ],
+
+        objectives: [
+            "Understand network metrics",
+            "Organize monitoring data",
+            "Create dashboards",
+            "Identify unusual patterns"
+        ],
+
+        roadmap: [
+            "Define network metrics",
+            "Prepare sample data",
+            "Create dashboard",
+            "Display metrics",
+            "Add monitoring states"
+        ],
+
+        challenges: [
+            "Display network status",
+            "Show traffic",
+            "Display alerts",
+            "Create monitoring summary"
+        ],
+
+        careerValue:
+            "The project combines networking concepts with monitoring and dashboard development.",
+
+        resources: [
+            "Networking",
+            "Python",
+            "Data Visualization"
+        ]
+    },
+
+
+    {
+        id: 58,
+        title: "Research Paper Organizer",
+        description: "Create an application for organizing research papers, topics, notes and references.",
+        course: "Research",
+        career: "Researcher",
+        category: "Research",
+        difficulty: "Beginner",
+        type: "Productivity Project",
+        time: "3–5 days",
+        icon: "fa-solid fa-file-lines",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "LocalStorage"
+        ],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        objectives: [
+            "Organize research information",
+            "Create search functionality",
+            "Store notes",
+            "Manage references"
+        ],
+
+        roadmap: [
+            "Create paper structure",
+            "Create paper cards",
+            "Add search",
+            "Add categories",
+            "Store notes"
+        ],
+
+        challenges: [
+            "Add research paper",
+            "Search papers",
+            "Add notes",
+            "Filter by topic"
+        ],
+
+        careerValue:
+            "This project develops information organization and productivity application skills.",
+
+        resources: [
+            "JavaScript",
+            "LocalStorage",
+            "Research Methods"
+        ]
+    },
+
+
+    {
+        id: 59,
+        title: "Social Media Dashboard",
+        description: "Create a dashboard for organizing social media metrics and content performance.",
+        course: "Digital Marketing",
+        career: "Digital Marketer",
+        category: "Digital Marketing",
+        difficulty: "Intermediate",
+        type: "Marketing Project",
+        time: "5–8 days",
+        icon: "fa-solid fa-share-nodes",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Data Visualization"
+        ],
+
+        prerequisites: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Basic analytics"
+        ],
+
+        objectives: [
+            "Track social metrics",
+            "Create visual dashboards",
+            "Compare content",
+            "Organize campaign data"
+        ],
+
+        roadmap: [
+            "Define metrics",
+            "Create dashboard",
+            "Add content records",
+            "Create charts",
+            "Compare performance"
+        ],
+
+        challenges: [
+            "Track engagement",
+            "Compare posts",
+            "Display followers",
+            "Create performance report"
+        ],
+
+        careerValue:
+            "This project combines marketing analytics with dashboard and visualization skills.",
+
+        resources: [
+            "Digital Marketing",
+            "Analytics",
+            "JavaScript",
+            "Data Visualization"
+        ]
+    },
+
+
+    {
+        id: 60,
+        title: "Skill2Career Project Explorer",
+        description: "Build a project discovery platform where learners can search projects based on courses, careers, skills and difficulty.",
+        course: "BCA",
+        career: "Full Stack Developer",
+        category: "EdTech",
+        difficulty: "Advanced",
+        type: "Major Project",
+        time: "10–20 days",
+        icon: "fa-solid fa-compass-drafting",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "LocalStorage"
+        ],
+
+        prerequisites: [
+            "JavaScript",
+            "DOM",
+            "Arrays",
+            "Objects",
+            "LocalStorage"
+        ],
+
+        objectives: [
+            "Create structured project data",
+            "Build search and filtering",
+            "Connect projects with careers",
+            "Create project details",
+            "Track project progress"
+        ],
+
+        roadmap: [
+            "Create project dataset",
+            "Build search",
+            "Create filters",
+            "Create project cards",
+            "Create project details",
+            "Add progress tracking"
+        ],
+
+        challenges: [
+            "Search projects",
+            "Filter by course",
+            "Filter by career",
+            "Track project progress"
+        ],
+
+        careerValue:
+            "This project closely represents the type of career-learning platform Skill2Career is designed to provide.",
+
+        resources: [
+            "JavaScript",
+            "DOM",
+            "LocalStorage",
+            "Data Structures"
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   DOM ELEMENTS
+========================================================= */
+
+const projectContainer =
+    document.getElementById("projectContainer");
+
+const projectSearch =
+    document.getElementById("projectSearch");
+
+const clearSearch =
+    document.getElementById("clearSearch");
+
+const careerFilter =
+    document.getElementById("careerFilter");
+
+const courseFilter =
+    document.getElementById("courseFilter");
+
+const categoryFilter =
+    document.getElementById("categoryFilter");
+
+const difficultyFilter =
+    document.getElementById("difficultyFilter");
+
+const technologyFilter =
+    document.getElementById("technologyFilter");
+
+const typeFilter =
+    document.getElementById("typeFilter");
+
+const resetFilters =
+    document.getElementById("resetFilters");
+
+const resultCount =
+    document.getElementById("resultCount");
+
+const noResults =
+    document.getElementById("noResults");
+
+const clearNoResults =
+    document.getElementById("clearNoResults");
+
+
+/* =========================================================
+   MODAL ELEMENTS
+========================================================= */
+
+const projectModal =
+    document.getElementById("projectModal");
+
+const modalClose =
+    document.getElementById("modalClose");
+
+const modalIcon =
+    document.getElementById("modalIcon");
+
+const modalCategory =
+    document.getElementById("modalCategory");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalCareer =
+    document.getElementById("modalCareer");
+
+const modalCourse =
+    document.getElementById("modalCourse");
+
+const modalDifficulty =
+    document.getElementById("modalDifficulty");
+
+const modalTime =
+    document.getElementById("modalTime");
+
+const modalType =
+    document.getElementById("modalType");
+
+const modalObjectives =
+    document.getElementById("modalObjectives");
+
+const modalPrerequisites =
+    document.getElementById("modalPrerequisites");
+
+const modalTech =
+    document.getElementById("modalTech");
+
+const modalRoadmap =
+    document.getElementById("modalRoadmap");
+
+const modalChallenges =
+    document.getElementById("modalChallenges");
+
+const modalCareerValue =
+    document.getElementById("modalCareerValue");
+
+const modalResources =
+    document.getElementById("modalResources");
+
+const modalProgressBar =
+    document.getElementById("modalProgressBar");
+
+const modalProgressText =
+    document.getElementById("modalProgressText");
+
+const startProject =
+    document.getElementById("startProject");
+
+const completeProject =
+    document.getElementById("completeProject");
+
+
+let currentProject = null;
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+function initializePage() {
+
+    populateFilters();
+
+    updateHeroStats();
+
+    displayProjects(projectsData);
+
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+function updateHeroStats() {
+
+    const totalProjects =
+        document.getElementById("totalProjects");
+
+    const totalCareers =
+        document.getElementById("totalCareers");
+
+
+    if (totalProjects) {
+
+        totalProjects.textContent =
+            projectsData.length;
+
+    }
+
+
+    if (totalCareers) {
+
+        const careers =
+            new Set(
+                projectsData.map(
+                    project => project.career
+                )
+            );
+
+        totalCareers.textContent =
+            careers.size;
+
+    }
+
+}
+
+
+/* =========================================================
+   POPULATE FILTERS
+========================================================= */
+
+function populateFilters() {
+
+    populateSelect(
+        courseFilter,
+        projectsData.map(
+            project => project.course
+        )
+    );
+
+
+    populateSelect(
+        careerFilter,
+        projectsData.map(
+            project => project.career
+        )
+    );
+
+
+    populateSelect(
+        categoryFilter,
+        projectsData.map(
+            project => project.category
+        )
+    );
+
+
+    populateSelect(
+        technologyFilter,
+        projectsData.flatMap(
+            project => project.technologies
+        )
+    );
+
+
+    populateSelect(
+        typeFilter,
+        projectsData.map(
+            project => project.type
+        )
+    );
+
+}
+
+
+/* =========================================================
+   GENERIC SELECT POPULATOR
+========================================================= */
+
+function populateSelect(select, values) {
+
+    if (!select) return;
+
+
+    const uniqueValues =
+        [...new Set(values)]
+            .sort();
+
+
+    uniqueValues.forEach(value => {
+
+        select.insertAdjacentHTML(
+            "beforeend",
+            `
+                <option value="${value}">
+                    ${value}
+                </option>
+            `
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   DISPLAY PROJECTS
+========================================================= */
+
+function displayProjects(projects) {
+
+    if (!projectContainer) return;
+
+
+    projectContainer.innerHTML = "";
+
+
+    if (resultCount) {
+
+        resultCount.textContent =
+            projects.length;
+
+    }
+
+
+    if (projects.length === 0) {
+
+        if (noResults) {
+
+            noResults.style.display =
+                "block";
+
+        }
+
+        return;
+
+    }
+
+
+    if (noResults) {
+
+        noResults.style.display =
+            "none";
+
+    }
+
+
+    projects.forEach(project => {
+
+        const difficultyClass =
+            project.difficulty
+                .toLowerCase()
+                .replace(/\s+/g, "-");
+
+
+        const card =
+            document.createElement("article");
+
+
+        card.className =
+            "project-card";
+
+
+        card.innerHTML = `
+
+            <div class="card-top">
+
+                <div class="project-icon">
+
+                    <i class="${project.icon}"></i>
+
+                </div>
+
+                <span
+                    class="difficulty ${difficultyClass}"
+                >
+                    ${project.difficulty}
+                </span>
+
+            </div>
+
+
+            <h3>
+                ${project.title}
+            </h3>
+
+
+            <p class="project-description">
+                ${project.description}
+            </p>
+
+
+            <div class="card-career">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <span>
+                    ${project.course}
+                </span>
+
+            </div>
+
+
+            <div class="card-career">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <span>
+                    ${project.career}
+                </span>
+
+            </div>
+
+
+            <div class="skill-tags">
+
+                ${project.technologies
+                    .slice(0, 4)
+                    .map(
+                        technology =>
+                            `
+                            <span class="skill-tag">
+                                ${technology}
+                            </span>
+                            `
+                    )
+                    .join("")
+                }
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span class="project-time">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    ${project.time}
+
+                </span>
+
+
+                <button
+                    class="view-project"
+                    data-id="${project.id}"
+                >
+
+                    View Project
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        projectContainer.appendChild(card);
+
+    });
+
+
+    addProjectButtonEvents();
+
+}
+
+
+/* =========================================================
+   PROJECT BUTTON EVENTS
+========================================================= */
+
+function addProjectButtonEvents() {
+
+    document
+        .querySelectorAll(".view-project")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const projectId =
+                        Number(
+                            button.dataset.id
+                        );
+
+                    openProject(projectId);
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   OPEN PROJECT MODAL
+========================================================= */
+
+function openProject(projectId) {
+
+    currentProject =
+        projectsData.find(
+            project => project.id === projectId
+        );
+
+
+    if (!currentProject) return;
+
+
+    if (modalIcon) {
+
+        modalIcon.innerHTML =
+            `<i class="${currentProject.icon}"></i>`;
+
+    }
+
+
+    if (modalCategory) {
+
+        modalCategory.textContent =
+            currentProject.category;
+
+    }
+
+
+    if (modalTitle) {
+
+        modalTitle.textContent =
+            currentProject.title;
+
+    }
+
+
+    if (modalDescription) {
+
+        modalDescription.textContent =
+            currentProject.description;
+
+    }
+
+
+    if (modalCareer) {
+
+        modalCareer.textContent =
+            currentProject.career;
+
+    }
+
+
+    if (modalCourse) {
+
+        modalCourse.textContent =
+            currentProject.course;
+
+    }
+
+
+    if (modalDifficulty) {
+
+        modalDifficulty.textContent =
+            currentProject.difficulty;
+
+    }
+
+
+    if (modalTime) {
+
+        modalTime.textContent =
+            currentProject.time;
+
+    }
+
+
+    if (modalType) {
+
+        modalType.textContent =
+            currentProject.type;
+
+    }
+
+
+    if (modalCareerValue) {
+
+        modalCareerValue.textContent =
+            currentProject.careerValue;
+
+    }
+
+
+    /* Learning objectives */
+
+    if (modalObjectives) {
+
+        modalObjectives.innerHTML =
+            currentProject.objectives
+                .map(
+                    objective =>
+                        `<li>${objective}</li>`
+                )
+                .join("");
+
+    }
+
+
+    /* Prerequisites */
+
+    if (modalPrerequisites) {
+
+        modalPrerequisites.innerHTML =
+            currentProject.prerequisites
+                .map(
+                    item =>
+                        `
+                        <span class="tag">
+                            ${item}
+                        </span>
+                        `
+                )
+                .join("");
+
+    }
+
+
+    /* Technologies */
+
+    if (modalTech) {
+
+        modalTech.innerHTML =
+            currentProject.technologies
+                .map(
+                    technology =>
+                        `
+                        <span class="tag">
+                            ${technology}
+                        </span>
+                        `
+                )
+                .join("");
+
+    }
+
+
+    /* Roadmap */
+
+    if (modalRoadmap) {
+
+        modalRoadmap.innerHTML =
+            currentProject.roadmap
+                .map(
+                    (step, index) =>
+                        `
+                        <div class="roadmap-step">
+
+                            <div class="step-number">
+                                ${index + 1}
+                            </div>
+
+                            <div class="step-text">
+                                ${step}
+                            </div>
+
+                        </div>
+                        `
+                )
+                .join("");
+
+    }
+
+
+    /* Challenges */
+
+    if (modalChallenges) {
+
+        modalChallenges.innerHTML =
+            currentProject.challenges
+                .map(
+                    (challenge, index) =>
+                        `
+                        <div class="challenge">
+
+                            <strong>
+                                Challenge ${index + 1}
+                            </strong>
+
+                            <br>
+
+                            ${challenge}
+
+                        </div>
+                        `
+                )
+                .join("");
+
+    }
+
+
+    /* Resources */
+
+    if (modalResources) {
+
+        modalResources.innerHTML =
+            currentProject.resources
+                .map(
+                    resource =>
+                        `
+                        <span class="resource-tag">
+                            ${resource}
+                        </span>
+                        `
+                )
+                .join("");
+
+    }
+
+
+    updateProjectProgress();
+
+
+    if (projectModal) {
+
+        projectModal.classList.add("show");
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+}
+
+
+/* =========================================================
+   PROJECT PROGRESS
+========================================================= */
+
+function getProgressData() {
+
+    return JSON.parse(
+        localStorage.getItem(
+            "skill2careerProjectProgress"
+        )
+    ) || {};
+
+}
+
+
+function updateProjectProgress() {
+
+    if (!currentProject) return;
+
+
+    const progressData =
+        getProgressData();
+
+
+    const progress =
+        progressData[currentProject.id] || 0;
+
+
+    if (modalProgressBar) {
+
+        modalProgressBar.style.width =
+            `${progress}%`;
+
+    }
+
+
+    if (modalProgressText) {
+
+        modalProgressText.textContent =
+            `${progress}%`;
+
+    }
+
+
+    if (!startProject) return;
+
+
+    if (progress === 100) {
+
+        startProject.innerHTML =
+            `
+            <i class="fa-solid fa-circle-check"></i>
+            Project Completed
+            `;
+
+    } else if (progress > 0) {
+
+        startProject.innerHTML =
+            `
+            <i class="fa-solid fa-arrow-right"></i>
+            Continue Project
+            `;
+
+    } else {
+
+        startProject.innerHTML =
+            `
+            <i class="fa-solid fa-play"></i>
+            Start Project
+            `;
+
+    }
+
+}
+
+
+/* =========================================================
+   START PROJECT
+========================================================= */
+
+if (startProject) {
+
+    startProject.addEventListener(
+        "click",
+        () => {
+
+            if (!currentProject) return;
+
+
+            const progressData =
+                getProgressData();
+
+
+            let progress =
+                progressData[currentProject.id] || 0;
+
+
+            if (progress < 100) {
+
+                progress += 25;
+
+            }
+
+
+            if (progress > 100) {
+
+                progress = 100;
+
+            }
+
+
+            progressData[currentProject.id] =
+                progress;
+
+
+            localStorage.setItem(
+                "skill2careerProjectProgress",
+                JSON.stringify(progressData)
+            );
+
+
+            updateProjectProgress();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   COMPLETE PROJECT
+========================================================= */
+
+if (completeProject) {
+
+    completeProject.addEventListener(
+        "click",
+        () => {
+
+            if (!currentProject) return;
+
+
+            const progressData =
+                getProgressData();
+
+
+            progressData[currentProject.id] =
+                100;
+
+
+            localStorage.setItem(
+                "skill2careerProjectProgress",
+                JSON.stringify(progressData)
+            );
+
+
+            updateProjectProgress();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+function closeModal() {
+
+    if (projectModal) {
+
+        projectModal.classList.remove(
+            "show"
+        );
+
+    }
+
+    document.body.style.overflow = "";
+
+}
+
+
+if (modalClose) {
+
+    modalClose.addEventListener(
+        "click",
+        closeModal
+    );
+
+}
+
+
+if (projectModal) {
+
+    projectModal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === projectModal
+            ) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Escape") {
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FILTER PROJECTS
+========================================================= */
+
+function filterProjects() {
+
+    const search =
+        projectSearch
+            ? projectSearch.value
+                .toLowerCase()
+                .trim()
+            : "";
+
+
+    const career =
+        careerFilter
+            ? careerFilter.value
+            : "all";
+
+
+    const course =
+        courseFilter
+            ? courseFilter.value
+            : "all";
+
+
+    const category =
+        categoryFilter
+            ? categoryFilter.value
+            : "all";
+
+
+    const difficulty =
+        difficultyFilter
+            ? difficultyFilter.value
+            : "all";
+
+
+    const technology =
+        technologyFilter
+            ? technologyFilter.value
+            : "all";
+
+
+    const type =
+        typeFilter
+            ? typeFilter.value
+            : "all";
+
+
+    const filteredProjects =
+        projectsData.filter(project => {
+
+
+            const searchableText = [
+
+                project.title,
+
+                project.description,
+
+                project.course,
+
+                project.career,
+
+                project.category,
+
+                project.type,
+
+                ...project.technologies,
+
+                ...project.prerequisites,
+
+                ...project.objectives
+
+            ]
+                .join(" ")
+                .toLowerCase();
+
+
+            const matchesSearch =
+                searchableText.includes(
+                    search
+                );
+
+
+            const matchesCareer =
+                career === "all" ||
+                project.career === career;
+
+
+            const matchesCourse =
+                course === "all" ||
+                project.course === course;
+
+
+            const matchesCategory =
+                category === "all" ||
+                project.category === category;
+
+
+            const matchesDifficulty =
+                difficulty === "all" ||
+                project.difficulty === difficulty;
+
+
+            const matchesTechnology =
+                technology === "all" ||
+                project.technologies.includes(
+                    technology
+                );
+
+
+            const matchesType =
+                type === "all" ||
+                project.type === type;
+
+
+            return (
+
+                matchesSearch &&
+
+                matchesCareer &&
+
+                matchesCourse &&
+
+                matchesCategory &&
+
+                matchesDifficulty &&
+
+                matchesTechnology &&
+
+                matchesType
+
+            );
+
+        });
+
+
+    displayProjects(
+        filteredProjects
+    );
+
+}
+
+
+/* =========================================================
+   SEARCH + FILTER EVENTS
+========================================================= */
+
+if (projectSearch) {
+
+    projectSearch.addEventListener(
+        "input",
+        filterProjects
+    );
+
+}
+
+
+if (careerFilter) {
+
+    careerFilter.addEventListener(
+        "change",
+        filterProjects
+    );
+
+}
+
+
+if (courseFilter) {
+
+    courseFilter.addEventListener(
+        "change",
+        filterProjects
+    );
+
+}
+
+
+if (categoryFilter) {
+
+    categoryFilter.addEventListener(
+        "change",
+        filterProjects
+    );
+
+}
+
+
+if (difficultyFilter) {
+
+    difficultyFilter.addEventListener(
+        "change",
+        filterProjects
+    );
+
+}
+
+
+if (technologyFilter) {
+
+    technologyFilter.addEventListener(
+        "change",
+        filterProjects
+    );
+
+}
+
+
+if (typeFilter) {
+
+    typeFilter.addEventListener(
+        "change",
+        filterProjects
+    );
+
+}
+
+
+/* =========================================================
+   RESET FILTERS
+========================================================= */
+
+function resetAllFilters() {
+
+    if (projectSearch) {
+
+        projectSearch.value = "";
+
+    }
+
+
+    if (careerFilter) {
+
+        careerFilter.value = "all";
+
+    }
+
+
+    if (courseFilter) {
+
+        courseFilter.value = "all";
+
+    }
+
+
+    if (categoryFilter) {
+
+        categoryFilter.value = "all";
+
+    }
+
+
+    if (difficultyFilter) {
+
+        difficultyFilter.value = "all";
+
+    }
+
+
+    if (technologyFilter) {
+
+        technologyFilter.value = "all";
+
+    }
+
+
+    if (typeFilter) {
+
+        typeFilter.value = "all";
+
+    }
+
+
+    displayProjects(
+        projectsData
+    );
+
+}
+
+
+if (clearSearch) {
+
+    clearSearch.addEventListener(
+        "click",
+        () => {
+
+            if (projectSearch) {
+
+                projectSearch.value = "";
+
+            }
+
+            filterProjects();
+
+        }
+    );
+
+}
+
+
+if (resetFilters) {
+
+    resetFilters.addEventListener(
+        "click",
+        resetAllFilters
+    );
+
+}
+
+
+if (clearNoResults) {
+
+    clearNoResults.addEventListener(
+        "click",
+        resetAllFilters
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE PAGE
+========================================================= */
+
+initializePage();
+
+
+    </script>
+
+</body>
+
+</html>
