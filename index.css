@@ -325,12 +325,12 @@ body {
 
     color: #65728a;
 
-    font-size: 30px;
+    font-size: 20px;
 
     line-height: 1.8;
-
+ 
     font-weight: 400;
-
+       
     linear-gradient(
             90deg,
             #075985,
@@ -353,7 +353,7 @@ body {
 /* SECOND DESCRIPTION */
 
 .second-description {
-   linear-gradient(
+  linear-gradient(
             90deg,
             #075985,
             #069c88,
@@ -370,7 +370,7 @@ body {
     animation:
         skillsGradient 5s linear infinite;
     margin-top: 10px;
-    font-size:30px;
+    font-size:20px;
 }
 
 
