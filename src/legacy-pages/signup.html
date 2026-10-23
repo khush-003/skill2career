@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | Skill2Career</title>
+
+    <style>
+    
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f7faff;
+
+    color: #172033;
+}
+
+
+/* =========================
+   SIGNUP PAGE
+========================= */
+
+.signup-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   SIGNUP CARD
+========================= */
+
+.signup-card {
+    width: 100%;
+
+    max-width: 450px;
+
+    background: #ffffff;
+
+    padding: 42px;
+
+    border: 1px solid #e4eaf2;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(18, 100, 232, 0.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.signup-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.logo {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    color: #172033;
+
+    text-decoration: none;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+
+.logo span {
+    color: #1264e8;
+}
+
+
+.signup-header h1 {
+    font-size: 29px;
+
+    margin-bottom: 10px;
+}
+
+
+.signup-header p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d9e0ea;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+
+.form-group input:focus {
+    border-color: #1264e8;
+
+    box-shadow:
+        0 0 0 3px rgba(18, 100, 232, 0.1);
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.terms {
+    margin: 18px 0;
+
+    font-size: 13px;
+
+    color: #596273;
+}
+
+
+.terms label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.signup-message {
+    min-height: 20px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.signup-message.error {
+    color: #dc2626;
+}
+
+
+.signup-message.success {
+    color: #16a34a;
+}
+
+
+/* =========================
+   SIGNUP BUTTON
+========================= */
+
+.signup-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #1264e8;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.signup-btn:hover {
+    background: #0d55c7;
+
+    transform: translateY(-1px);
+}
+
+
+.signup-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-text {
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #687385;
+
+    font-size: 14px;
+}
+
+
+.login-text a {
+    color: #1264e8;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   GUEST
+========================= */
+
+.guest-access {
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0f4;
+
+    text-align: center;
+}
+
+
+.guest-access a {
+    color: #4d596b;
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+
+.login-text a:hover,
+.guest-access a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+    .signup-page {
+        padding: 18px;
+    }
+
+    .signup-card {
+        padding: 30px 22px;
+    }
+
+    .signup-header h1 {
+        font-size: 25px;
+    }
+
+}
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="signup-page">
+
+        <section class="signup-card">
+
+            <!-- HEADER -->
+
+            <div class="signup-header">
+
+                <a href="index.html" class="logo">
+                    Skill<span>2</span>Career
+                </a>
+
+                <h1>Create your account</h1>
+
+                <p>
+                    Start exploring careers, skills and learning paths.
+                </p>
+
+            </div>
+
+
+            <!-- SIGNUP FORM -->
+
+            <form class="signup-form" id="signupForm">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <div class="terms">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        <span>
+                            I agree to the terms and conditions.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <p
+                    id="signupMessage"
+                    class="signup-message">
+                </p>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="signup-btn"
+                    id="signupButton">
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN -->
+
+            <div class="login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+
+            <!-- GUEST -->
+
+            <div class="guest-access">
+
+                <a href="index.html">
+                    Continue without an account →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+    <script>
+
+// =====================================================
+// SIGN UP FORM
+// =====================================================
+
+const signupForm = document.querySelector("#signupForm");
+
+const nameInput = document.querySelector("#name");
+
+const emailInput = document.querySelector("#email");
+
+const passwordInput = document.querySelector("#password");
+
+const confirmPasswordInput =
+    document.querySelector("#confirmPassword");
+
+const termsCheckbox =
+    document.querySelector("#terms");
+
+const signupButton =
+    document.querySelector("#signupButton");
+
+const signupMessage =
+    document.querySelector("#signupMessage");
+
+
+// =====================================================
+// EMAIL VALIDATION
+// =====================================================
+
+function isValidEmail(email) {
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailPattern.test(email);
+}
+
+
+// =====================================================
+// SHOW MESSAGE
+// =====================================================
+
+function showMessage(text, type) {
+
+    signupMessage.textContent = text;
+
+    signupMessage.className =
+        `signup-message ${type}`;
+
+}
+
+
+// =====================================================
+// SIGN UP
+// =====================================================
+
+signupForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+
+    // Get values
+
+    const name =
+        nameInput.value.trim();
+
+    const email =
+        emailInput.value.trim();
+
+    const password =
+        passwordInput.value;
+
+    const confirmPassword =
+        confirmPasswordInput.value;
+
+
+    // =================================================
+    // VALIDATION
+    // =================================================
+
+    if (!name || !email || !password || !confirmPassword) {
+
+        showMessage(
+            "Please fill in all fields.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if (!isValidEmail(email)) {
+
+        showMessage(
+            "Please enter a valid email address.",
+            "error"
+        );
+
+        emailInput.focus();
+
+        return;
+    }
+
+
+    if (password.length < 6) {
+
+        showMessage(
+            "Password must contain at least 6 characters.",
+            "error"
+        );
+
+        passwordInput.focus();
+
+        return;
+    }
+
+
+    if (password !== confirmPassword) {
+
+        showMessage(
+            "Passwords do not match.",
+            "error"
+        );
+
+        confirmPasswordInput.focus();
+
+        return;
+    }
+
+
+    if (!termsCheckbox.checked) {
+
+        showMessage(
+            "Please accept the terms and conditions.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // =================================================
+    // CHECK EXISTING USERS
+    // =================================================
+
+    const existingUsers =
+        JSON.parse(
+            localStorage.getItem(
+                "skill2careerUsers"
+            )
+        ) || [];
+
+
+    const existingUser =
+        existingUsers.find(
+            user => user.email === email
+        );
+
+
+    if (existingUser) {
+
+        showMessage(
+            "An account with this email already exists.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // =================================================
+    // CREATE USER
+    // =================================================
+
+    const newUser = {
+
+        name: name,
+
+        email: email,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    // =================================================
+    // SAVE USER
+    // =================================================
+
+    existingUsers.push(newUser);
+
+
+    localStorage.setItem(
+        "skill2careerUsers",
+        JSON.stringify(existingUsers)
+    );
+
+
+    // =================================================
+    // DEVELOPMENT CONSOLE
+    // =================================================
+
+    console.log(
+        "New Skill2Career user registered:"
+    );
+
+    console.table(newUser);
+
+
+    console.log(
+        "All registered users:"
+    );
+
+    console.table(existingUsers);
+
+
+    // =================================================
+    // CREATE LOGIN STATE
+    // =================================================
+
+    localStorage.setItem(
+        "skill2careerLoggedIn",
+        "true"
+    );
+
+
+    localStorage.setItem(
+        "skill2careerUser",
+        email
+    );
+
+
+    // =================================================
+    // SUCCESS
+    // =================================================
+
+    signupButton.disabled = true;
+
+    signupButton.textContent =
+        "Account Created";
+
+
+    showMessage(
+        "Account created successfully!",
+        "success"
+    );
+
+
+    // =================================================
+    // REDIRECT
+    // =================================================
+
+    setTimeout(() => {
+
+        window.location.href =
+            "index.html";
+
+    }, 1200);
+
+});
+
+    </script>
+
+</body>
+
+</html>
